@@ -1,0 +1,159 @@
+	Log Ingestion Concepts:
+Time Synchronization: Why is time important to logs and security?
+  Some systems require time sync - errors occur when time is off
+  Kerberos is very time sensitive
+  Security events - If logging is part of a breach, there is a need to establish an accurate timeline
+  Timestamps are legally admissable
+  NTP/ntpd is used for synchronization
+Logging Levels
+  Used especially in syslog
+  Timestamps are important
+  Determines importance/severity of an event
+  Most common are:
+    Fatal (system/service crash, BSOD)
+    ERROR (Something unexpected happened causing functionality issue)
+    WARN  (Something unexpected happened but functionality was able to continue)
+    INFO  (Standard Logging data, something occured)
+    DEBUG (Finely defined data, helps troubleshoot code/issue)
+    TRACE (Extremely specific data (stacktrace), used to investigate difficult errors
+
+	Common Operating System Concepts:
+Windows Registry (AKA Hive):
+  You can break things easily - it is entire configuration of operating system
+  Backups are always a good idea
+  HKEY_CLASSES_ROOT - default applications and related configuration information
+  HKEY_CURRENT_USER - Profile of logged-in user (temp dirs, printers, networks, onedrive, etc)
+  HKEY_LOCAL_MACHINE (AKA HKEY_LM) - Hardware/Software/Security Configuration (most useful for SecOps, SAM is here)
+  HKEY_USERS - Config of all users
+  HKEY_CURRENT_CONFIG - System Startup, Software
+System Hardening: Adding security controls to make systems more secure, many guides online
+File Structure:
+  Config File Locations:
+    Windows: C:\Windows\System32
+    /etc, /var, /root, /
+    /bin /sbin /usr/ /usr/local (for binaries)
+System Processes:
+  Task Manager
+  Procmon
+  top/htop
+Hardware Architecture:
+  x86 - 32 bit archetecture
+  amd64 - 84 but architecture
+  ARM - SoC like Raspberry Pi
+
+	Common Infrastructure Concepts:
+Serverless technology:
+  Cloud service - Servers are involved, you don't provision anything
+  Combines cloud services that work together, such as AWS lambda, you are charged for usage
+Virtualization:
+  Utilize unused resources of a system to make virtual machines - Foundation of cloud services
+  Type I Hypervisor (AKA Bare Metal) - Hypervisor is directly installed onto machine (instead of onto an OS)
+    VMWare, Citrix
+  Type II (AKA Hosted) - Hypervisor runs on top of underlying OS
+    VMWare Workstation
+Containerization:
+  More narrow/streamlined VM with all dependencies needed for a specific application/service
+  Most common is docker
+    docker pull [image]
+    docker run -dit --name [name of app] -p [host port]:[contianer port] -v [source files]:[files mapped to container] [image]:[version]
+    docker ps
+    docker stop [name of app]
+    docker rm [name of app]
+
+	Common IAM (Identity & Access Management) Concepts:
+Multifactor Authentiction - Software/Hardware is better than SMS
+SSO (Single Sign On) - Enables user to login to multiple apps in the SAME domain
+Federation (AKA Federated Identity Management):
+  Enables user to login to app across MULTIPLE domains (such as sign in using google account)
+    Apps and Service Providers authenticate users with help of Identity Providers (IdP)
+  Examples: Okta, OpenID Connect, Azure Active Directory
+  If attacker gets access to main account, all other accounts are also compromised
+PAM (Privileged Access Management):
+  Access framework, helps enforce PoLP (Principle of Least Privilege)
+  Comprehensive approave to privileged access - control, audit and monitor all privileged identities and activities
+  Both human and non human identities - Root/Admin (Domain/local), SSH, Service Accounts, API Keys
+  Mandatory key/secrets rotation for privileged access
+  Isolate sensitive assets
+Passwordless:
+  Possession Factors, such as authentication apps/OTPs, biometrics, "magic links"
+Cloud Access Security Broker (CASB):
+  Cloud Services - Gives control over BYOD, Microsoft Apps, Data sharing and Loss Prevention
+    Can also do Encryption and Key Management, User and  
+  4 Pillars:
+    Visibility - Who/What/When/Where are cloud services being used (CASB Should be able to monitor and control
+    Compliance - Built-In Regulatory Compliance
+    Data Security - Encryption and DLP
+    Threat Protection - UEBA () and Malware Detection/Analysis
+
+	Common Encryption Concepts:
+PKI - Ability to create and manage certificates for encryption
+  You can Create, Issue, Revoke, and Manage certificates
+PKI Components:
+  CMS (Certificate Management System)
+    Creates, stores, distributes, and verifies certificates
+  Digital Certificates:
+    The actual cert, used to verify entities
+  Validation Authority:
+    Validates digital certs
+    Can be seperate, or done by CMS
+    Hosts a CRL (Cert Revocation list) and responds to CRL requests
+  Certificate Authority:
+    The main engine
+    Issues, validates, Revokes and deletes certs
+  End Users:
+    The consumer - Requests and sometimes manages certs
+  Registration Authority:
+    Helps support CA, pre-screens cert signing request for initial enrollments and renewals
+    Verifies Requester then forwards requests to CA
+PKI Process:
+  1. Subject Applies for cert from RA (or CA if no RA)
+  2. RA processes request (verifies identity  and requests CA to issue cert/key to subject)
+  3. CA process request from RA ( Issues Cert/public key to subject and updates VA with subjects info)
+  4. User recieves cert and uses it (Communication is signed with cert)
+  5. Client queries the VA and ensures that cert is valid
+  6. VA verifies the cert
+CA services - often are trusted third parties (VeriSign, Digicert, etc)
+Self-Signed - Good for inside organizational intranet, bad for public internet
+SSL/TLS Inspection:
+  Network device can decrypt/re-encrypt traffic
+  Device that can inspect traffic to look for sensitive data and/or malicious traffic
+    Common feature of NGFW (Next-gen Firewall), Network Tap, etc\
+  Adds strong Layer of security
+
+	Protecting Sensitive Data:
+DLP - Any kind of unauthorized loss of data:
+  Often for the obfuscation of sensitive things
+  Microsoft can enable DLP
+  If a SSN is in an email, it can obfuscate it or remove it completely
+  
+  
+PII (Personally Identifiable Information:
+  Name, SSN, Phone, Email, etc. that can be attributable to a person
+  Extremely lucrative
+  Encryption, Obfuscation, Network Segmentation
+CHD (Cardholder Data):
+  Regulatory framework (PCI-DSS - Payment card data)
+  Storage is kept to a minimum
+  SAD (Sensitive authentication data) is not stored after authentication
+  Assess to full displays of PAN and cardholder data is restricted
+  Cryptographic keys are securely stored
+  
+
+	Common Network Architecture:
+On-Prem - Devices that are owned by and located on organization
+Cloud - Managed services of resources/network/software over the internet
+Hybrid:
+  Logically or/and physically segmented
+  Limits attacker's ability to laterally move
+  Access to critical systems and data are also limited
+Zero Trust:
+  Never Trust; Always Verify
+  Requests and connections are NEVER trusted
+  Applies to external AND internal sources and locations 
+    Employs a lot of monitoring and analysis - IDS/IPS, UEBA (User Entity Behavior Analysis), Traffic Analysis, geofencing
+    Features often are found in NGFW
+SASE (Secure Access Secure Edge):
+  Combines Software-Defined WAN, SaaS, CASBs, Zero Trust Network Access
+SDN (Software-Defined Networking):
+  Traditional networking - control plane and data plane
+    

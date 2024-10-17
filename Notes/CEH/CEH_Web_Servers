@@ -1,0 +1,70 @@
+	Web Server Basic Concepts:
+Networked service that serves web applications
+Web server software: Server itself, comes in a multitude of types
+  Most Common types: Apache, NGINX, IIS (microsoft)
+  Uncommon (temporary web servers): light httpd, python http.server
+Common Components:
+  Document root: where the index.html file is or http://example.com/
+  Server root: Where the configuration files are
+  Virtual Document Tree: Remotely hosted web server files  
+  Virtual Hosts: seperate websites that go to the same machine
+  Web Proxy:
+Vulnerabilities/Reasons for exploit:
+  Lacking OS updates and patches
+  Poor or no authentication
+  Misconfiguration of OS, HTP_Server, website, permsisions
+  Software vulnerabilities
+  Internal Web applications being used by the web server may have vulnerabilities
+Contermeasures:
+  Setting up DMZs, network segmentation and firewalling
+  WAF - Web application firewalls
+  Patches and updates
+  Change Defaults
+  Set file permsisions
+  Secure Coding (looking at code to make sure it is safe
+  Filter user input and acceptable file types
+  Disable Directory listing
+  Use encryption - SSL/TLS for http
+  Honeypot the site
+  Disable Errors
+  Be vague with responses
+  
+	Web Server Attacks:
+DoS/DDoS attacks - denys legitimate access to the web server
+Directory Traversal - if web request allows, user can request files outside directory root
+  Dependent on web service permissions
+Phishing - send an email with a link to fake website to get logins
+Defacement - hack into web server with grafitti 
+Bruteforce Remote Administration - Bruteforce attacking other services that are used to get remote sessions (SSH, RDP)
+  hydra, ncrack, burpsuite, wp-scan (wordpress)
+SSRF (Server Side Request Forgery) - Get server to make requests on your behalf since it is trusted by network 
+  such as RFI/LFI - look for parameters like /file= /path= /src=
+Port Scan
+XSS - getting a webpage to interpret malicous input from a user as code
+CSRF - 
+Insecure Direct Object Refrences (IDOR) - Accessing files that users aren't intended to access 
+Injection - Code or command execution
+File Inclutions - Remote File Inclusion/Local File Inclusions
+
+	Web Server Hacking Methodology:
+1. Recon:
+  Learn ports, services, service versions
+  Learn web service frameworks, apache, nginx, etc
+  Look at banners 
+  Look at "powered by" and versioning
+  Subdomain/DNS enumeration
+2. Vulnerability Scans:
+  Scan for vulnerabilities :}
+  Scanners: Nessus/Teneble, OpenVAS, nikto, SkipFish, Arackne, Burpsuite Pro (expensive), OWASP ZAP
+3. Directory Fuzzing:
+  Compile a list of directories that are a part of the web server
+  Tools: feroxbuster!, dir(go)buster?, robots.txt
+4. Abuse Defaults:
+    Google the default creds
+    Look for config files and phpinfo() for server information
+5. Web app attack
+    Take all the information you've gathered so far to attack web server
+    Use tools like burpsuite or OWASP ZAP, or exploits to other vulnerabilities
+    
+   
+

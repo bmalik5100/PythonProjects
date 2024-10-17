@@ -1,0 +1,55 @@
+	Malicious Network Activity:
+Bandwith Consumption - Using behavioral analysis, monitor for anomalies in the network 
+Beaconing - Malware has been installed and is trying to reach out to its C2 server
+Irregular P2P Communication - (Such as beaconing), looking for repetitiveness 
+Rogue Devices on Network - Covered by asset management and discovery
+Scans/sweeps - especially by non-admins, and fast, also can catch bruteforce attempts
+Unusual Traffic Spikes - Look for ICMP across network. Beware of alert fatigue (and port 4444)
+Activity on Unexpected Ports - Close unused ports!
+Important to know what your baseline is, so that you are aware of what is unusual.
+
+	Malicious Host Activity:
+Resource Consumption - Common indicator of malware:
+  Processor
+  Memory
+  Storage/Drive Capacity
+  Network
+Unauthorized Activity - Remediate with Asset Management:
+eck  Software - Define a policy in your organization
+  Changes - Automate auditing policy, such as Group Policy Check?
+  Privileges - Use PoLP and prevent privilege creep through Asset management
+Malicious Processes - Task Manager or Procmon, If anything looks unusual or unrecognizable
+Data Exfiltration - Look at size of data, port, being exfiltrated using monitoring tools, wireshark, IDS, SOC.
+Abnormal OS Process Behavior - look at resource consumption, check file hashes, set registry persistence or export it
+File System changes or anomalies - Also look at file hashes, unusual directories
+Unauthorized Scheduled Tasks - Task Scheduler (Windows) or Crontab (Linux)
+
+	Malicious Application Activity:
+Anomalous Application Activity - Look for unusual resource consumption/spiking, asking for admin creds, filling up storage, changing regestry entries
+  Ensure you are aware of typical behavior, baselines
+Introduction of new accounts - ESPECIALLY new user accounts (occasionally software installation intends to create service accounts)
+  Powershell: net-user [user account] (Check local/global group memberships) 
+  Linux: cat /etc/passwd, grep "csh\|zsh\|bash" /etc/passwd
+Unexpected Output from Applications: Occasional indicator of buffer overflows is "garbled mess"
+  Linux: netstat | grep -i established, look for unusual communications
+         wireshark, ps, etc
+  Powershell: Task Manager, netstat, procmon (cmd or powershell sessions)
+Service Interuptions: Look for denial of service, random or consistent service crashes, common with buffer overflows. Look in application/service/error logs 
+Application Logs: Look for random heavy entry spikes or unusual activity
+
+	Other Malicious Activity:
+Social Engineering Attacks:
+  Probably THE most effective type of attack
+  Best Defense is good end-user training
+  Asking about how IT team is structured, to enumerate admin users
+  Physically ask someone to fill out form
+  Asking to install software/AVs
+  Asking someone to click link from email
+  Phishing 
+Obfuscated Links:
+  Links that have malicious intent hidden from victim
+  Hyperlink over text
+  Typosquatting (ex. https://outloook.com or lowercase l to uppercase I)
+  Encoding some of link (outloook.com/admin/?login=%25%27
+  Common attack vector is HR through visiting sites and socials from employees
+  URL shorteners, bit.ly, tinyurl, etc (online sites can undo this safely)

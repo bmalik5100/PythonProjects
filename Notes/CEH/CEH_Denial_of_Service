@@ -1,0 +1,124 @@
+
+	DoS and DDoS attacks:
+Denial of Service attacks: Attacks where a service (such as web server, file server, etc) is no longer accessible
+Distributed DoS: DoS attack from multiple different attackers
+Pentest term: "Stress testing" - typically out of scope
+Volumetric attack - bandwith hogging
+Amplification attack - flooding, generating a lot of data by sending a small amount of data
+  Smurf attacks, pulsewave attacks, udp/icmp flooding
+Protocol (packes-per-second) attacks:
+  SYN floods, ACK floods, packet fragmentation
+Application layer attacks - taking advantage of a application to starve it of resources
+  Web service attacks like slow loris, UDP app layer flood
+Multi-vector attack - combination of any of the above
+Permanent DoS:
+  Bricking a host/device, Phlashing (maliciously flashing)
+Reflective Attack:
+  Hides the true source of attack
+  Distributed Reflection DoS (DRDoS)
+    Multiple attacking devices utilizing DoS attacks
+Ransom DoS: DoS for money
+Tools: 
+  LOIC (Low orbit ion cannon)
+  HOIC (High orbit ion cannon)
+  hping3 --flood (send packets as fast as possible, don't accept replies
+  slowloris (thru metasploit)
+
+	Volumetric Attacks:
+Types:
+  UDP Flooding: Send UDP packets to a device from a spoofed source IP. Replies are sent to source IP  
+    Legit traffic will not be able to reach server
+    Also a reflection attack
+    Done with hping3
+      sudo hping3 --flood --spoof [victim] --udp -p 53 [reflected IP]
+      [--flood] does not care about responses, sends packets as fast as possible
+      packet crafting requires root privileges
+  ICMP Flooding: Send ICMP packets to a device from a spoofed source IP. Similar to UDP
+    Done with hping3
+      sudo hping3 --flood --spoof [victim] --icmp -p 53 [reflected IP]
+      [--flood] does not care about responses, sends packets as fast as possible
+  Ping of Death (mostly patched out of systems):
+    Send ping with highly oversized payload
+    Crashes systems
+    Can be used with just ping
+  Smurf and Fraggle attacks:
+    Smurfs: DoS which uses ICMP echo request to a broadcast with a spoofed source. Source recieves replies from ALL hosts that received broadcast request
+      Example: sudo hping3 --flood --spoof [victim] --icmp [broadcast IP such as 192.168.0.255]
+    Fraggles: Smurf which uses UDP and targets port 7 and 19
+      Example: sudo hping3 --flood --spoof [victim] --udp -p7,19 [broadcast IP such as 192.168.0.255]
+  Pulsewave attack: DoS used in Hybrid cloud environments
+    Attacker sends very large amounts of data in timed waves
+    These attack sessions can last very long time
+    Requests must be serviced, host may be handling servers even when attacker moves to a differnet target in timer
+Ransom DDoS: Needs money
+
+	(TCP) Protocol Attacks:
+SYN Flood: Takes advantage of behavior of TCP 3-way handshake
+  SYN establishes a connection and makes target track partially open connections in LISTEN QUEUE
+  Listen Queue tracks initiation for at least 75 seconds
+  Attacker never sends ACK response to target's SYN/ACK
+  Attacker overwhelms listen queue and it can no longer handle legitimate reuqests
+  Tools:
+    hping3 - requires sudo
+    sudo hping3 --flood --syn -p [target service port] [target ip] 
+ACK/PSH-ACK Flood: Sends a bunch of ACK or PSH-ACK packets to a target
+Fragmentation: Sends a large number of fragmented packets, so target's resource becomes overwhelmed trying to assemble the packets
+  Attack can be more effective if fragments are randomized
+  Can bypass firewalls and IDS/IPSs since packets are fragmented
+
+	Application-Layer Attacks:
+General Definition: Attacks on OSI application layer (top layer) and the protocols that the apps are using
+HTTP:
+  Server processes http methods such as GET or POST, by flooding the server with these requests we can deny service to legitimate requests
+  These can happen accidentally
+Slowloric: 
+  Slow and low attack, start slowly opening connections and keeping them open for as log as possible
+  Overwhelms current connection thread pool with malicious connections
+  Can be done with metasploit
+UDP Application Flood:
+  Useful for non-http applications
+
+	Botnets:
+Dispersed group of compromised and remotely-controlled devices
+Topically used with IoT devices, but can be any internet-connected devices
+Can be visualized with threat maps
+Uses other than DDoS:
+  Crypto Mining
+  Attack platform for cyber crime
+  DDoSAAS - DDoS as a a service, botnet rentals
+  Spread malware
+  Influence online polls and games
+Often uses autonomous scanning
+Backchaining - exploited target exploits other targets
+C2C controls bot by uploading malicious software
+
+	DoS and DDoS Countermeasures:
+Active Profiling - setting and monitoring network activity behavior baselines
+Sequential Change Point Detection - algorithmic detections of DoS attacks (usually using cumulative sum algorithm)
+Wavelet-based signal analysis - spectral analysis of an imput signal looking for anomalies of spectral window energy
+Strategies:
+  Absorb:
+    Scale up or out resources temporarily
+  Mitigation/Prevention:
+    Ingress/Egress filtering
+    TCP intercepting - validate connection requests 
+    Rate limiting/Quality of Service
+    Blackholing/Sinkholing - setting up a route to nowhere or a controlled environment
+  Deflections:
+    Create a safe space that acts as a decoy (honeypot/honeynet)
+  Degrading:
+    Turn off all non-critical resources so those resources can be used to prevent attacks
+  Shut down:
+    Turn off all services to wait out attack
+Botnet protections:
+  Blackholing/Sinkholing
+  ISP-provided Botnet protection 
+  Cisco IPS Source IP Reputation Filtering
+  RFC 3704: Checks for spoofed IPs and blocks them
+  Hardware Appliances:
+    Quantum DDoS Protector from checkpoint
+  Software and third party services
+  Updates and patches
+  Utilize Encryption
+  Shut down any unnecessary ports and services
+

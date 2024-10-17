@@ -1,0 +1,116 @@
+Sections of the Vulnerability Assessment Report
+Prowler -OpenSource Security tool to perform AWS Azure Gcloud and Kubernetes security nest preactices assessments audits, incident response, continuous monitoring hardening and forensics readiness
+Maltego - comprehensive/complex for building a network topology map, has free community version
+Incident RECOVERY process
+  Containment
+  Eradication
+  Validation
+  Corrective Actions (remediation and re-imaging)
+  Incident Summary Reporting
+Benefits of vulnerability management reporting
+Differences between GDB and Immunity Debugger
+  GFB - You can discover what a program was doing when it crashed
+  Immunity Debugger - Python based API - allows for the writing of exploits and analyzation of malware, and reverse engineering of binary files
+CIS Benchmark - considered a compliance thing,
+SCAP - Security Content Automation Protocol
+  Set of interoperable specifications from community for security compliance and vulnerability assessment
+Confidence level of the findings of a vulnerability scan
+  Timeliness
+  Relevance
+  Accuracy
+RFCs
+TAXII - Trusted Automated eXchange of Intelligence Information - format through which threat intelligence data is transmitted.
+STIX - Structured Threat Information eXpression - standardized language that uses a JSON-based lexicon to express and share threat intelligence information
+  
+STRIDE - Model for identifying computer security threats developed by Microsoft: 
+  Spoofing, Tampering, Repudiation, Information disclosure, Denial of Service, Elevation of Privilege
+When creating an incident commuincation portion of IR plan, designate an internal point of contact for external communication
+OWASP Top 10 of 2021
+  A01:2021-Broken Access Control
+  A02:2021-Cryptographic Failures
+  A03:2021-Injection
+  A04:2021-Insecure Design
+  A05:2021-Security Misconfiguration
+  A06:2021-Vulnerable and Outdated Components
+  A07:2021-Identification and Authentication Failures
+  A08:2021-Software and Data Integrity Failures
+  A09:2021-Security Logging and Monitoring Failures
+  A10:2021-Server-Side Request Forgery
+SDLC
+  Planning and requirements
+  Design
+  Development
+  Testing
+  Deployment
+  Maintenance
+SSDLC
+  Planning and security requirements (add gap analysis)
+  Secure design and prototyping (add threat modeling)
+  Secure development (add secure coding)
+  Security and Vulnerability testing (add unit testing)
+  Secure Deployment (build routine security tests)
+  Maintenance and monitoring (add bug bounty program)
+Organizations myst report security incidents for the following reasons
+  Maintain regulatory compliance
+  Build trust with customers and stakeholders
+  Protect business relationsships
+  Ensure prompt remediation plan
+CVSS Impact Sub Score
+Alternate Processing Site
+  Hot Site
+  Cold Site
+  Warm Site
+CVSS Metric Groups
+  Base - Exploitability and Impact (the normal ones)
+  Temporal:
+    Eploit Code Maturity (E) - Undefined (E:X), Unproven that exploit exists (E:U), Proof of concept code (E:P), Functional exploit exists (E:F), High (E:P)
+    Remediation Level (RL) - Undefined (RL:X), Official Fix (RL:O), Temporal Fix (RL:T), Workaround (RL:W), Unavailable (RL:U)
+    Report Confidence (RC) - Undefined (RC:X), Unknown (RC:U), Reasonable (RC:R), Confirmed (RC:C)
+  Environmental:
+    Exploitability (MXX, such as MUI, MAV, MAC)
+    Impact (MX, such as MC MI MA)
+    Impact Subscore: Confidentiality (CR:X) Integrity (IR:X), Availability (AR:X)
+Lessons learned phase of incident response is where Root Cause Analysis occurs
+Incident Form:
+  Used to descibe the icident in detail - record CMOS and HDD info, image archive details, platform info, and the name and contact info of the person who reported the incident
+Call/Escalation List:
+  Indicate under what circumstance these certain individuals should be contacted to avoid unnecessary alerts.
+Chain of Custody Form:
+  Indicates who has handled the evidence, when they handled it, and the order in which the handler was in possession of the evidence.
+NIST 800-61 provides guidelines for all stages of handling IoCs including collection analysis and application
+  Collection/detection - understanding attack vectors, identifying signs of incident, and sources of precursors and indicators
+  Analysis - Analysis Process, Incident proper incident prioritization and stakeholder notification process
+  Application/containment, eradication and recovery - minimize damage, remove threat and return to normal environment
+Sensitivity Levels
+  Low - Intended for public use. Unrestricted
+  Medium - Intended for internal use only, Sensitive
+  High - Confidential/Restricted, can have catastrophic impact on org or individuals
+Security Areas/Channels identified by OSSTMM
+  Human Security - Security awarness levels and effectiveness of security training in an org
+  Physical Security - Access controls, perimieter security, CCTVs, building/facility controls
+  Wireless Communication - all wireless communication security
+  Telecommunications - non-wireless types of communication such as VoIP and PBX in org
+  Data Networks - assesses computer and network seucurity in your org
+eDiscovery Guidelines
+  Preservation and Collections process:
+    Data acquisition phase should be from a live system to include volitile data when possible
+    Data acquisition should include both bit-stream imaging and logical backups 
+    The chain of custody should be preserved from the data acquisition phase to the presentation phase
+    Hashing should be performed when data is aquired, modified and when custody transfer of data occurs
+    A consistent process and policy should be documented and followed at all times
+    Forensic toolkits should be used
+    Data should not be altered in any manner within reason
+    Logs both paper and electronic must be maintained
+    At least two copies of collected data should be maintained
+Stages of Forensic Discovery
+  1. Verification - Confirm an incident has occurred
+  2. System Description - COllect Detailed Descriptions of thesystems in scope
+  3. Evidnce Acquisition - Aquire the relevant data in scope, minimizing data loss in a matter that is legally defensible
+  4. Data Analysis - Medial analysis, string/byte search, timeline analysis, and data recovery
+  5. Results Reporting - Provide evidence to prove or disprove statement of facts
+Stages of eDiscovery
+  1. Identification - Verify that triggering event has occurred. Find and assign potential sources of data subject matter experts and other required resources
+  2. Preservation and collection - Acquire data in scope
+  3. Processing, Review and Analysis - Process and analyze data ensuring that minimal data is lost
+  4. Production - Prepare and produce electronically stored information in a format that has been priorly agreed upon
+  5. Presentation - Provide evidence to prove or disprove statement of facts

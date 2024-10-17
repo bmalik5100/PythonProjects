@@ -1,0 +1,163 @@
+	Communicate Vulnerability Management Reporting:
+Identify your audience (Generically, stakeholder is anyone not involved in creating report)
+Stakeholders:
+  Executives - C-suite, they want high level overview, what are key finding
+  Managers/Dept Heads - Tailor the content you are communicating to be relevant
+  General Employees - Why we have end-user security training, be non-technical, dos and don'ts
+  IT Staff - you can get technical, they need to know data in a way that is meaningful to them
+  Development Team - Be highly technical
+
+Reporting Existing Vulnerabilities:
+  What was discovered - ensure you communicate what vulnerabilities are an actual risk and what are irrevalent
+  What was affected: Hosts, Processes, Software, Network
+    Define scope, and classify what is critical
+
+Classifying of Vulnerabilities:
+  Risk Score - Impact x Likelihood, mathematical equation
+    Internal vs external vulnerabilities
+  NIST has IT vulnerabiliity assessment template
+  Provide your own interpretation to add meaning to the data you are providing
+  Remember non-technical employees - how does this affect them
+Prioritizing:
+  What to tackle first - Use score of impact and likelihood, as well as remediation difficulty/cost
+  Ensure you are mindful of the reasoning - think of budget and reputation impact
+Communicating the remediation process:
+  Configuration/Change Management
+    Identify and Communicate highest impacted system
+    Propose changes
+    Identify Risks associated by changing/not changing (think of potential downtime)
+  Patch Management:
+    Identify Impacted systems
+    Proposed Updates - gather information about what systems are relevant and what they fix
+    What is the reasoning of the patch
+
+	Communicate Incident Response Metrics and KPIs:
+KPI - Key Performance Indicators
+Metrics - MTTD -> MTTI -> MTTResp -> MTTC -> MTTRem -> MTTRec
+MTTD (Mean-time-to-detect), a measurement of the average time from when an incident starts and the time taken to become aware of the vulnerability
+MTTI (Mean time to identify)
+MTTR (Mean time to respond) - time between inital response to potential incident
+MTTC (Mean time to contain) average time to quarantine
+MTTR (Mean time to remediate) average time to patch/remove vulnerability
+MTTR (Mean time to recover) average time to restore to normal functionality
+
+Alert Volume - amount of notifications indicating a potential security incident. The greater the amount of notifications can leat to "alert fatigue"
+	
+	Communicating Compliance Reporting:
+Could be industry regulation, government regulation, or just SLA/contractual obligation
+Know your audience - is the compliance a guideline, standard or framework
+Know the industries
+  ISO 27001 - Gap analysis - what is the ideal state vs current state of environment
+  HIPAA - Healthcare industry
+  PCI-DSS - Payment Card Industry
+  GDPR - Companies that do business (or have customer information) in EU
+  SOC2 - Standard for storage and processing of information
+  California Data Privacy Act - Kind of like GDPR for California residents
+Accredidation is a very long process
+Regulation is a 
+Examples of Communication:
+  Secure your communication to appropriate stakeholders
+  Report compliance requirements and scope, as they often change
+  Report on controls providing adherence to requirements 
+  Communicate and be aware of compliance vs non-compliance and proposed controls, especially ensure that employees know what is and is not allowed (clean desks, no sharing keycards/privileges, etc)
+  Monitoring/Validation - ensure proposed control meets the regulation 
+Definitely periodically nurture your policies, anually at least, to audit and report that compliance is followed
+
+	Communicate Inhibitors to Remediation:
+MOU (Memorandum of Understanding)
+  A statement of intent between organizations to work together and often states goals, objectives, or the purpose for the partnership 
+  They always should include security as well to avoid or include language for vulnerability remediation necessity
+SLA (Service Level Agreement):
+  Defines the specific responsibilities of the service provider and sets the customer expectations
+  Creation of these agreements should include a potential for service disruption if an incident happens
+Organizational Governance (The execs):
+  Senior leadership may not be on board with interruptions
+  Overal process from detection to patching can be long and consume a lot of resources
+  Compensating controls may be required
+  While the remediation process may reduce service levels, it has to be conveyed that it will increase security and reduce risks to the company
+Degrading functionality:
+  With SLAs in mind, reduced performance or functionality or service quality might put the company a risk of a violation, which can bring penalties
+  Vulnerability scanning can consume large amounts of bandwidth
+  Can interrupt business processes
+Legacy Systems:
+  Legacy systems that cannot be patched present a high degree of risk
+  Virtually no support
+  May be required to support business systems as the cost may be too expensive to upgrade or deploy new software
+  May have to implement compensating controls
+
+	Communicate Incident Response Reports:
+Identify your stakeholders (anyone not part of the remediation effort that requires communication):
+  IT Security Team - Handle the technical aspects of the incident 
+    They may have authority to declare an incident. If not them, who else
+      Communicate the process in playbooks beforehand - names, positions
+    Who handles the response of the incident - names, positions, contact information
+      IT engineers, CSIRT, support staff, etc
+    Who handles the incident escalation: Communicate process, names, positions
+  Executives - they make the key decisions
+    Require a higher level view of the incident, the minutiae does not matter
+    Commucation requires a summarization of key events
+    They may appreciate a failover/disaster recovery plan
+  Legal - (local, city, state, federal)
+    Work with a legal counsel
+    Ensure that the strategy of response is in compliance with regulation or laws, including obligations through contracts (MOU, SLA, Regulatory/Customer Obligations)
+  Public Relations:
+     Support services, Brand reputation, company reputation
+     Customer services (SLAs, not met, breaches, outages)
+     Public media
+  Regulatory Authority reporting:
+    Examples: HIPAA/GDPR violations
+  Law Enforcement may be involved during civil or crimminal liabilities
+Incident Response Reporting:
+  Executive Summary - High level overview of key findings
+    Who - threat actor
+    What - type of occurence, threat vector, method
+    When - Timestamp of the occurrance, maybe downtime, MTTRs
+    Where - What system, process, application, or physical location the incident occured
+    Why - Identified vulnerability/ies
+  Recommendations - strategic advice on controls to implement or deploy (aka countermeasures)
+    Consider gap analysis
+  Timeline - a complete record of the event from detection to remediation
+  Legal Obligations - Chain of custody, timeline, compliance violations, notifications
+  Impact - Financial, functional, availability, etc
+  Scope - details of the range of the effect to the organization, does it affect venders, customers
+  Evidence - preservation of all the documentation for examination at a later time (timestamps, chain of custody, etc)
+
+	Communicating RCA (Root Cause Analysis):
+After the confinement and remediation, before you close the incident
+Lowest level look at why an incident occurred
+You can use the cyber kill chain
+RCA:
+  Identify the vulnerability and contributing factors
+  Clear and consise breakdown of the underlying circumstances and the timeline of events
+  Other systems - discovery circumstances can affect other systems, did pivots occur, was there later moves or "jump boxes"
+  Deploy strategic controls and countermeasures
+    Reduce or limit the impact of other vulnerabilities in case there is another incident
+    Avoid reoccurence - who has the authority to say the incident is over
+Lessons Learned:
+  Incident Response Team and everone involved in recovery should be involve in lessons leaned
+  There should be formal sessions, with documentation
+  Policy Changes: what went right, what went wrong, where can we improve
+  Identify roadblocks or barriers to remediation and recovery
+  Identify changes that need to made to the incident response plan
+  Identify and document new IoCs (Indicators of Compromise)
+
+	Communicate Vulnerability Metrics and KPIs:
+Go to the professionals - look at trend analysis from companies
+Gartner Top CS Predictions:
+  Responding to threats:
+    Attack Surface Expansion (changes to digital system, modern workplaces esp after pandemic)
+    Identity Threat Detection and Response (Identity as a new perimeter, sustained attacks)
+    Digital Supply Chain Risk (disclosure of sensitive information, compromise of infrastructure, security flaws in products delivered to customers)
+  Rethinking technology:
+    Vetting Vendors/Vendor Consolidation (Supply chain management strategy()
+    Cybersecurity Mesh - a set of tools and controls to secuire a modern enterprise
+OWASP Top 10 Vulnerabilities:
+  
+CVE database from MITRE
+Critical Vulnerabilities and zero-days
+SLOs (Service Level Objectives):
+  Measurable characteristic of an SLA
+  Defines best performance levels and the lowest amount of service that is acceptable by an SLA (such as 99.9% uptime)
+  Quantifiable metrics that show the reliability of a system
+  Should be understood by technical staff and communicated appropriately to leadership
+All these attributes must be communicated to the stakeholders: IT Technical teams, Execs, Customers (such as for service interruptions)

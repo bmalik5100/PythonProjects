@@ -1,0 +1,94 @@
+	Network Sniffing:
+Definition - monitoring packets that move across network
+This is done by putting a NIC into 'promiscuous mode'
+Normal Mode - Drops packets not bound for the interface
+Promiscous mode - Accepts everything that it receives
+Tools:
+  Wireshark
+  TCPDump
+Also called protocol analyzing
+Some hardware built for this is called Hardware/Network Taps
+Monitoring stations can take advantage of port mirroring
+To look at session in wireshark, right-click -> follow -> TCP Stream
+Passive network sniffing - Not generating any traffic, just monitoring 
+Active Network Sniffing - Soliciting/forcing traffic to come to device while monitoring, such as spoofing IP/MAC, poisoning, using malware
+Sniffing Switched networks:
+  CAM table- content addressable memory table determining MAC, port ID, etc
+  Learning mode - vector for attack, flooding switch to overwrite CAM table defaults it to learning mode (basically becomes a hub), known as CAM attack
+  Tools for CAM attack:
+    macof - tool for flooding a switched lan with random MAC addresses (casuing some switches to "fail open" in repeating mode, facilitating switching)
+  Switch Port Stealing - Mac spoofing, flooding, and poisoning
+    Flood a switch with a spoofed MAC via APR requests (macchanger in linux or network properties in windows)
+    Switch starts sending traffic to spoofed MAC
+  VLAN Hopping - Access other VLANs for purpose of sniffing:
+      Switch spoofing - attacker has controlled switch plugged into network, and tries to force a trunk link, OR double tracking where it sends malicious ethernet frames for VLAN to strip off main 802.11q tag
+  STP attack (Spanning tree protocol):
+    Lowest MAC address ID wins root bridge and becomes main switch
+    Become root bridge and sniff it by forcing controlled switch to become lowest MAC address ID
+
+	DHCP Sniffing:
+DHCP - dynamically assigns IP addresses, sets DNS/gateway info,
+DORA (Discover, Offer, Request, Acknowledgement) - Process by which DHCP works, sends each step as packet before assigning IP
+  1. Client sends outmultiple DHCPDISCOVER packets to find DHCP servers
+  2. DHCP server broadcasts DHCPOFFER request back to client with info about IP address, duration of time that client can use
+  3. DHCP Client sends DHCPREQUEST message as broadcast when it receives offer from server to accept the IP address given by the server.
+  4. DHCP server sends DHCPACKNOWLEGE message (broadcast) to client when it receives request which contains IP address and subnet mask the server assigns to the client.
+  Note: steps 2-4 are unicast to specific MAC address of client/server, but Broadcast to all devices on network since IP is not yet assigned
+Common DHCP Attacks:
+  Rogue DHCP - Sending targets to hacker controlled DHCP server by responding to DCHPDISCOVER Broadcast and giving false information, can DoS devices from network, or set gateway device to setup hacker controlled MitM attack, set clients DNS information to poisoned DNS data or credential harvesting
+  
+	ARP (Address Resolution Protocol) Poisoning:
+ARP - resolves IPs to MAC addresses on Datalink layer:
+  It is an automatic (dynamic) service
+  If host receives an update packet, it updates ARP table
+  By spoofing a victim's MAC address to attackers IP, you can intercept traffic
+  Tools:
+    Bettercap
+    Ettercap
+    Dsniff
+    Arpspoof
+Defenses agains ARP Poisoning:
+  You can set ARP to be static.
+  Tools can detect when it is occurring such as XARP, ARP detector
+
+	DNS Poisoning:
+Resolves FQDN to IP address.
+Windows DNS order:
+  1. Checks its own FQDN
+  2. Checks resolver Cache (recent cache of  $ iconfig /displaydns)
+  3. Checks Hosts file (user-hardcoded local windows file)
+  4. Checks DNS Server
+  5. DNS Server Checks Root Servers (asks other servers)
+DNS Cache Poisoning:
+  Poisoning resolver cache with malicious entries
+  To destroy windows resolver cache $ ipconfig /flushdns
+  Method:
+    Set up your own DNS server using ettercap
+       edit /etc/ettercap/etter.dns to add your host record files 
+       In GUI: Scan for hosts
+       Target 1 is victim, target 2 is AD server
+       Begin DNS poisoning in ... etercapp menu -> manage plugins -> dns_spoof
+       Begin ARP poisoning as well
+       Optional: Set up credetial harvesting site or other MitM attack based on malicious host records
+  Other methods are derpnspoof
+
+	Sniffing Defenses:
+Encryption is very important!!
+Set up encryption on important services - HTTPS, SSH, etc
+Physical Security - prevent people put rogue switches or aps
+Static ARP, static IP addresses
+Potentially use IPv6 for one-to-one communications
+Use IDSs and promiscuous mode scanners
+For switch-based attacks:
+  Switch port security - cisco port-security
+  DHCP snooping that works as a firewall between untrusted and trusted devices
+  Port based NACs
+  Dynamic ARP inspection
+  Disable things like trunk autonegotiations for access and trunk ports
+  Don't use default VLAN to prevent double tagging
+  For STP attacks - BPDU guards and root guards
+DNS Defenses:
+  Implementing DNSSec (secures dns traffic)
+  Block outbound traffing from port 53/UDP
+  Encrypt DNS
+

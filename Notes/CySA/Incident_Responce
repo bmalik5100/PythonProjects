@@ -1,0 +1,109 @@
+	Attack Methodology Frameworks:
+Cyber Kill Chain:
+  Reconnaissance
+  Weaponization
+  Delivery
+  Exploitation
+  Installation (of malware/backdoors)
+  Command and Control (C2)
+  Actions and Objectives
+Diamond Model of Intrusion Analysis
+             Infrastructure
+    Adversary               Victim
+               Capability
+MITRE ATT&CK
+  Globally accessable knowledgebase of attack techniques
+  Useful for the development of specific threat models and penteting guides
+  Sort of a more detailed version of the cyber kill chain
+OSS TMM (Open Source Security Testing Methodology Manual)
+  Assures there is emperical scientific testing for security
+OWASP Testing Guide:
+  Web Security Testing Guide
+    Guide for security testing of web apps/services
+DON'T Consult the textbook - Go to the websites, since they are always updated
+
+	Incident Response - Detection and Analysis:
+IoCs (Indicators of Compromise):
+  Network-Related Indicators:
+    Unusual Bandwidth
+    Beaconing - periodical ping towards C2
+    Irregular P2P communication - Inside to outside of network
+    Rogue Network Devices
+    Common protocols using non-standard ports
+  Host-Related Indicators:
+    Unusual or excessive resource consumption 
+    Unauthorized Software/Applications
+    Modified/bypassed allowlists
+    File System changes
+    Unauthorized privileges - audit your admins
+    Data Exfiltration
+    Registry Changes (Windows)
+    Unauthorized Scheduled Tasks
+  Application-Related Indicators:
+    Anomalous activity (does this app always ask for admin?)
+    New accounts
+    Unexpected Output or Erroring
+    Unexpected outbound communication
+    Service interruption
+    Memory overflow
+    Weird activity in application logs
+Evidence Acquisitions:
+  There must be a clear and well-documented chain of custody.
+  Validation of data integrity
+  Preservation
+  Legal hold - Assets must be preserved and intouched due to legal compliance
+Data and log analysis:
+  SIEM - Log aggregation system such as splunk that helps manipulate, manage, and analyze logs
+
+	Incident Response - Containment, Eradication and Recovery:
+Containment:
+  Reduce or eliminate the spread of the incident, includes preserving evidence
+  Focus on scope of incident - how much is affected by incident
+  Segmentation - including microsegmentation, such as containers, sandboxes, etc
+  Isolation - Take host(s) off the network if necessary 
+  Removal - Consider threat intelligence value, crime scene evidence, and business continuity 
+Eradication:
+  Return all systems to a known good state; rebuild systems
+  BE SURE TO GATHER EVIDENCE FIRST - memory dumps, file hashes, etc
+  Rebuild rather than repair - consider good snapshots or backups,
+Recovery:
+  Identify the relevant attack vectors and implement countermeasures
+  Communicate with teams and departments to determine best way to mitigate vulnerabilities
+  Sanitize (through rebuilding)
+  Reconstructed of data
+  Secure disposal (degaussing, shredding, etc)
+  Patching systems
+  Fix/audit permissions, make sure any new accounts are deleted
+
+Consider:
+  Impact
+  Isolation (Think ahead)
+  Remediation plan
+  Compensating controls (and why they were not enough to stop breach)
+
+	Incident Response - Preparation:
+End-User Training! Train employees on procedures that must be followed, incidents that may occur
+Develop incident response drill scenarios, blind and non-blind test process
+Ensure everything is approved and funded
+Preparation (According to NIST):
+  Gather tools
+  Create playbooks
+  Plan for BC/DR (Business Continuity/Distaster Recovery)
+  Tabletop workshops
+
+	Incident Response - Post-Incident Activity:
+Forensic Analysis Phase:
+  Uses legal compliance guidelines
+  Also called digital forensics
+  Recover data that was unavailable during the incident
+Root Cause Analysis:
+  As defined by NIST, "A principle-based systems approach for the identification of underlying causes associated with a particular set of risks"
+  Oftentimes the incident is a result of targeting multiple vulnerabilities, not just one, so do not be quick to assume
+Lessons Learned:
+  Often in the form of a report (Comes from the military)
+  Typical Format:
+    Issue
+    Discussion
+    Recommendation
+  Keep your audience in mind when creating report, do not be too technical with c-suite
+

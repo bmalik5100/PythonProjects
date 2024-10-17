@@ -1,0 +1,75 @@
+	Intro to Network Communications:
+Purpose of Networks: Two or more devices connected to communicate and share data/resources
+Bounded transmission media (With Cables, faster):
+  Copper Cables
+  Fiber Optic Cables
+Unbounded Transmission Media (Wireless, easier than wiring through infrastructure):
+  Wifi
+  Cellular Networks
+  Bluetooth
+Endpoints (Any device with network conenctivity):
+  Servers (Web, File, Email)
+  Computers
+  Mobile Devices
+Redistribution Points
+  Hubs (For basic signal retransmissions in a network)
+  Routers (For directing traffic at the network layer)
+  Switches (For managing traffic at the data link layer)
+Network topology considerations
+  Bus - (Legacy/Obsolete) Linear cable that all devices are connected to. 
+  Star - (Common) Networked device with multiple nodes (devices) connected centrally to it
+  Ring - (Legacy/In WAN) - Self-healing with dual ring
+  Mesh - (Common in WAN/Wireless ad hoc)
+  Tree - Top node with lower tiers
+  Hybrid - Two or more, often not intentionally built. 
+  Choice of topology impacts network scalability, redundancy and maintenace
+
+	Examining Network Standardization:
+ISO - International Organization for Standardization
+  Develops and publishes international standards for networking, created OSI Model (ISO/IEC 7498-1)
+  ISO/IEC 27000 Series (Information Security)
+  ISO/IEC 20000 (IT Service MAnagement
+  ISO/IEC 11801 (Cabling Standards for Networking)
+IANA - Internet Assigned Numbering Authority
+  Developed framework for IP address allocation, DNS root zone administration, and port/protocol parameter assignments (under oversight of ICANN)
+ICANN - Internet Corporation for Assigned Names and Numbers
+  Internationally/Globally oversees the functions of IANA and Internet  
+IETF - Internet Engineering Task Force
+  Develops nad coordinates internet standards (TCP/IP), RFSs
+IEEE - Institute of Electrical and Electronics Engineers
+  Formulates sandards for internet communications, telecom, IT, and power
+  IEEE 802.3 - Ethernet standard
+  IEEE 802.11 - Wifi Standard
+  IEEE 802.15.1 - Bluetooth Standard
+  IEEE 802.1Q (Vlan Tagging Protocol)
+ 
+ 	TCP/IP and OSI Model:
+OSI - Open Systems Interconnection
+Layers:
+  7 - Application	(Web Browser/Email Client/Apps, DNS, HTTP, SMTP)
+  6 - Presentation	(JPEGs/Encryption & Compression, Formatting)
+  5 - Session		(Timing, Sync, Maintain Session Communication, Session Handshake)
+  4 - Transport		(TCP/UDP)
+  3 - Network		(IP Addressing, Routers, BGP, Layer 3 switching)
+  2 - Data-Link		(Logical Link Control, MAC addressing, Switches, Frames)
+  1 - Physical		(Pysical Assets, Electrical impulses, 1s and 0s)
+ 
+ IP (fka DoD) Model - 
+  4 - Application (User interfaces and higher-Level Protocols) <- All covered by programming/developer
+  3 - Transport (Same functionality as Network Layer)
+  2 - Internet (Layer 3 of OSI)
+  1 - Network Interface  (Data-Link and Physical)
+  
+OSI is more conceptual, IP is more practical
+
+	Encapsulation and Decapsulation
+Application Data - Layer 7 (PDU)
+Presentation Data - Layer 6 (PDU)
+Session - Layer 5 (PDU)
+Transport - Layer 4 (PDU - Segments)
+Network - Layer 3  (PDU - Packets)
+Data-Link - Layer 2 (PDU - Frames - Also contains CRC32 footer for error checking)
+Physical - Layer 1 (PDU - Electrical impulses)
+
+BPDU - Bridge Protocol Data Unit - Helps with STP routing
+

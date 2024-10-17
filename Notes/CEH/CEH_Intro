@@ -1,0 +1,201 @@
+	Basic Concepts:
+CIA - Data Confidentiality, Integrity, Availability
+Red (Offensive Security) & Blue (Defensive Security) teams & Purple team
+Types of Hackers - White Hat, Black Hat, Grey Hat, Suicide Hacker, Script Kiddies, Cyber Terrorist, State-Sponsored, Hacktivist
+
+	Attack Classifications:
+Passive (Packet Sniffing, NMAPing, etc) 
+Active (DoS, Password Attack, SQLi, RCE, etc)
+Close-In (Social Engineering, Dumpster Diving, Shoulder Surfing, etc)
+Insider Threads
+Distribution Attack - AKA Supply Chain
+
+	Cyber Kill Chain:
+Passive Recon - Harvesting emails, conference data, public info, etc
+Weaponization - Coding exploit with backdoor into deliverable a deliverable payload  
+Delivery - Delivering a weaponized bundle to victive via email, USB, etc
+Exploitation - Exploit a vulnerability to execute code on victims system
+Installation - Installing malware on asset
+Command and Control (C2) - Command channel for remote manipulation of victim
+Actions and Objectives
+
+	Tactics, Techniques and Procedures - Attacker Behaviors
+Used to determine and predict black hat behavior 
+Tactics - Initial Objectives and Goals
+Techniques - Methods to acheive goals and objectives
+Procedures - Mechanisms or tools to perform those methods
+
+	Common Adversarial Behaviors
+Internal Recon - Passive reconissance/scanning/enumerating internal networks. Look for hosts, configs, services, users, etc (PS1, BASH)
+Command Line / Terminal - Modify and Read data automatically
+Web Shell - Browser based connection to shell (often using php, perl, etc) to execute commands remotely
+Command and Control - BOLO C2 traffic to block
+DNS Tunnelling - 
+Data Staging - Collection of data that is ready to be extracted
+What to do - Logging and monitoring
+
+	Thread hunting Models:
+Threat hunting can generate Indicators of Compromise (IoC)
+IoC data:
+  Atomic - Self-Contained data, such as IP or email address
+  Computed - Derived data, such as hash values, regex
+  Behavioral - Logically combining atomic and computed
+IoC categories:
+  Email Artifcats, such as sender email, subject line, attachments or links
+  Network Artifacts, such as domain info or IP addresses
+  Host-Bashed Artifacts, such as file names, registry entries, drivers, hash values
+  Behavioral Artifacts, such as Macros, or service accounts
+High or unusual login activity - /var/log/auth.log
+
+	Risk And Risk Management:
+Threat x Vulnerability x Impact = Risk
+Threat x Vulnerability x Asset Value= Risk
+Basically, probability a negative event will occur and outcome of negative event
+Risk Leveles:
+  Impact x Probability = Risk Level
+  Low: Threat, but unlikely to occur and/or impact is negligible
+  Medium: Threat is likely, but not imminent. Mitigate asap to reduce risk
+RAG Chart, aka Risk matrix:
+		High	3	4	5
+Likelyhood	Medium	2	3	4	1 to 5, 5 being most risky
+		Low	1	2	3
+			Low	Medium	High
+			      Impact
+Stages:
+  Identify Risks -> Assessment Likelyhood/Impact and Prioritization -> Treatment -> Track and Review
+
+	Cyber Threat Intelligence:
+Gathering of data and intelligence related to threats.
+High-Level
+  Strategic - Long term things
+  Operational - Immediate things
+Low-Level
+  Technical - Specifics/details of tactical methods
+  Tactical - Strategy of cyber threat
+
+	Threat Modeling:
+Steps:
+  Identify security objectives - Compliance, Law, etc
+  Application Overview - Identify Roles, (mis)usage scenarios, suite of technologies related to an application
+  Decompose the Application - breakdown app into components (diagrams help)
+  Identify Threats
+  Identify Vulnerabilities
+STRIDE Threat Model
+PASTA Threat Model - Process for Attack Simulation and Threat Analysis
+DREAD Threat model
+	D amage
+	R eproducibility
+	E xploitability
+	A ffected Users
+	D iscoverability
+Online resources available
+
+	Incident Management Handling And Response:
+Process by which we:
+  Identify
+  Analyze
+  Prioritize
+  Resolve
+In order to restore normal operations asap
+Steps:
+  Preparation - Create Policy, training, procedure
+  Incident Recording and Assignment - Address how to properly report and record incident
+  Triage - Analyze, confirm, categorize, and prioritize Security Incident
+  Notification - Inform stakeholders, management, clients, 3rd party vendors, etc
+  Containment - Pull the plug
+  Evidence Gathering and Forensic analysis
+  Eradication - Remove root cause of the incident
+  Recovery - Bring affected resources back online
+  Post-Incident Activities - Final Review & Documentation
+
+	Machine Learning and Artificial Intelligence:
+AI - Human-like problem solving
+ML - AI conditional learning taking in datasets to compute 
+Learning Techniques (ML):
+  Supervised Learning - labelled datasets training ML in order to CLASSIFY data and compute REGRESSION
+    Classification - Classify/categorize data into defnied groups
+    Regression - Discern the relationship between independent and dependent variables
+  Unsupervised Learning - unlabelled datasets training ML to look for patterns in order to CLUSTER, ASSOCIATE, and REDUCE DIMENSIONALITY
+    Cluster - Grouping unlabeled data based on similarities/differences
+    Association - Discovery of relationships between variables in a given dataset
+    Dimensionality Reduction - Reduces high number of data inputs to a manageable size
+Usage in Sec: Endpoint Protection, Authentication, Network Security, Captcha, Behavioral Analysis, AI vs AI, Phishing, Threat Detection, Vulnerability Assessment and Management 
+
+	Standards and Regulations:
+PCI-DSS (Payment Card Industry Data Security Standards):
+  
+ISO-27001:
+  
+HIPAA - (Protection Standards of Personal Health Information for Health Organizations):
+  
+Sarbains-Oxley Act or SOX (Corporate Disclosures):
+  
+DMCA - Digital Millenium Copyright Act (Intellectual Property Protection):
+
+FISMA aka Federal Information Security Modernization Act (US Government Standards for IS Management):
+
+GDPR EU protections:
+
+DPA (UK version of 2021):
+
+	EC Council CEH Hacking Methodology:
+Ethical Hacking Steps:
+  1. Planning and Reconnaissance - (OSINT) Gathering public information
+  2. Scanning - Active Host/Vulnerability/Port discovery
+  3. Gaining Access / Priviledge escalation - Exploiting vulnerabilites, phishing
+  4. Maintaining Access - backdoor Malware (C2 agent), phantom user account
+  5. Analysis and WAF Configuration / Clearing Track - Exfiltration & Covering your tracks, Shredding
+
+	MITRE ATT&CK Framework:
+Emulation of threats by following framework using global knowledgebase
+Enterprise Tactics Columns
+  Reconnaisance
+  Resource Development
+  Initial Access 
+  Execution
+  Presistence
+  Priviledge Escalation
+  Defense Evasion
+  Credential Access
+  Discovery
+  Lateral Movement
+  Collection
+  Command and Control
+  Exfiltration
+  Impact
+
+	Diamond Model of Intrusion Analysis:
+Structure for analyzing attacks, threats, etc to guide decision making during intrusion
+	      Adversary
+	        /  \
+Infrastructure <----> Capability
+	        \  /
+	       Victim
+Victims:
+  Who is being hacked
+  Victim Persona (Who), Victim Asset (What - aka attack surface)
+Adversary:
+  Threat actor (Most likely to be unknown)
+  Adversary Operator (Actual hacker), Adversary Customer (Who is gaining from hack)
+Capability:
+  TTP of hacker
+  Caoacity (Ability), Arsenal (Resources)
+Infrastructure
+  Any physical or logical items that can be used to attack victim (person, email, phone)
+  Fully owned/controlled by adversary, Owned by third party used to attack
+  Service providers - cloud providers, DNS, ISPs, unwitting participants
+Meta-Features:
+  Timestamps - date and time events occur
+  Phases - steps of hacking process (e.g. cyber kill chain)
+MF - Results:
+  What did adversary accomplish and how was victim affected.
+  Think CIA model, what was affected
+  Post-Conditions
+MF - Directionality:
+  Infrastructure to victim, adversary to capability, etc
+MF - Methodology:
+  Labelling as a class of activity, AKA M.O.
+MF - Resources:
+  Resources REQUIRED for event to occur
+  Software, hardware, access, funds, etc.
+

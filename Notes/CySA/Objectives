@@ -1,0 +1,309 @@
+#### 1.0 Security Operations - 33% ####
+1.1 Explain the importance of system and network architecture concepts in security operations.
+  Log ingestion
+  - Time Synchronization
+  - Logging Levels
+  Operating Systems Concepts
+  - Windows Registry
+  - System Hardening
+  - File Structure
+    - Configuration file locations
+  - System Processes
+  - Hardware Architecture
+  Infrastructure Concepts
+  - Serverless
+  - Virtualization
+  - Containerization
+  Network Architecture
+  - On-Premises
+  - Cloud
+  - Hybrid
+  - Network Segmentation
+  - Zero Trust
+  - Secure Access Secure Edge (SASE)
+  - Software-Defined Networking (SDN)
+  Identity and Access Management
+  - MFA (Multifactor Authentication)
+  - SSO (Single Sign On)
+  - Federation
+  - (PAM) Privileged Access Management
+  - Passwordless
+  - CASB (Cloud Access Security Broker)
+  Encryption
+  - PKI (Public Key Infrastructure)
+  - SSL (Secure Sockets Layer)
+  Sensitive Data Protection
+  - DLP (Data Loss Prevention)
+  - PII (Personally Identifiable Information)
+  - CHD (Cardholder Data)
+1.2 Given a scenario, analyze indicators of potentially malicious activity.
+  Network-Related
+  - Bandwith Consumption
+  - Beaconing
+  - Irregular P2P Communication
+  - Rogue Devices on Network
+  - Scans/Sweeps
+  - Unusual Traffic Spikes
+  - Activity on Unexpected Ports
+  Host Related
+  - Processor Consumption
+  - Memory Consumption
+  - Drive Capacity Consumption
+  - Unauthorized Software
+  - Malicious Processes
+  - Unauthorized changes/privileges
+  - Data exfiltration
+  - Abnormal OS Process behavior
+  - File System changes or anomalies
+  - Registry changes or anomalies
+  - Unauthorized Scheduled Tasks
+  Application Related
+  - Anomalous Activity
+  - Introduction of New Accounts
+  - Unexpected Output
+  - Unexpected Outbound Communication
+  - Serice interruption
+  - Application Logs
+  Misc
+  - Social Engineering Attacks
+  - Obfuscated Links
+1.3 Given a scenario, use appropriate tools or techniques to determine malicious activity
+  Tools
+  - Packet Captures (Wireshark, TCPdump)
+  - Log Analysis/Correlation (SIEMs, SOARs) 
+  - Endpoint Security (EDRs)
+  - DNS and IP Reputation (WHOIS, AbuseIPDB)
+  - File Analysis (strings, virustotal)
+  - Sandboxing (Joe Sandbox, Cuckoo Sandbox)
+  Common Techniques
+  - Pattern recognition (C2)
+  - Interpreting Suspicious Commands
+  - Email Analysis (Header, Impersonation, DKIM, DMARC, SPF, embedded links)
+  - File analysis (Hashing)
+  - UEBA (End User Behavior Analysis) (Abnormal Account Activity, Impossible Travel)
+  Programming Languages/Scripting
+  - JSON/XML
+  - Python, Powershell, Shell Scripting
+  - Regex
+1.4 Compare and contrast threat intelligence and threat-hunting concepts:
+  Threat Actors
+  - APTs
+  - Hacktivists
+  - Organized Crime
+  - Nation-states
+  - Insider Threats (Intentional and unintentional)
+  - Supply chain
+  - Script Kiddie
+  Tactics, Techniques, and Procedures
+  Confidence Levels
+  - Timeliness
+  - Relevancy
+  - Accuracy
+  Collection Methods and Sources
+  - Open Source (Social Media, Blogs/Forums, Government Bulletins, Computer Emergency Response Teams, CSIRT, Dark Web)
+  - Closed Source (Paid Feeds, Information Sharing Organizations, Internal Sources)
+  Threat Inteligence Sharing
+  - Incident Response
+  - Vulnerability Management
+  - Risk Management
+  - Security Engineering
+  - Detection and Monitoring
+  Threat Hunting
+  - Indicators of Compromise (IoC) (Collection, Analysis, Application)
+  - Focus Areas (Configurations/Misconfigurations, Isolated Networks, Business-critical assets and processes)
+  - Active Defense
+  - Honeypots
+1.5 Explain the importance of efficiency and process improvement in security operations
+  Standardize Processes
+  - Identification of tasks suitable for automation (Repeatable/human interaction non-required)
+  - Team coordination to manage and facilitate automation
+  Streamline operations
+  - Automation and orchestration (SOARs)
+  - Orchestrating threat intelligence data (Data enrichment, Threat feed combination)
+  - Minimize human engagement
+  Technology and tool integration
+  - Application Programmin Interfaces (API)
+  - Webhooks
+  - Plugins
+  Single Pane of Glass
+#### 2.0 Vulnerability Management - 30% ####
+2.1 Given a scenario, implement vulnerability canning methods and concepts
+  Asset Discovery
+  - Map Scans
+  - Device Fingerprinting
+  Special Considerations
+  - Scheduling, operations, performance, sensitivity levels, segmentation, and regulatory requirements
+  Internal vs External Scanning
+  Agent vs Agnetless
+  Credentialed vs Non-Credentialed Scans
+  Passive vs. Active Scans
+  Scatic vs Dynamic
+  - Reverse Engineering
+  - Fuzzing
+  Critical Infrastructure
+  - Operation Technology (OT)
+  - Industrial Control Systems (ICS)
+  - Supervisory Control And Data Aquisition (SCADA)
+  Security Baseline Scanning
+  Industry frameworks
+  - Payment Card Industry Data Security Standard (PCI-DSS)
+  - Center for Internet Security (CIS) Benchmarks
+  - Open Web Application Security Project (OWASP)
+  - International Organization for Standardization (ISO) 27001
+2.2 Given a scenario, analyze output from vulnerability assessment tools
+  Tools
+  - Network Scanning and Mapping (Maltego, Angry IP Scanners)
+  - Web App Scanners (Burp Suite, OWASP ZAP!, Arachni, Nikto)
+  - Vulnerability Scanners (Nessus, OpenVAAS)
+  - Debuggers (Immunity Debugger, GNU, Debugger (GFB))
+  - Multipurpose (Nmap, MSF aka Metasploit, Recon-ng)
+  - Cloud Infrastructure Assessment Tools (Scout Suite, Prowler, Pacu)
+2.3 Given a scenario, analyze data to prioritize vulnerabilities
+  - Common Vulnerability Scoring System (CVSS) interpretation
+    - Attack Vectors
+    - Attack Complexity 
+    - Privileges Required
+    - User Interaction
+    - Scope
+    - Impact (Confidentiality, Integrity, Availability)
+  - Validation (True/False Positives, True/False Negatives)
+  - Contextual Awareness (Internal, External, Isolated)
+  - Exploitability/Weaponization
+  - Asset Value
+  - Zero-Day
+2.4 Given a scenario, reccomend controls to mitigate attacks and software vulnerabilities.
+  Cross-Site Scripting
+  - Reflected
+  - Persistent
+  Overflow Vulnerabilities
+  - Buffer, Integer, Heap, Stack
+  Data Poisoning
+  Broken Access Control
+  Cryptographic Failures
+  Injection Flaws
+  Cross-site Request Forgery (CSRF)
+  Directory Traversal
+  Insecure Design
+  Security Misconfiguration
+  End-of-life or Outdated Components
+  Identification and Authentication Failures
+  Server-side Request Forgery (SSRF)
+  Remote Code Execution (RCE)
+  Privilege Escalation
+  Local File Inclusion (LFI) / Remote File Inclusion (RFI)
+2.5 Explain concepts related to vulnerability response, handling, and management
+  Compensating control
+  Control Types
+  - Managerial
+  - Operational
+  - Technical
+  - Preventative
+  - Detective
+  - Responsive
+  - Corrective
+  Patching and Configuration Management
+  - Testing
+  - Implementation
+  - Rollback
+  - Validation
+  Maintenance Windows
+  Exceptions
+  Risk Management Principles
+  - Accept, Transfer, Avoid, Mitigate
+  Policies, Governance, and Service Level Objectives (SLOs)
+  Prioritization and scalation
+  Attack Surface Management
+  - Edge Discovery
+  - Passive Discovery
+  - Security Controls Testing
+  - Penetration Testing and Adversary Emulation
+  - Bug Bounty
+  - Attack Surface Reduction
+  Secure Coding Best Practices
+  - Input Validation
+  - Output Encoding 
+  - Session Management
+  - Authentication
+  - Data Protection
+  - Parameterized Queries
+  Secure Software Development Life Cycle (SDLC)
+  Threat Modeling
+#### 3.0 Incident Response and Management - 20% ####
+3.1 Explain concepts related to attack methodology frameworks
+  Cyber Kill Chains
+  Diamond Model of Intrusion Analysis
+  MITRE ATT&CK
+  Open Source Security Testing Methodology Manual (OSS TMM)
+  OWASP Testing Guide
+3.2 Given a Scenario, perform incident response activities
+  Detection and Analysis
+  - IoCs
+  - Evidence Aquisitions (Chain of Custody, Validating data integrity, preservation, legal hold)
+  - Data and log analysis
+  Containment, Eradication, and Recovery
+  - Scope, Impact, Isolation, Remediation, Re-imaging, Compensating Controls
+3.3 Explain the preperation and post-incident activity phases of the incident management lifecycle
+  Preparation
+  - Incident response plan
+  - Tools
+  - Playbooks
+  - Tabletop simulations
+  - Training
+  - Business continuity (BC), Disaster Recovery (DC)
+  Post-incident activity
+  - Forensic analysis
+  - Root Cause analysis
+  - Lessons learned
+#### 4.0 Reporting and Communication - 17% ####
+4.1 Explain the importance of vulnerability management reporting and communication.
+  Vulnerability management reporting
+  - Vulnerabilities
+  - Affected hosts
+  - Mitigation 
+  - Recurrance
+  - Prioritation
+  Compliance Reports
+  Action Plans
+  - Configuration Management
+  - Patching
+  - Compensating controls
+  - Awareness, education and training
+  - Changing business requirements
+  Inhibitors to remediation
+  - Memorandum of Understanding (MOU)
+  - Service-Level agreements (SLA)
+  - Organizational Governance
+  - Business process interruption
+  - Degrading Functionality
+  - Legacy Systems
+  - Proprietary systems
+  Metrics and Key Performance Indicators (KPIs)
+  - Trends
+  - Top 10 (such as OWASP)
+  - Critical Vulnerabilities and zero-days
+  - SLOs
+  Stakeholder identifiation and communication
+4.2 Explain the importance of incident response reporting and communication
+  Stakeholder identification and communication
+  Incident declaration and escalation
+  Incident response reporting
+  - Executive Summary
+  - Who, what, when, where and why
+  - Recommendations
+  - Timeline
+  - Impact
+  - Scope
+  - Evidence
+  Communications
+  - Legal
+  - Public relations (Customer communications, Media)
+  - Regulatory reporting
+  - Law enforcement
+  Root Cause Analysis
+  Lessons learned
+  Metrics and KPIs
+  - MTTD (Mean Time To Detect)
+  - MTTRes (Mean Time To Respond)
+  - MTTRem (Mean Time To Remediate)
+  - Alert Volume
+

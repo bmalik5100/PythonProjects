@@ -1,0 +1,224 @@
+	IoT Basics:
+Definitions: Process of connecting everyday objects and systems to networks ino reder to make them globally available
+Components: Device, Gateway, Cloud Server (stores/processes data), Remote application
+Types of IoT:
+  Consumer IoT: Such as IP security cameras
+  Industrial IoT: Such as sensors for industrial systems
+OSI IoT Architechure:
+  Edge Technology: IoT hardware components
+  Access Gateway: Inter-technology communication devices
+  Internet Layer: IP based communication that allows connectivity
+  Middleware: Services that run in the background of and support the application layer software
+  Application layer: End-user application, could be mobile, web, etc
+IoT Deployment Areas:
+  Commercial
+  Consumer
+  Healthcare
+  Transportation
+  Military/Law Enforcement
+  IT (Such as server room sensors)
+  Energy
+Common IoT Technologies and Protocols:
+  Communication:
+    Wifi
+    Zigbee
+    Radio Frequency Identification (RFID)
+    LTE-Advanced (medium-range cellular)
+    LPWAN (Low-Power Wide Area Networking) (Long Range)
+    Sigfox (Long Range)
+    Ethernet (Wired)
+  Operating Systems for IoT (Typically called embedded systems):
+    Mbed OS (ARM based)
+    Windows 10 for IoT
+    Contiki-ng: Github OS for IoT devices
+    Ubuntu Core: Security-Focused
+Communication Models:
+  Device-to-Device
+  Device-to-Cloud: Device --> App Service Provider
+  Device-to-Gateway: Device --> IoT Gateway --> App Service Provider
+  Back-End Data Sharing: Device --> App Service Provider 1 --> App Service Provider 2, etc
+IoT Security Challenges:
+  Weak or no intrinsic security:
+    Weak authentication
+    Poor Access Control Implementation
+    Vulnerable Web Apps
+    Clear-Text Communications
+    Buffer Overflows and Remote Code Execution 
+  Support Could be lacking or nonexistent
+  Theft of IoT Device
+
+	IoT Threats and Vulnerabilites:
+IoT OWASP TOP 10 Threats:
+  1. Weak, Guessable, or Harcoded Passwords
+  2. Insecure Network Services (that compromise CIA)
+  3. Insecure Ecosystem Interfaces (web, backend API, cloud or mobile)
+  4. Lack of Secure Update Mechanism
+  5. Use of Insecure or Outdated Components
+  6. Insufficient Privacy Protection (Insecurely stored creds or user data)
+  7. Insecure Data Transfer and Storage
+  8. Lack of Device Management (Trash management interface)
+  9. Insecure Default Settings
+  10. Lack of Physical Hardening Measures (Use a padlock)
+
+IoT Threats and Attack Surfaces:
+  Ecosystem
+  Admin portals and web interfaces
+  Physical Interfaces
+  Firmware
+  Network Traffic and Communication
+  Vendor and third party APIs
+  Local Storage
+  Mobile Apps
+
+Standard Vulnerabilities:
+  Weak/no encryption
+  Weak/no passwords
+  No MFA or 2FA
+  No lockout policy or capability
+  DoS attacks
+  Physical Threats
+  Lack of Updates, patches and support
+  Physical Console access
+  Insecure third-party components
+  Debug Ports (Check out UART or JTAG)
+
+	IoT Attacks, Tools and Countermeasures:
+Standard Threats:
+  SQLi
+  Ransomware
+  DoS Attacks
+  MITM Attacks
+  RCE attacks
+
+Tools (Software):
+  Screen/Putty
+  Browser
+  Shodan
+  Censys
+  Wireshark/TCPDump
+  Burpsuite/OWASP ZAP
+  Attack Proxy
+  SDR Tools (In Parrot OS)
+Tools (Hardware):
+  JTAGulator
+  UART USB
+  BUS Pirate
+  CR232 to USB
+
+Countermeasures:
+  Change Defaults
+  Updates and patches
+  Encryption
+  Disable unnecessary services
+  Physical Security
+  Logging and monitoring 
+  Locouts
+  SDR (Security Data Retention) Security:
+    Don't use rolling code
+    Utilize preamble and syncronization nibbles
+    Use Encryption
+  Manufacturer Security:
+    Security Boot Chain - Software Verification Technique
+    Chain of Trust: The update Process
+  IoT Device Management:
+    IBM Watson IoT
+    Predix
+    AT&T
+    Oracle
+
+	OT Basics:
+Operational Technology - Industrial technology used in manufacturing, energy, and critical infrastructure
+ICS - Industrial Control Systems - command center for industrial instruments
+SCADA - Supervisory Control and data acquisition - gathers and presents data to operators
+DCS - Distributed Control System - similar to SCADA, but more focused on automating processes
+Operatonal Technology
+  PLC - Programmable Logic Controller: Performs a programmable function
+  RTU - Remote Terminal Unit: Beefed up PLCs
+    AKA Remote Telecontrol/Telemetry Unit
+    Better environmental tolerances
+    Options for Backup Power and Autonomy
+  Basic Process Control System (BPCS): Receives information and sends to SCADA
+  SIS (Safety Instrumented Systems):
+    Sensors, logic solvers, and final control environments
+    Protects people, equipment, and environment
+    Isolates the plant in case of an emergency
+  Human Machine Interface (HMI):
+    Screen that allows a person to interact with a machine or system of machines
+    Data I/O
+    Is a subset of SCADA
+    Where you push the buttons
+  IED (Intelligent Electronic Device):
+    Devices that recieve data from sensors/power equipment
+    Issue control commands such as tripping breakers during electrical (voltage/current) anomalies
+    Example: voltage regulator
+  Industrial Internet of Things (IIoT):
+    The convergence of OT and IT
+    Uses traditional IT infrastructure to manage OT devices
+    Where security issues often occur
+
+OT Security Challenges: 
+  Plaintext passwords/protocols 
+  High levels of complexity (Think Asset creep)
+  Proprietary or legacy tech unable to be secured
+  Lack of OT security professionals
+  Converging with IT brings in IT security issues
+
+	OT Attacks, Tools, and Countermeasures:
+OT Vulnerabilities:
+  Freely available RF/Wifi signals
+  Internet-connected OT Systems
+  OT systems connected to other system connected to internet
+  Missing/Nonexistent updates
+  Weak passwords/no authentication
+  Weak firewall rules (both ingress/egress)
+  Nonexistent network segmentation
+  Weak/nonexistent encruption
+OT Threats:
+  Malware introduced through:
+    Removable Media (Stuxnet)
+    External Hardware (Potentially from supply chain attack)
+    Downloaded from internet
+    IT Connected systems
+    Web/Database
+    Compromised Cloud
+    Infected End-user devices
+  DoS or DDoS Attacks
+  HMI (Muman machine interface) based attacks
+    Physical interference
+    Buffer overflows
+    RCE
+  Human Error (Damage, Programming errors, misconfigurations)
+  Side Channel Attacks:
+    Monitor physical aspects of the OT
+    Timing Analysis
+    Power analysis
+    Deduce Password or crypto-key
+    Use oscilloscope obseves power consumption between clock cycles
+  RF Connected controller attacks
+    Replay attacks (Capture and replay legit command)
+    Command injection 
+    Malicious RF Controller Re-pairing attack (Evil controller)
+    Malicious reprogramming attack (Evil Firmware)
+  
+Tools:
+  Shodan
+  Search Diggity
+  s7scan
+  plcscan
+  smartrftm packet sniffer
+  ISF (Metasploit for ICS/SCADA)
+
+Countermeasures:
+  Updates & Patches
+  Secure Coding practices
+  Change Defaults
+  Secure Authentication:
+    Strong Passwords
+    MFA
+    Disable/secure remote access 
+    Encryption
+    Security Training
+    Network Segmentation
+    Firewalss/IDS/IPS
+    OT-specific Monitoring Solutions
+    Honeypots & Honeynets (conpots)

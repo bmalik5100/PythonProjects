@@ -1,0 +1,133 @@
+Footprinting resources:
+Google
+Shodan
+Censys Search
+
+	Footprinting:
+Learning any information about a victim AKA OSINT gathering
+Two Types:
+  Passive - no interaction with target, freely available public information
+    Extremely difficult to detect
+  Active - Making direct contact with target, e.g host discovery, port scans, etc
+    More possible to detect
+Information to Gather:
+  System information - OS, services like AD or LDAP, DNS
+  Network informtation - firewall rules, domains/subdomains, hosts
+  Organizational information - Org charts, employee information
+Information to be used for vulnerability assessment
+
+	Google Dorks:
+Definition - Using advanced search features of google to do footprinting
+Examples:
+  inurl:
+  intitle:
+  related:
+  link:
+  site:
+Pair many together to get a more and more specific google entry for recon.
+
+	Shodan and Censys:
+Search engines that find more hosts than just web servers, e.g. firewalls, IoT, etc
+Shodan - Search engine for Internet-Connected devices:
+  Free version, and teired access
+  shows ports, IPs, vulnerabilities, country/region of origin, etc.
+  Filters available
+Censys - Discover, monitor, analyze devices publicly accessible to internet (same as Shodan):
+  Raw headers, host information, ssh banners, etc
+
+	Sub-domain Enumeration:
+Subdomain - subdomain.domain.com, organization of domains to connect different parts of organization to same top domain. below GTLD
+Purpose - Discover more (possibly vulnerable) areas as part of victims attack surface
+Methods:
+  Google dorking - $ site:example.com
+  View Source - ctrl + f and looking at source html pages for subdomains
+  Netcraft Search DNS - online tool to search DNS records by domain 
+  sublister - in apt, cmdline tool (-d for domains, -t for threads), go slow so you don't get banned
+
+	Social Networking Recon:
+Basically Social Media Stalking
+Company information - ID Badge information, 3rd party info
+employee information - email, job titles, interests, technologies used, location information
+Linkedin - very organizational
+Automation:
+  TheHarvester - not as good as it used to be, better for subdomains, ip addresses, etc
+  sherlock - commandline username enumerator
+  socialsearcher - online tool looking for hashtags
+Client websites - look for email domains
+
+	Job Board Recon:
+Description - shows different technologies and organizational charts used in qualifications ex. looking for SQL dev uses SQL and reports to xyz.
+Contact information - email addresses, locations
+Look in both job boards and client site openings
+
+	Deep/Dark web Recon:
+Deep web - beyond surface web, unable to be searched/indexed, cannot reach without authorization
+Dark Net - Anonymous/Hidden network by nature using encryption, such as Tor Network, safer to use VM
+  E.g. Freenet - peer-to-peer platform used by journalists in hostile areas
+       Retroshare - peer-to-peer chat/mail/filesharing
+Dark web - Websites that exist on the dark net
+Tor Browser - Access the dark web
+  Hidden Wiki - Multiple links for various categories of sites
+
+	Email Tracking:
+Email Tracking - Getting information from emails, e.g. mouse movements, IP address, browser, etc
+Email Tracking:
+  Read receipts -  
+  Tracking Pixels - Tiny embedded images built/coded to track user activity (often used by marketers)
+  Tracking Links - Same as above, but triggered by telemetric data grabbed when visitng a link
+Email Tracking Services:
+  Github - Various open source projects 
+  Linkly - Paid tracking link service
+  Bitly  - Tracking Link service
+
+	DNS and WHOIS Enumerations:
+WHOIS - Registry of information:
+  Thick Model: Admin info, Billin info, Domain information, Point of Contacts
+  Thin Model: Just who is it registered with
+  Example of site query: Search at https://who.is
+DNS - Domain Name Service:
+  Discern Domain names, IP addresses, mail server info
+  Standard for Query is nslookup or dig -axfr @ (for zone transfer)
+  CDN information
+
+	Social Engineering Techniques:
+Eavesdropping - Listening in on Phone, Email, Text/Audio/Videos
+Shoulder Surfing - Looking over someone entering passwords, PINs, Account/CC numbers
+Dumpster Diving - Looking in trash to find valuable information
+Impersonation - Convincing a party that you are authorized to get information/data
+
+	Other Footprinting Tools:
+FOCA - Fingerprinting Organizations with Collected Archives
+  Mainly used to find metadata and hidden in formation in the documents it scans.
+  Runs on windows
+  Used commonly for OSINT and Pen Testing
+  Analyzes Microsoft office, open office, etc.
+OSINT Framework - Open Source Intelligence
+  Runs in the browser
+Metagoofil - Metadata
+ExifTool - Metadata
+ReconDog - Python Driven OSINT automation tool
+  Github Repo - w/requirements.txt
+  API driven
+  Lots of lookups and scans
+MALTEGO - Organize your thoughts
+  Paid product with community version in apt
+  Maps assets together
+  Graphically-driven tool to create maps of data and footprint tracking
+  Similar tool is Obsidian
+Recon-ng - 
+  Create workspaces
+  Kind of like metasploit
+
+	Footprinting & Recon Countermeasures:
+This is hard to do.
+Security Policies - Allows for universal security across an organization. Ensures good practice is enforced.
+End-User education training - makes sure that even non-technical users are educated on 
+Opting In to WHOIS security privacy information
+ENCRYPTION ENCRYPTION ENCRYPTION - No good reason not to use encryption
+Authentication Methods - Important for accessibility only for people who SHOULD access data
+Be Safe on social media - Reasonable paranoia
+Disabling Location Services
+Sanitize job listings - be selective about data you share 
+
+

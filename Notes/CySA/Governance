@@ -1,0 +1,39 @@
+Undertand the basics of these standards and frameworks, their purpose, and how they apply to cybersecurity practices.
+
+PCI DSS (Payment Card Industry Data Security Standard)
+Purpose - Designed to PROTECT CARD INFORMATION during and after a financial transaction
+Key Requirements:
+  Build and Maintain a Secure Network (Firewalls, IPS/IDS, Security Configurations)
+  Protect Cardholder Data (Encrypt cardholder data stored and transmitted)
+  Maintain a Vulnerability Management Program (Use and update AV software and develop secure systrems and applications (SAST/DAST))
+  Implement Strong Access Control Measures (Restrict access to cardholder data to only those who need it and implement strong authentication mechanisms)
+  Monitor and Test Networks (Track and monitor all access to network resources and cardholder data and regularly test security controls)
+  Maintain an Information Security Policy (Develop a policy that addresses infosec)
+
+ISO 27001 (International Organization for Standardization)
+Purpose - Provides a systematic approach to managing SENSITIVE COMPANY INFORMATION to ENSURE CIA TRIAD
+Key Satndard - ISO - Specifies requirements for an information security management system, coverign risk manaement, securit controls, and continuous improvement
+
+SOX (Sarbanes Oxley)
+Purpose: To provide accuracy and reliability of financial reporting to companies
+Includes requirements for internal controls over financial reporting and the security of electronic records
+
+FISMA (Federal Information Security Management Act):
+  Role and Purpose - FISMA requires federal agencies and their contractors to secure information systems
+  Mandates the development of security policies, risk management processes, and continuous monitoring
+  Within the context of government systems
+
+HIPAA (Health insurance portability and accountability act)
+  Role and Purpose - US regulation focused on protecting the privacy and security of PHI
+  Mandates safeguards to protect electronic PHA including admin, physical and technical controls
+
+NIST provides a broad set of standards guidelines and best practices to help orgs manage and reduce CS risk
+NIST Cybersecurit Framework - a set of guidelines for managing cs risk in critical infrastructure
+NIST SP 800 - detailed publications covering various aspects of infosec, including risk management, incident response and security controls
+
+NIST provides broad guidance on cyber practices and frameworks
+ISO offers international standards for information security management
+HIPAA focuses on protecting health information
+SOX deals with financial reporting and internal controls
+FISMA addresses federal information security requirements
+

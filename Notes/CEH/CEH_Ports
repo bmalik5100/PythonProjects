@@ -1,0 +1,47 @@
+20/21 - FTP
+
+22 - SSH
+
+23 - Telnet
+
+25 - SMTP
+
+111 - PortMapper
+
+123 - Network Time Portocol. Used for synchronizing time with time server. Also used to sync windows server time vier internet.
+
+135 - RPC (Remote Procedure Call) Locater Service. Maintains a list of networked services that support RPC and DCOM standards. List holds information regarding which ports and IP addresses the services are running or listening on.
+
+137 - NetBIOS Name Service (WINS). Used by NetBIOS to find other computers on a workgroup network. On a P2P network this will be done via broadcast.
+
+143 - IMAP4. Used by IMAP4 servers.
+
+115 - SFTP. FTP File transfers over an SSH connection
+
+119 - Newsgroups. Used for newsgroup access 
+
+161/UDP - SNMP (Simple Network Management Protocol). Gathers/configures informtaion about network devices (hardware agnostic)
+
+179 - BGP (Border Gateway Protocol) - Exchanges routing information between routers in autonomous networks.
+
+1026 - CAP (Novel and Microsoft). On some windows 2000 servers, used for task scheduler or other services.
+
+1080 - SOCKS/Online Chat/Hotmail. Used by IM apps as well as hotmail
+
+1090 - RealAudio. Used by Real Audio for streaming audio and and video apps
+
+1433 - SQL Server Port & SQL Server Replication Port. Used by SQL Server 6 and above for replication between SQL servers
+
+1434 - SQL Server Monitoring Port. Used by Microsoft SQL Server to monitor SQL server performance.
+
+1521 - Default Oracle Port. Default port for connection to Oracle DB server.
+
+1677 - Novell Groupwise - TCP/IP communications between clients and agents and the GroupWise Post Office Agent (POA)
+
+1701 - L2TP (Layer 2 Tunneling Protocol). Tunnelling and encryption standard used to create a VPN (Replaced PPTP)
+
+1720 - H.323 Port. Used for video conferencing equipment which uses the H.323 protocol.
+
+1900 - 
+
+3389 - RDP - Remote Desktop Protocol

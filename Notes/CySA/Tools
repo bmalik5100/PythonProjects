@@ -1,0 +1,120 @@
+	Packet Capture Tools
+Wireshark - gui tool, gold standard:
+  Capture Filters (Under capture options) vs Display Filters (In top bar)
+  Can use logical operators ( && || ! == != )
+  Can use filters (ip.add == [ip addr], ip.dst == [destination ip], ip.src == [source ip], tcp.port == [port], tcp.flags.example
+TCPDump - cmd line tool, good for scripting:
+  -i [interface, or any]
+  -c [count]
+  -w [file to write]
+  -r [pcap to read]
+  [arp, tcp, udp, or icmp]
+  [port]
+  [host [host ip]]
+  [dst [destination ip]]
+  [src [source ip]]
+
+Log Analysis Tools:
+  SIEMs: Security Information and Event Management
+    Log Aggregation System - provide/generate alerts based on conditions
+    Previously, syslog servers allowed aggregation of multiple device logs remotely
+    Auditing: updates, host configuration, user activity
+    Compliance/Governance: PCI-DSS NIST, GDPR
+    Examples: AlienVault, Splunk, Wazuh
+  SOARs: Security Orchestration, Automation and Response
+    Integrates with security tools and technologies:
+      CTI, SIEM, EDR, Vulnerability Management platforms, etc
+    Helps teams: Detect, Prioritize, and respond to Threats 
+
+	Endpoint Detection and Response:
+Tool used to detect more sophiscticated Attacks
+Utilizes ML, Behavioral Analysis, and Threat Hunting to detect suspicious activity 
+  Detects sohpistigated and targeted attacks, and can also alert and block attacks
+Difference from Antivirus:
+  AV PREVENTS malware from infecting endpoints
+  EDR DETECTS and RESPONDS to malware and that bypasses AVs
+  Occasionally integrated within a SIEM
+Open source EDR: OpenEDR
+Methodology:
+  Admin typically installs EDR agent:
+    1. Agent Monitors and collects data (User/System data)
+    2. Agent builds baselines for endpoint
+    3. Agent watch for unusual and/or sustem behavior
+      Network activity, file access, system changes, data exfiltration, data encryption (aka ransomware), malware analysis, etc
+    4. Automated Response and Remediation
+    5. Reporting to dashboard, SOC, etc 
+    6. (Optional but recommended) Admin manually confirms/investigates
+
+	DNS and IP Reputation Tools:
+Reputation over public internet as a whole
+DNS Reputation:
+  Focused on domain names associated with IPs
+  Determies if a domatin name has been associated with suspicious or malicious behavior
+    Such as: Spam, Phishing, Malware, etc
+IP Reputation:
+  Determines if an IP address has been associated with suspicious or malicious behavior
+    Such as: Spam, Phishing, Mawlare, etc
+Can be used to block access to websites or othe ronline resources associated with the domain
+Often used by web filtering and security services to help protect users from accessing potentially harmful websites
+WHOIS:
+  Can't perform reputation lookup
+  BUT you can get information needed to check reputation, such as NameServer
+Cisco: https://talosintelligence.com/reputation_center
+AbuseIPDB: https://abuseipdb.com  
+
+	File Analysis Tools:
+AV/EDR systems can typically do this, but are not perfect
+strings - built-in Linux tool to discover and print ascii text in files such as executables
+  Suspicious strings could be: base64 encoded strings or ip addresses
+  Use regex and searching by piping output to less
+Hashing - Good for checking file integrity
+  Tools could be: md5sum, sha256sum
+VirusTotal - online tool to check uploaded binaries or urls against dozens of AVs
+  Also has a free API
+
+	Sandboxing Tools:
+Sandbox - safe place to run potentially malicious software for dynamic analysis
+DIY sandbox - Customizable Virtual Machine
+Sandboxing Services:
+  Joe Sandbox: Cloud Sandbox tool with free and pro version, create an environment
+  Cuckoo Sandbox: Open-source On Prem sandbox
+
+	Email Analysis Tools:
+Email is one of the main attack vectors that security professionals have to deal with
+Email Headers: Contain data that could point to impersonation (domains, IPs, Reply-To)
+Embedded links: Could contain malicious redirects
+Attachments: Be aware of file hashing for integrity, or virustotal
+SPF (Sender Policy Framework)
+  Create a TXT file that is put into DNS service that lists allowed mail servers
+  Authentication system used to verify allowed "Sending Email" Servers
+    Is this server allowed to send email on behalf of your domain
+    Contains trusted IP addresses of mail servers
+  > nslookup
+  > set type=txt
+  > domain.com
+DKIM (DomainKeys Identified Mail)
+  Ensures email integrity using Digital signatures to prevent malicious email modificaitons
+    Public/Private Keys (Email recipient uses senders public key of sender to validate digital signature)
+DMARC (Domain-Based Message Authentication, Reporting, and Conformance):
+  Advertises that the sender domain is using SPF and/or DKIM
+  Tells recipient what to do with email that fails those auth methods (Quarantine, Reject, Ignore, Drop)
+  dmarcian.com can verify DMARC of domains
+  You can use the RFC to create your own DMARC
+
+	UEBA (User Entity Behavior Analysis):
+Determining user behavior to generate baselines
+Used to detect compromised account creds, can also determine if real users pose a risk
+Is a Built-in funciton to many SIEM solutions, such as Splunk, MS Sentinel
+Alerts to anomalies to user baselines, such as unusual location/time of logins, systems/apps access by user
+
+	Scripting and Programming:
+JSON (Javascript Object Notation): Searializes and structures data for transfer, used commonly in web applications
+XML (eXtensible Markup Language): Human Readable Markup Language used by many systems for data exchange, used by SOAP APIs to structure and encode data being exchanged in SOAP messages
+Common Languages for Scripting: Python, Powershell, Shell Scripts
+Regex - Used for log analysis, file analysis, report generation
+
+	Integrating Tools and Technology into Security Operations:
+APIs - very helpful for automation and integration into other applications
+Webhooks - like an API, but responder will reach out to a listening requester once something is complete 
+Plugins and Addons - in browsers/end-user sotware or security software
+Single Plane of Glass - Aggregate a lot of functionality into a single dashboard

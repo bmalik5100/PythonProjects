@@ -1,0 +1,101 @@
+	NetBIOS and SMB Enumeration:
+Netbios - Made by windows, shares printers, files, etc, for local computers to communicate over network
+  uses UDP/TCP port 137, 139
+  nbtstat - windows Netbios tool
+  [nbtstat -c] shows cache
+  nbtscan - linux netbios tool
+  sudo nmap -sV --script nbstat.nse [target] (Also does the same)
+SMB - Share files, printers, serial ports, etc. AKA Server Message Block
+  uses port 445
+  Windows has their own version, linux has samba
+  CIFS and SMBv1 fundamentally the same
+  commands:
+    sudo nmap -A -Pn -p 445 [target]
+    sudo nmap --script smb.nse [target]
+    smbclient -L //[target ip] (Will show public SMB shares)
+    smbclient //[target ip]/[specific share] (may need to druteforce or use blank password)
+    enum4linux -S [target ip] ( good for shares)
+  If writing says N/A instead of DENIED, maybe try writing anyway
+
+	SNMP Enumeration:
+Simple Network Management Protocol - system of communication relaying status info to server, typically used for monitoring system health
+On port UDP/161
+Information:
+  Managers: Basically the servers 
+  Agents: procs on the individual device, check into managers 
+  Taps: triggered on certain events to alert agents
+  Community String: Sort of like a password. Defaults to public, default is read. private community string is r/w access
+  Management Information Base: Database, identifies objects by OID
+  
+Tools:
+  onesixtyone [options] [host] [community]
+	Can determine hardware, software, etc.
+  snmp-check [target ip]
+	Has GUI caleld snmpcheck
+	Can determine running procs on target OS, established connections, user accounts
+  NMAP
+	There are scripts
+	sudo nmap -sU -p 161 --script [specific script in /usr/share/nmap/scripts] [target]
+  snmpwalk -c [community string, usually public] -v[version] [target ip] [optional OID]
+    
+Good idea to focus on snmpwalk and nmap 
+
+	LDAP Enumeration:
+Most common server is Windows AD
+Port number: 389, SSL/TLS LDAP is 636
+Good for collecting PII, user/group account data
+LDAP Administrator:
+  Alternative 3rd party tool to Windows LDAP. Can be used by anyone.
+  Uses gui
+ldapsearch:
+  Linux terminal tool
+  ldapsearch -LLL -x -H ldap://[ldap server ip] -b '' -s base'(objectclass=*)' 
+AD Explorer:
+  
+Python Libraries:
+    ldap3
+    Good for ldap customization (one size fits one)
+NMAP Script:
+    ldap-search
+
+	NTP Enumeration:
+Network Time Protocol - Time synchronization tool (UDP port 123)
+Maintains time within ~10ms, can attain accuracy of 200 microseconds
+Not super useful for data gathering
+Try to get ntp to disclose information about peers that it knows about
+Tools:
+  ntpdate -d [target]
+  ntptrace -r [remote target] (often like traceroute but for ntp)
+  ntpq (interactive shell)
+    > host [target]
+    > peers
+
+	NFS Enumeration:
+Uses port TCP/UDP 2049
+Tools:
+  sudo NMAP -A -n -Pn -p 2049 [target ip]
+  rpcinfo -p [target]
+  showmounts -e [target]
+  rpc-scan.py --nfs [host]
+Once you find a mountpoint, try to mount it:
+  mkdir /tmp/localpoint
+  sudo mount.nfs [target]:/mountshare /tmp/localpoint
+  cd /tmp/localpoint
+Permissions still apply, but looking for data using find command helpful
+
+	SMTP Enumeration:
+Good for discovering usernames, account info
+Port 25 is standard, you can log in using telnet or netcat
+Tools:
+  vrfy [email address or username] - can verify if user is valid, also expn, reciept2
+  ncat -nv [target ip] 25 (or telnet)
+    ehlo bob [or] helo bob
+    vrfy [user]
+  smtp-user-enum -M [VRFY/EXPN/RCPT] -u [user] (or) -U [filelist of users, try seclists]
+  metasploit
+    > search smtp aux (searches for auxiliary/scanners)
+    > use smtp_enum
+    > options 
+    > set RHOSTS [target]
+  sudo nmap --script -Pn -n smtp-enum-users.nse -p 25 [target] (not to be confused wuth smtp-user-enum)
+  

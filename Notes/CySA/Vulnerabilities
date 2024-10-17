@@ -1,0 +1,335 @@
+	Asset Discovery and Mapping:
+Map Scans: Look for all devices on network, start with known asset documentation.
+Scan for hosts using ping sweeps, such as NMAP/rustmap
+Device Fingerprinting - help understand purpose and details about device
+  Device Types: Server, Desktop, Mobile, IoT, Networking
+  Operating System
+  Ports/Services
+Zenmap - GUI nmap, has a graphical network topology capability
+Angry IP Scanner - Alternative to zenmap, very fast
+Maltego - comprehensive/complex for building a network topology map, has free community version
+Good idea to use multiple tools to reduce inconsitencies
+
+	Vulnerability Scanning Types and Considerations:
+Special Considerations:
+  Scheduling - Very important. There are risks involved in scanning prod. Nights/Weekends/Holidays 
+  Regulatory Requirements - Activities and requirements from PCI-DSS, HIPAA, etc
+  Performance - Will scan degrade performance or shut down servers 
+  Sensitivity Levels - Sensitivity of data (Top Secret, Secret, Public, Private), sensitivity of device (how aggressive can you scan)
+  Segmentations - Multiple networks (VLAN) vs one network
+  Operations - Who is involved, who is informed, support staff, how it will affect performance
+Internal vs external scan:
+  Internal - Inside network boundaries, what vulnerabilities are inside network (Act as insider threat)
+  External - Outside network boundaries, scans public portion of network
+Agent vs Agentless scan:
+  Agent: Install software on each host which report back to server
+  Agentless: Central server does all work
+Credentialed vs non-credentialed: Scanning devices with some/higher access vs no access
+
+Passive Sanning: Non-intrusive sniffing and watching network
+Active Scanning: Physically probing and looking for responses within network
+Static Scanning: Looking at/scanning code and seeing any insecure coding practices 
+Dynamic Scanning: Application is running, testing behavior/fuzzing  
+Critical Infrastructure: OT (Operational), ICS (Industrial Control Systems), SCADA (Supervisory control and data acquisition)
+  Very sensitive, people can be injured or killed if something goes wrong
+Baseline scanning is important to have in order to determine anomalies
+
+	Vulnerability Scanning Frameworks:
+Security Standards:
+  PCI-DSS (Payment Card Industry Data Security Standard)
+    Not enforced by governments, if financial institutions do not comply, they don't get to work with everyone else
+  CIS (Center for Interet Security) Benchmarks
+    Helpful hardening guides for various devices, operating systems, networks, etc
+    Security Mechanisms, Tactics, Procedures, etc
+  OWASP (Open Web Application Security Project)
+    Good resource for web, mobile, API, IoT standards
+    Community built documents with real-world knowledge
+  ISO 27000/27001 (International Organization for Standardization)
+    Highly valued accredidation, makes companies look very secure for customers/investors
+    Costs money to download guides
+    
+	Analyzing Vulnerability Assessment Scanner Output:
+Web Application Scanners:
+  Burp Suite (not in community edition)
+  OWASP Zed Attack Proxy (ZAP)
+  Arachni - can generate web server dashboard
+  Nikto - scanner from terminal, can generate html output
+Vulnerability Scanners:
+  Tenable Nessus - Gold standard, paid enterprise software
+  OpenVas - open source
+Debuggers:
+  Immunity debugger
+  GNU debugger (GDB)
+Multipurpose tools:
+  NMAP - has vulnerability scanning capabilities within scripts
+  Metasploit Framework
+  Recon-ng - Metasploit for web app testing, also does other stuff
+    workspaces create [workspace name]
+    marketplac help
+    marketplace info [module]
+    marketplace install [module]
+    modules load [module]
+    options set SOURCE [target]
+    run
+    show hosts
+Cloud Infrastructure Assessment Tools (Typically AWS, Azure, GCP):
+  Scout Suite
+  Prowler
+  Pacu - Just AWS
+
+	CVSS (Common Vulnerabilities Scoring System):
+Multiple versions, some companies use v2.0 vs 3.0 vs 3.1
+Score out of 10
+
+vv Base Metric Group vv
+Exploitability Metrics:
+  AV (Attack Vectors):
+    N - Network
+    A - Adjacent
+    L - Local
+    P - Physical
+  AC (Attack Complexity):
+    L - Low
+    H - High
+  PR (Privileges Required):
+    N - None
+    L - Low
+    H - High
+  UI (User Interaction):
+    N - None 
+    R - Required
+  S (Scope): (Kind of like privilege escalation)
+    U - Unchanged
+    C - Changed
+Impact Metrics: (CIA Triad)
+  C - Confidentiality: High, Low, None
+  I - Integrity: High, Low, None
+  A - Availability: High, Low, None
+Qualitative Severity Rating Scale:
+  Critical (9.0-10.0)
+  High     (7.0-8.9)
+  Medium   (4.0-6.9)
+  Low      (0.1-3.9)
+  None     (0.0)
+ 
+	Vulnerability Prioritization:
+Validation:
+  True Positive  - Truly Vulnerable 
+  False Positive - Detected incorrectly, not Vulnerable
+  True Negative - Vuln does not exist
+  False Negative - Vuln is not detected
+Context Awareness:
+  Internal - Inside network/VLAN
+  External - Attack vector can be from outside network
+  Isolated - Airgapped systems
+Exploitability - Can it be exploited? DO NOT pentest during a vulnerability assessment.
+Weaponization - Can vulnerability be used to cause harm to data or org
+Asset Value:
+  How important is this asset to the business or organization?
+    Does it contain sensitive data
+    Would downtime cause problems?
+Zero Days: Vulnerabilities that are so new that they are not picked up by scanners
+  HIGHEST PRIORITY 
+
+	Software Vulnerability Mitigations:
+XSS (Cross Site Scripting):
+  Do not trust user input
+  Encoding the Output
+  Use a WAF (Web application firewall)
+  Input Sanitization
+  HTML Sanitization
+  Safe Sinks (Do not use innerHTML, use textContext or value instead)
+Buffer Overflow Vulnerabilities:
+  SAST/DAST (Static/Dynamic Application Security Testing)
+  Safe Coding Practices
+  Heed Compiler Warnings
+  Stack Canaries (Random values placed on the stack at runtime)
+    Canaries are verified when returning to caller functions
+    If canary is overwritten with BoF, then error is generated
+  DEP (Data Execution Prevention) in Windows
+    NX (No Execute) Linux version
+    Makes the stack non-executable 
+  ASLR (Address Space Layout Randomization) - Varies the memory base address of the stack and other memory areas
+AI Data Poisoning:
+  Bad data fed into Data Sets intended to produce incorrect outcomes
+  Targets AI/ML availability and integrity
+  Mitigations: 
+    Standard security methods/checks
+    Outlier Detection/Data Sanitization/Anomaly Detection
+    Human in the loop - Have human verification
+Broken Access Control:
+  Default to Deny lists (except for Public Resources)
+  Minimize CORS usage
+  Disable Directory Listing (Security through Obscurity)
+  Move any sensitive files out of Web Root
+  Log/Alert to access control failures
+  Enable Rate-Limiting - automation is severely crippled
+Cryptographic Failures (Weak or no encryption): 
+  Classify All Data - prevents accidental exposure of sensitive data
+  Ensure encryption of data at rest, in motion, and in use (if possible)
+  Don't use encryption algorithms that are known to be weak
+  Use CSPRING (Cryptographiclaly Security Pseudo Random Number Generator) for IV (Initialization Vector)
+Injection Flaws:
+  Sanitize User Input (Regex Filters)
+  Use Prepared Statements or Stored Procedures
+  Use Parameterized Queries
+CSRF (Cross-Site Request Forgery):
+  Use CSRF Tokens
+Directory Traversal:
+  Input Validation/Sanitization
+  Append a root directory to all API calls
+Insecure Design - Use proper secure coding practices (DevSecOps)
+Security Misconfiguration - Ensure PoLP, force authentication, use ACLs, Audit User accounts
+Identificaiton and Authentication Failures - Employ MFA
+SSRF (Server-Side Request Forgery) - Enable Firewalls and ACLs, utilize proxies
+RCE (Remote Code Inclusion) - Sanitize user input, secure application memory management, monitor/inspect network traffic, use a NGFW
+Privilege Escalation - Software update schedule, isolate/remove software with known vulnerabilities
+Remote/Local File Inclusions: Sanitize User Input, Use a WAF
+
+	SDLC (Software Development Life Cycle):
+Requiremments -> Development -> Implementation -> Operation -> Retirement ---> Requirements
+Requirements:
+  Identifications of Requirements
+  Artifacts are typically created
+  Often divided between functional and nonfunctional
+    Functional: Defines Funciton of a system, uses inputs, processing and outputs, not specific constraints
+    Nonfunctional (Quality Requirements): Defining limitations, constraints, or charactaristics, Devs don't like this
+  Security Requirements (Biggest concern, also concerned with interactions with other systems)
+    Funtional and nonfunctional
+Development:
+  Meeting of functional and non-functional requirements
+  LOTS of testing is done in this phase
+  Security requirements must be ensured, especially to meet requirements
+Implementation:
+  Ensure the solution will work properly in the target environment/systems
+  Might introduce friction between teams
+  Ensure any integrations are smooth
+Operation and Maintenance:
+  30 percent of the cost of operation/maintenance is chasing down bugs
+  Main driver for all the effort of SDLC
+Retirement:
+  May be data/artifacts that need to be properly disposed of 
+  Shredding/degaussing disks
+Agile:
+  Most companies use agile-type methodology, such as scrum
+
+	Threat Modeling:
+Definition: Procedure for testing security against attacks
+Working with pentesting
+Important to perform early and often, Assists the security team understand the solution better
+Common Components:
+  Adversary Capability
+  Total Attack Surface (Where they attack)
+  Attack Vector (Method of attack)
+  Impact
+  Likelihood
+Models and methodologies to learn from:
+  STRIDE - Spoofing, Tampering, Repudiation, Information Disclosure (C in CIA), Denial of Service, Escalation of Privileges
+  PASTA - Defining Objectives and Technical Scope, Application Decomposition, Vulnerability and Resource Analysis, Attack Modeling, Risk and Impact Analysis
+
+	Compensating Controls (AKA Alternate Controls):
+Compenating Controls - Seek to compensate that tech cannot solve
+Prevantative Controls - limit the possibility of an undesirable outcome
+  Ex: Segregating Duties, Password Policy, PoLP
+Managerial Controls - The policies and procedures in order to achieve security goals
+  Ex: Acceptable Use Policy, Oboarding Procedures
+Corrective Controls - Correct undesirable outcomes to reduce risk
+  Ex: Backups, System Recovery Tools, IPS
+Operational Controls - Security Controls often implemented by humans instead of systems
+  Ex: Process Reviews, Security Awareness Training
+Technical Controls - The use of technology (logic controls) to reduce vulnerabilities
+  Ex: Encryption, AV software
+Detective Controls - Controls seeking to identify risks and vulnerabilities:
+  Ex: SIEM, Trend Analysis
+Responsive Controls (Yikes) - Controls designed to respond to a security event or flaw
+  Ex: Snapshot Restore, Incident Response/EDR
+
+	System Maintenance Procedures:
+Patching:
+  Unpatched systems lead to most damaging incidents
+  Frequent area of zero-day attacks
+  BYOD are susceptible to people not updating, Intune MDM policies can manage these
+  Process:
+    Update test system before rolling out company-wide
+    Implement through all devices
+    Rollback - ensure you have a backup plan in case patch messes everything up
+    Validate - Did the patch actually apply? (Maybe pentest to be sure)
+Config Management
+  Maintain consistency of: Performance, Functional, Physical Attributes
+  Have allowlist of authorized software
+  Software: Config identification, control, accounting, and auditing
+    Cloud based systems can do this automatically
+Maintenance Windows
+  Try not to break productivity, schedule during off hours
+  Often used for: App/Package/Patch Deployments, compliance settings, OS tasks
+Exceptions
+  Such as air-gapped systems set up in SCADA/ICS may need to remain unchanged
+
+	Risk Management:
+We have risks, what are we going to do about them
+You cannot plan for how you can respond to risks if you have not properly identified them
+IDENTIFY YOUR RISKS
+Main tactics for risk management:
+  Avoiding Risks:
+    Plan a course that avoids the risk altogether 
+    Best plan, but unrealistic for all environments
+    Ex: If there are too many risks associated with a cloud environment, don't do cloud
+  Transferring Risks:
+    Transfer or escalate to a specialized team, often outsourced from org
+    Ex: Work with a MSSP to deal with issue
+  Mitigate the Risks:
+    Ensure that we can stop the risk before it has a major impact
+    Job of the blue team to add security controls
+    Ex: Strong DoS prevention and firewalls
+  Acceptance of Risks:
+    Just live with it
+    Maybe risk of security breach is very low, asset is worthless
+    Despite acceptance, do not forsake the asset in incident response, logging, monitoring
+Other Publications/Guidelines may have more or differently named management, but these are most important
+
+	Policies, Governance, and SLOs:
+Policies - Organizational rules of conduct of end users, teams, and technology
+  Examples: Email policy, AUP, Social Media AUP, Remote Work Policy, Information Security Policy, Password Policy
+Governance - Compliance to regulatory bodies, such as US, GDPR, Corporation
+  Basic Principles - Accountability, Transparency, Fairness, Responsibility, Risk Management
+SLO - Service-Level Objective:
+  Components of a Service Level Agreement
+  Example: Latency (such as for Cloud), Downtime
+  Error budget - vendor defined error forgiveness
+  SLI - Service-Level Indicator
+  SLA - Service Level Agreement (vendor-client agreement for a service defining quality of service
+  BLO - Business Level Objectives (Non-technical objectives)
+  Baselines may help you when creating SLA to account for error budget
+
+	Prioritization and Escalation:
+Prioritization - NIST 800-61 for guidance
+  Evaluate based on: (akin to CVSS)
+    Functional impact of the incident (None, Low, Medium, High)
+    Information impact of the incident (None, Privacy Breach, Proprietary Breach, Integrity Loss)
+    Recoverability from the incident (Regular, supplemented (support), extended (external support), not recoverable)
+  Escalation should follow rules and procedures and provide a lot of documentation  
+Escalation:
+  Incident response policy should identify:
+    Potential escalation points in the process
+    Procedures for escalation
+    On-call information
+    Escalation procedure should detail everything including acceptable and expected wait times (SLAs)
+
+	Attack Surface Management:
+Edge Discovery - What devices are exposed at the edge of the network, both in corporate environments and cloud
+Engage in passive discovery of the network to expose public facing resources
+Test security controls - trust but verify
+Bug Bounties - Pay third parties to find vulnerabilities or major bugs within a defined scope
+Reduce Attack Surface - Such as disabling/removing unnecessary services
+Pentesting and adversary emulation - discover holes and patch them
+Aside: Azure Intune has an helpful wizard feature for attack surface reduction
+
+	Secure Coding Best Practices:
+Input Validation - 
+Output Encoding - Sanitize Inputs
+Session Management - Use HTTPS and pseudorandom Session IDs
+Authentication - MFA! and prevent the use of plaintext, lockout after a number of failed logins
+Data Protection - Encrypt data in motion (HTTPS), at rest (AES), and in use (Sandboxes/Applocker)
+Parameterized Queries - aka prepared statements, do not allow application to form new sql queries, make predefined functions
+Use tools to ensure that theses practices are met. There are also cloud specific tools.
+ 

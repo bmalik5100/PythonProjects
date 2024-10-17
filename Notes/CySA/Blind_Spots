@@ -1,0 +1,247 @@
+## Practice Test 8/16 ##
+
+CCB - Configuration Control Board
+PAM - Privileged Access Management
+  Not to be confused with Linux PAM
+  An IAM framework that helps enforce PoLP (People who don't need access do not get access)
+  Control, audit and monitor ALL privileged identities and activities
+  Both service accounts and user accounts
+  "Manage" the "access" of "privileged" use
+  Root/Admin Domain and Local, SSH, Service Accounts, API keys/secrets, 
+  Mandatory key rotation
+  Isolate sensitive assets if traffic is not typical
+  Enabling MFA is good for PAM
+SASE and its components, namely Secure web gateways, SD-WAN, ZTNA, and CASB
+  SD-WAN (Software Defined WAN): Optimized and manages network trafic across varios WANs. Intelligently directs traffic based on real-time network conditions, application requirements, and policies. (Networking capabilities) 
+  SaaS: The SASE framework is designed to support secure access to SaaS applications, often by integrating with CASBs to enforce security policies and monitor usage of SaaS applications.
+  Zero-Trust Network Analysis:
+  Secure Web Gateways (SWG): Provide security at the edge of network, enforces internet access policies, and protects users from web-based threats, inspects web traffic to block malicious content and filters access to inappropriate/blocked websites.
+  CASB:
+    4 Pillars! Visibility, Compliance, Data Security, Threat Protection 
+    Visibility: Who/What/When/Where/Why/How are cloud services being used (CASB should be able to monitor and control/audit conditions of cloud services)
+    Compliance (Built-in regulatory compliance)
+    Data Security (Encryption and DLP)
+    Threat Protection (UEBA and Malware Detection/Analysis)
+Zero-Trust
+  Requests and connections are NEVER Trusted
+  MFA 
+  A lot of monitoring and analysis with IDS/IPS, UEBA, Traffic Analysis/Geofencing
+  Many features are included in a NGFW
+  
+Software-Defined Networking (SDN)
+  Allows for programmatic configuration of a network 
+  Centralized way to deal with your network
+  Define policies and rules centrally and software communicates it to network devices
+  Popular in a cloud environment, can be security minded
+Blind Testing - attackers have no prior knowledge about the system, but taget is informed
+Reversal Testing - Attackers know about systems, admins are blind
+LDAP Injection -
+  
+Reasons for automation - Namely processes in a security response playbook, and processes that correspond to identified threat models
+Active defense vs passive defense
+  Passive Defense (preventative) - measure designed to prevent or mitiage attacks before they occur or as they happen
+    Monitoring and deteciton, system hardining, preventative measures like firewalls, AVs, encryption, updates
+  Active Defense (proactive) - passively defending but also actively engaging with and countering threats, real-time detection, analysis, and response to threats
+    Engagement, such as honeypots, and threat intelligence sharing
+    Countermeasures, such as actively disrupting or deciving attackers
+    Adaptability - Adapting defense based on ongoing threats and new attack techniques
+    Real-time response: focuses on immediate response to attack, including automated actions to neutralize threats/mitigate damage
+Exploitability vs impact metrics
+  Score out of 10.0
+  Exploitability:
+    Attack Vector (Network, Adjacent, Local, Physical)
+    Attack Complexity (Low, High)
+    Privileges Required (None, Low, High)
+    User Interaction (None, Required)
+    Scope (Unchanged, Changed)
+  Impact (CIA)
+    Confidentiality (High, Low, None)
+    Integrity (High, Low, None)
+    Avaliability (High, Low, None)
+Security baseline scanning
+Inhibitors
+  MOU (Memorandum of Understanding) - A statement of intent between the participating orgs to work together. Creation of these agreements should include security as well to avoid or include langage for vulnerability remediation necessity
+  SLA (Service Level Agreement) - Defines specific responsibilities of the service provider and sets the customer expectations
+BUffer overflows
+Request for Change (RFC) and Change Control Board (CAB)
+OSS TMM (What compliances are recognized, aka legislative like HIPAA, contractual like PCI DSS, and Standards based like ISO 27001)
+Perimeter networks vs system isolation (exceptions are not used with perimeter networks)
+Difference between operational and managerial controls
+  Operational - day-to-day operations and procedures, often involve direct interaction with systems and users ex. Acess controls, training, incident response, etc
+  Managerial - concerned with governance, planning and overall management of security, ex policy development, compliance management, 
+Difference between SLI and SLO
+Edge Discovery
+  Discovering and managing the systems that are connected to the edge of a network between interal and external network
+Difference between Physical and Local attack vectors (In regards to CVSS Score Metrics) - Physical attacker has to physically touch computer, local user can have keyboard or RDP/SSH access 
+ICS Standard Layered Approach
+Business continuity Plans 
+
+## Practice Test 8/21 ##
+Snort and othe name brand IDS/IPS
+  Snort
+Zenmap
+  GUI version of NMAP
+OWASP Testing Framework
+  Phase 1 - Before development begins - Defining SDLC, reviewing policies and standarsd and developing measurement and metrics criteria for the project
+  Phase 2 - During definition and design - reviewing security requirements, design and architecture, and creating and reviewing Unified Modeling Language Models and threat models
+  Phase 3 - During development - code walkthroughs and code reviews
+  Phase 4 - During deployment - application pentesting adn configuration management testing
+  Phase 5 - Maintenance and Operations - Operational management reviews, periodic health checks, and ensuring change verification
+Cyber Kill Chain
+  Recon
+  Weaponization
+  Delivery
+  Exploitation
+  Installation
+  (C2) Command and Control
+  Actions on objectives
+Incident response lice cycle (NIST)
+  Preparation - determining sensitive information, identify all required resources, create plans, contact information, on-call information, software, and ensure org has reasonable controls implemented to reduce numebr of incidents
+  Detection and Analysis - alerting, detecting and determining impact and severity of incidents
+  Containment, Eradication and Recovery - Contain the assets affected, removing/remediating the affected systems/resources, recovering systems affected to normal operations
+  Post-Incident Activity - RCA, Lessons learned, gathering information to aid in incident response process and threat sharing 
+FSK vs DD
+  DD is an imaging tool, could be considered a forensics tool, but does not provide an forensic suite because it only does one thing
+  FTK - Forensic Suite Tool
+CySA toolkit:
+  Preventative - such as IPS, Firewall, AV/AM, WAF
+  Collective - network scanners, vulnerability scanners, SIEMs, pcaps, and IDS
+  Analytical - vulnerability scanning, monitoring and inception proxy services
+  Exploit - proxy, exploit frameworks and fuzzer services
+  Forensics - including forensic, hashing, password cracking and imaging services
+
+nmap
+  -ns (no port scan aka ping scan)
+  -Pn (no ping scan, good for servers that block ICMP)
+  -sT (port list TCP)
+  -sU (port list UDP)
+  -sS (stealth TCP connect scan)
+  -sT (default; TCP connect scan) 
+
+Attestation of Findings - Proof that appropriate penetration test was completed
+Executive summary - part of the formal written report provided to company
+Rules of engagement - scope of pentest, what is off-limits
+Lessons learned - Post-Incident session or document after the resolution of a security incident identifying RCA, gaps in organizational security, security improvement recommendations,
+
+Redirect attack:
+  Redirects a user to a remote malicious site where user can log in or download malware/disclose PII
+IoC = Indicator of Compromise
+IoA = Indicator of Attack
+Sections of the Vulnerability Assessment Report
+
+### After 3rd Practice Test 8/23 ###
+Prowler -OpenSource Security tool to perform AWS Azure Gcloud and Kubernetes security nest preactices assessments audits, incident response, continuous monitoring hardening and forensics readiness
+Maltego - comprehensive/complex for building a network topology map, has free community version
+Incident RECOVERY process
+  Containment
+  Eradication
+  Validation
+  Corrective Actions (remediation and re-imaging)
+  Incident Summary Reporting
+Benefits of vulnerability management reporting
+Differences between GDB and Immunity Debugger
+  GFB - You can discover what a program was doing when it crashed
+  Immunity Debugger - Python based API - allows for the writing of exploits and analyzation of malware, and reverse engineering of binary files
+CIS Benchmark - considered a compliance thing,
+SCAP - Security Content Automation Protocol
+  Set of interoperable specifications from community for security compliance and vulnerability assessment
+Confidence level of the findings of a vulnerability scan
+  Timeliness
+  Relevance
+  Accuracy
+RFCs
+TAXII - Trusted Automated eXchange of Intelligence Information - format through which threat intelligence data is transmitted.
+STIX - Structured Threat Information eXpression - standardized language that uses a JSON-based lexicon to express and share threat intelligence information
+  
+STRIDE - Model for identifying computer security threats developed by Microsoft: 
+  Spoofing, Tampering, Repudiation, Information disclosure, Denial of Service, Elevation of Privilege
+When creating an incident commuincation portion of IR plan, designate an internal point of contact for external communication
+OWASP Top 10 of 2021
+  A01:2021-Broken Access Control
+  A02:2021-Cryptographic Failures
+  A03:2021-Injection
+  A04:2021-Insecure Design
+  A05:2021-Security Misconfiguration
+  A06:2021-Vulnerable and Outdated Components
+  A07:2021-Identification and Authentication Failures
+  A08:2021-Software and Data Integrity Failures
+  A09:2021-Security Logging and Monitoring Failures
+  A10:2021-Server-Side Request Forgery
+SDLC
+  Planning and requirements
+  Design
+  Development
+  Testing
+  Deployment
+  Maintenance
+SSDLC
+  Planning and security requirements (add gap analysis)
+  Secure design and prototyping (add threat modeling)
+  Secure development (add secure coding)
+  Security and Vulnerability testing (add unit testing)
+  Secure Deployment (build routine security tests)
+  Maintenance and monitoring (add bug bounty program)
+Organizations myst report security incidents for the following reasons
+  Maintain regulatory compliance
+  Build trust with customers and stakeholders
+  Protect business relationsships
+  Ensure prompt remediation plan
+CVSS Impact Sub Score
+Alternate Processing Site
+  Hot Site
+  Cold Site
+  Warm Site
+CVSS Metric Groups
+  Base - Exploitability and Impact (the normal ones)
+  Temporal:
+    Eploit Code Maturity (E) - Undefined (E:X), Unproven that exploit exists (E:U), Proof of concept code (E:P), Functional exploit exists (E:F), High (E:P)
+    Remediation Level (RL) - Undefined (RL:X), Official Fix (RL:O), Temporal Fix (RL:T), Workaround (RL:W), Unavailable (RL:U)
+    Report Confidence (RC) - Undefined (RC:X), Unknown (RC:U), Reasonable (RC:R), Confirmed (RC:C)
+  Environmental:
+    Exploitability (MXX, such as MUI, MAV, MAC)
+    Impact (MX, such as MC MI MA)
+    Impact Subscore: Confidentiality (CR:X) Integrity (IR:X), Availability (AR:X)
+Lessons learned phase of incident response is where Root Cause Analysis occurs
+Incident Form:
+  Used to descibe the icident in detail - record CMOS and HDD info, image archive details, platform info, and the name and contact info of the person who reported the incident
+Call/Escalation List:
+  Indicate under what circumstance these certain individuals should be contacted to avoid unnecessary alerts.
+Chain of Custody Form:
+  Indicates who has handled the evidence, when they handled it, and the order in which the handler was in possession of the evidence.
+NIST 800-61 provides guidelines for all stages of handling IoCs including collection analysis and application
+  Collection/detection - understanding attack vectors, identifying signs of incident, and sources of precursors and indicators
+  Analysis - Analysis Process, Incident proper incident prioritization and stakeholder notification process
+  Application/containment, eradication and recovery - minimize damage, remove threat and return to normal environment
+Sensitivity Levels
+  Low - Intended for public use. Unrestricted
+  Medium - Intended for internal use only, Sensitive
+  High - Confidential/Restricted, can have catastrophic impact on org or individuals
+Security Areas/Channels identified by OSSTMM
+  Human Security - Security awarness levels and effectiveness of security training in an org
+  Physical Security - Access controls, perimieter security, CCTVs, building/facility controls
+  Wireless Communication - all wireless communication security
+  Telecommunications - non-wireless types of communication such as VoIP and PBX in org
+  Data Networks - assesses computer and network seucurity in your org
+eDiscovery Guidelines
+  Preservation and Collections process:
+    Data acquisition phase should be from a live system to include volitile data when possible
+    Data acquisition should include both bit-stream imaging and logical backups 
+    The chain of custody should be preserved from the data acquisition phase to the presentation phase
+    Hashing should be performed when data is aquired, modified and when custody transfer of data occurs
+    A consistent process and policy should be documented and followed at all times
+    Forensic toolkits should be used
+    Data should not be altered in any manner within reason
+    Logs both paper and electronic must be maintained
+    At least two copies of collected data should be maintained
+Stages of Forensic Discovery
+  1. Verification - Confirm an incident has occurred
+  2. System Description - COllect Detailed Descriptions of thesystems in scope
+  3. Evidnce Acquisition - Aquire the relevant data in scope, minimizing data loss in a matter that is legally defensible
+  4. Data Analysis - Medial analysis, string/byte search, timeline analysis, and data recovery
+  5. Results Reporting - Provide evidence to prove or disprove statement of facts
+Stages of eDiscovery
+  1. Identification - Verify that triggering event has occurred. Find and assign potential sources of data subject matter experts and other required resources
+  2. Preservation and collection - Acquire data in scope
+  3. Processing, Review and Analysis - Process and analyze data ensuring that minimal data is lost
+  4. Production - Prepare and produce electronically stored information in a format that has been priorly agreed upon
+  5. Presentation - Provide evidence to prove or disprove statement of facts

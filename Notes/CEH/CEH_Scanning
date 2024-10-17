@@ -1,0 +1,247 @@
+	Network Scanning Types:
+Network Scanning - Active process of utilizing network processes to gather network data AKA Host Discovery
+  CEH Definition
+  Port/Service Scanning
+  Vulnerability Scanning - typically done over a network (also can be agent-based)
+Objectives of network scanning - discover live hosts on the network
+  Also discover Host OS details
+  Good for mapping out what is going on, how network is laid out
+Port/Service Scanning - Look for open ports/services on each host
+  NMAP can do all this plus service version, to help detect version-specific vulnerabilites
+Vulnerability scanning - most likely will do everything: look for live hosts, ports, services, etc, and use data to search relevant vulnerabilities from database
+Helpful tools:
+  NMAP
+  hping3
+
+	Network Scanning Tools:
+NMAP: Network Mapper (Note: Great Documentation)
+  Resources - Manpages, book, website
+Unicornscan: Simple but fast hostscanner
+Masscan: Very fast for host scanning over the internet
+hping3: Packet crafting utility
+Metasploit: MSFconsole - search for scanner to use any number of network scanner
+s
+Fing: Helpful scanner for mobile
+
+	Host Discovery
+Discovering connected devices
+External hosts vs internal hosts scanning
+Host discovery technique types:
+  ICMP (aka echo)
+  ARP
+  SYN
+  UDP
+Tools:
+  Ping [IP address] (helpful with bash automation) (Note it is inherently blocked in windows)
+  angryipscanner
+  NMAP -sn (king of the hill) (sn is sweep network)
+  traceroute to find path of IP address (linux)
+  Metasploit
+
+Example
+  NMAP -PE or NMAP -PO (try a mix based on what type of ping is accepted)  
+  NMAP -PS (TCP SYN Ping, does not create full tcp connection, potentially not logging)
+Security techniques to prevent host discovery:
+  IDS, IPS
+  Rate limiting
+  Blocking ICMP from the internet
+  Setting up a DMZ
+
+	Port/Service Scanning:
+Open Ports may have a service available on it
+65535 ports available
+Make sure you know well known ports
+Service - Network server on a port
+Well Known Ports:
+  20, 21
+  22
+  23
+  80, 443
+Port scans usually include service scans
+nmap -sV flag is service version scan
+
+	TCP Connect Scanning through NMAP:
+AKA Full Open Scan - Makes a standard, fully open tcp connection
+Good for running scans without admin/sudo privileges
+Example:
+nmap -sT [target]
+TCP 3-way Handshake Review
+  Client ->   SYN   -> Server
+  Client <- SYN/ACK <- Server
+  Client ->   ACK   -> Server
+  Client <-> Data  <-> Server
+RST (Reset) flag is for closing connections
+Pros: No privileges req'd, returns a ports most accurate state of openness
+Cons: Noisy, creates more traffic, will create log file, slower, non-zero possibility of crashing service
+
+	Stealth Scans:
+AKA SYN Scan - a little quieter. Default Scan through NMAP
+Does require admin/sudo, typically much quicker than tcp scan
+Examples:
+sudo nmap -sS [target]
+sudo hping3 -8 1-65535 -S [target] (-8 or --scan is scan mode -S is SYN scan)
+
+	Inverse TCP, XMAS, and Maimon Scans
+Inverse TCP scan 
+  manipulating TCP to determine port status
+  Useful for obfuscation
+  Closed ports typically respond to TCP flags that open ports ignore.
+  Closed ports respond with a RST (reset) flag.
+  Eg flags: FIN, URGE
+  sudo required
+  Examples:
+    sudo nmap -sF [target] (-sF is FIN scan)
+    hping3 -8 [ports] -F [target]
+    sudo nmap -sN [target] (-sN is NUL scan)
+    hping -c 2 -p [ports] -s [source port] -Y [target] (YMAS scan, no flags set)
+    sudo nmap --scanflags URGACKPUSHRSTSYNFIN (to use any combination of TCP flags)
+    sudo hping3 --scan 1-65535 -F -S -N -U -A -P -R [target] (aka any combination of flags)
+    SYNACK Probe (Just SYN and ACK)
+XMAS Scan AKA Christmas Scan:
+  Uses -sF -sN -sX for (FUN URG PUSH) 
+  Lights the packet up like christmas tree
+  You can use --scanflags or -sX
+  sudo nmap -sX [target]
+Maimon Scan:
+  Uses FIN ACK
+  Many BSD derived systems instead of sending RST when port is open, packet is dropped. Closed sends RST. 
+  sudo nmap -sM [target]
+Considerations:
+  Typically responds best to BSD Compliant network stacks. Windows/Cisco behavior is unreliable
+
+	ACK Scans:
+Good for discovering firewall data - is there a firewall, what does it filter/block, possibly if it is stateless/stateful
+  Example:
+    sudo nmap -sA [target]
+    if port is open or closed, will send RST
+    Stateful firewall looks at connection states, does not allow for ACKs from connections that are not established yet.
+    Stateless looks purely at the individual packet.
+    unfiltered determines if ports are available past firewall, but does not determine of port is open or closed
+TTL based ACK scan:
+  May be able to determine if port is open or closed based on length of TTL
+  sudo nmap -sA [target] --packet-trace
+  TTL value is lower than typical, then the port is open, 
+  Only works on specific
+  sudo nmap -sA --ttl [average TTL from RCVD packet] [target] --packet-trace
+
+Window based ACK scan:
+  Target returns RST and non-zero window, then port is open
+  Target returns RST and zero window, then port is closed
+  Target returns nothing, target is filtered
+  sudo nmap -sW --packet-trace
+
+	IDLE IPID Scan
+AKA Zombie Scan
+Modern Devices do not do this. Simple devices that do not expect lots of traffic, like printers, etc, are good targets
+Requires attacker + zombie to attack target
+Steps:
+  0. (NMAP will check if zombie proxy is suitable for attack)
+  1. Attacker sends SYN/ACK packet to zombie
+  2. Zombie sends RST back
+  3. Attacker checks IPID of RST packet recv'd
+  4. Attacker sends SYN packet to target, while spoofing as zombie
+  5. Target sends RST to zombie (since the src ip was spoofed as such)
+  6. Repeat process to determine change in IPID value
+  If the port is open, the zombie IPID value is incremented by 1. If closed/filtered, it will not.
+NMAP is the ideal tool for attack
+sudo nmap -Pn -p [port] -sI [zombie IP] [target] --packet-trace ( -sI for IDLE scan )
+Good way to obfuscate traffic, as traffic comes from the zombie
+
+	UDP Scan
+Often forgettable compared to TCP
+UDP IS CONNECTIONLESS - NO 3-WAY HANDSHAKE, no SYN, no error checking.
+No response on an open/filtered port
+Responds on a closed port: Sends an ICMP unreachable message 
+Can use NMAP or hping3
+Examples:
+  sudo nmap -sU -p [ports] [target]
+  sudo hping3 -2 -c 4 [target] -p [port(s)]
+UDP scans are typically very slow, consider breaking into chunks of ports or scanning spscific individual ports
+
+	SCTP INIT and COOKIE ECHO Scans:
+SCTP - Stream Control transmission Protocol
+  Tries to marry speed of UDP and connection of TCP
+  Uses 4-way handshake:
+    Client -> INIT -> Server
+    Client <- INIT-ACK <- Server
+    Client -> COOKIE-ECHO -> Server
+    Client <- COOKIE-ACK <- Server
+  Lets use NMAP to SCTP SCAN!
+  sudo nmap -sY -n -Pn -p [ports] [target] (INIT/COOKIE-ECHO SCAN)
+  Sends INIT, and expects INIT-ACK response for open or ABORT for closed
+COOKIE-ECHO Scan:
+  "Stealthy" - Some non-stateful firewalls can detect this
+  Sends COOKIE-ECHO. If target responds ABORT/ICMP, then port is closed. If no response, open/filtered. 
+  sudo nmap -sZ -n -Pn -p [ports] [target] (-sZ is COOKIE-ECHO)
+  
+	Scan Optimizations:
+Making scans more efficient/faster in NMAP.
+Determine what scans are useful. Dan uses reductionist model: Start broad, and focus.
+  Scan all ports with a few different scans
+  Then, once open ports are found, version scan on the ports that are open
+  As an example:
+    sudo nmap -n -Pn -F --send-ip [target] (Defaults to -sS) 
+    -n prevents DNS resolution
+    -Pn prevents ping testing (Note: Windows blocks ping by default)
+    -F would reduce to top 100 ports
+    -p [ports] allows for individual, lists, and/or ranges of ports
+    --disable-arp-ping or --send-ip would default to IP scans, useful for internal networks if you don't want ARP
+  Changing timing options:
+    -T<0-5> timing template, higher is faster
+    -T0 (paranoid)
+    -T1 (sneaky)   T1 and T0 typically good for IDS evasion
+    -T2 (polite)
+    -T3 (normal)
+    -T4 (aggressive)
+    -T5 (insane)
+
+	Target Operating System Techniques:
+Operating Systems function differently
+Some inherent differences:
+  Ping a linux box, you get ttl of 64
+  Ping a windows box, you often get blocked by firewall (If not, ttl is 128)
+Let NMAP do the heavy lifting, can determine most with high confidence.
+  sudo nmap -O [target] ( -O attempts to determine OS )
+  nmap scripting engine ( --script to add certain nmap scripts)
+    ex. sudo nmap --script smb-os-discovery.nse [target] (For SMB version 1 only)
+IPv6 - if you add -6 to nmap scan, it will scan ipv6. It may be installed, enabled, unfirewalled.
+Countermeasures:
+  Change the name of the server to be vague
+  Turn off non-essential ports.
+  Turn off banners.
+  Hide file extensions.
+
+	IDS and Firewall Evasion:
+Varying degrees of success, ymmv.
+Packet Fragmentation:
+  Breaks up the packet into very small pieces.
+  Obfuscates the packet so that firewalls/IDSs do not recognize it as a threat
+  Example:
+    sudo nmap -f [target] ( -f tries to "fire through firewall")
+    optionally adjust mtu (maximum transition size) with --mtu <val>
+Cloaking:
+  sudo nmap -D [target] (cloaks a scan with decoys) 
+  device looks like it gets scanned with a bunch of different people, difficult to detect who is the real one
+  Ineffective against firewalls, helpful for sneaking past IDSs 
+Source IP spoofing:
+  Send scan to machine with different IP.
+  You can make it look like someone else is scanning. 
+  nmap -S
+Source Port modification:
+  sudo nmap -g [target]
+  Use a port that is not being filtered by the target, such as 80, 53 443 3389, etc.
+SSRF attacks:
+  Server makes requests on attackers behalf, server should always be trusted.
+Randomizing Hosts:
+  nmap --randomize-hosts
+  doing a sequential scan on an IP range such as 192.168.0.0/24 will be picked up by IDSs
+  consider pairing with timing options, fragmentation
+Proxy servers:
+  Use as a middle man with nmap --proxies
+Anonymizer:
+  To prevent autoblock
+  VPN
+  TOR - consider using OSs such as Tails, Whonix as entire machine runs through TOR
+  Proxyswitcher.com - you can surf anonymously online, switches when one proxy gets blocked
+ 
+

@@ -1,0 +1,147 @@
+	Wireless Basics:
+Access Points (APs) - Device that provides wireless access to network
+WLAN - Wireless Local Area Network
+BSSID - Basic Service Set Identifier: MAC Address of WAP
+SSID AKA ESSID - Common name given to WAP
+Association - Connecting to a WAP, you can only associate with one at a time
+Wireless Standards (802.11):
+  Standard	Frequency	Distance	Throughput	
+  802.11a	5 Ghz		35-100m		54 Mbps
+  802.11b	2.4 Ghz		35-140m		11 Mbps
+  802.11g	2.4 Ghz		38-140m		54 Mbps
+  802.11n	BOTH		70-250m		54-600 Mbps
+  802.11ac 	5 Ghz		46-92m		433-6933 Mbps
+  802.11ax	2.4|5|6 Ghz	9.1m		574-9608 Mpbs		
+  802.11be
+Authentication Types:
+  Open - Any device can authenticate/associate to AP
+  PSK  - Pre-shared Key (aka a password)
+  Centralized Authentication - Remote Authentication Dial In User Service (RADIUS) server
+Antenna Types:
+  Directional:
+    Yagi: Ultra High Frequency (UHF) and Very High Frequency (VHF) - Like TV antennae
+  Omnidirectional
+  Parabolic Grid Antenna - Looks like a grill
+  Reflector: Enhances signal into reciever to get better signal
+Wireless Encryption:
+  WEP (Wired Equivelency Privacy):
+    24-Bit Static IV (Initialization Vector) - All sent in plaintext
+    Extremely Weak, uses RC4 cipher
+    40-104 bit length
+    CRC32 - But no cryptographic integrity Protection
+  WPA (Wifi Protected Access):
+    48 Bit IV 
+    Uses RC4 with TKIP (Temporal Key Integrity Protocol)
+    Generates a new key for each packet
+    128 bit length 
+    Predictable GTK (Group Temporal Key)
+      From an insecure Random Number Generator
+      Allows for injection and decryption of traffic and password cracking
+  WPA2:
+    48 Bit IV
+    Uses AES-CCMP (Advanced Encryption Standard - Cipher Block Chaining Message)
+    128 bits
+    Two Modes:
+      Personal - Uses a PSK
+      Enterprise - Centralized Auth, such as RADIUS 
+  WPA3:
+    48 Bit IV
+    Uses AES-GCMP 256 (Advanced Encryption Standard - Galois Counter Mode)
+    192 bits
+    Two Modes:
+      Personal - Uses a PSK
+      Enterprise - Centralized Auth, such as RADIUS 
+   
+	Wireless Threats
+Authentication Attacks:
+  Typically bruteforcing a psk (password)
+Rogue Access Point:
+  Install AP into target network which allows for backdoor access
+  Can be done by non-malicious employee or malicious hacker
+Evil Twin:
+  Client Misassociation - Disguise yourself as legit SSID with known or open authentication
+  Potentially overcome signal of legit SSID with strong antennae or similar channels
+Honeypot AP:
+  Looks like a commonly trusted SSID
+    Restaurants, Coffee shops, etc
+Soft AP (software AP):
+  Installed via a malware
+  Malware turns device into an AP, thereby allowing attacker to access internal resources
+DOS Attacks:
+  Deauthentication Attack
+    Attacker sends deauthentication frames 
+  Dissassociation Attack
+    Attacker sends disassociation frame
+  Jamming of Cell and Wifi service
+KRACKs (Key Reinstallation attacks)
+  For WPA and WPA2
+  Blocks handshake 3 of 4 way handshake
+    AP then retransmits message 3 multiple times with the same nonce
+    The reuse will make encryption susceptible to attack
+    Attacker creates a fake AP with the same SSID on a different channel
+    Attacker performs MITM Attack
+Spoofing Client MAC address:
+  This can bypass MAC filtering
+   
+	Wireless Hacking Tools:
+Wifi Discovery:
+  OS: Can discover wifi out of the box, but is simple and not detailed for analysis
+  InSSIDer: provides statistics about SSIDs/BSSIDs that Wifi card can see
+  NetSurveyor: Provides detailed data about AP
+  Mobile Apps: Fing, NetworkAnalyzer, NetworkAnalyzerPro
+GPS mapping:
+  WIGLEnet (https://wigle.net): Requires login...shows reported wireless networks based on a provided gps location
+  Wifi Map (https://wifimap.io): Shows a ton of open or public password wireless networks for a location
+Traffic Analysis:
+  Wireshark!!
+    Wireless tab that can filter WLAN traffic
+    To put in promiscuous mode, you can use airmon-ng start wlan0 before launching
+Wureless attacks:
+  Aircrack-ng suite: Command suite Most useful - airmon-ng, aircrack-ng, airodump-ng
+  wifite: CLI tool for attacking
+  fern-wifi-cracker: AIO GUI for scanning, analysis and attack
+
+	Wireless Hacking:
+MAC Spoofing - Change your mac to bypass MAC filtering
+  Use macchanger to change to a client's device that is on the wireless network (you can find this using airodump-ng)
+Deauthentication Attacks (Deauth):
+  Considered a DoS attack
+  Can be used with aircrack-ng suite
+  After finding BSSID and Client MAC
+  sudo aireplay-ng --deauth [number of packets] -h [client MAC address] -b [Target BSSID] [attacker interface] 
+WPA Cracking (aircrack suite):
+  Attempt to sniff WPA 4 way handshake (may need to force reauthentication)
+  Capture Target BSSID and record using 
+  sudo airodump-ng -w [file] --bssid [bssid] -c [channel] [interface]
+  Optional: Deauth client using aireplay-ng to force reauthentication
+  sudo aircrack-ng -a2 -b [Target BSSID] -w [Path to Wordlist] [capture file with PKMID or EAPOL]
+WPA Cracking (wifite):
+  sudo wifite --wpa
+  Enable Monitoring mode
+  Select Target
+  Start Attack
+
+	Wireless Hacking Countermeasures
+Wireless Security Controls:
+  Patches and updates (Both client devices and firmware for APs)
+Changing AP Defaults:
+  Changing Default Authentication Passwords
+  Changing Default Web portal Credentials
+  Upgrading Auth to highest (WPA2/WPA3)
+  (Discovered this one myself) DISABLE WPS 1.0
+Use Strongest Encryption Possible - No less than WPA2
+SSID Obfuscation - turn SSID Broadcasting off
+Disable Remote Login for AP Web Portal
+Add extra layers of protection:
+  VPNs
+  Encrypted Applications (such as SFTP, HTTPS)
+  NACs/NAPs (Network Admission Controls or Network Adress Protection)
+  Network Segmentation
+    Firewalls
+    Wireless IDS/IPS software
+  DO NOT CONNECT WORK DEVICES TO PUBLIC WIFI 
+  Enforce Physical Security of Devices (Use PoLP
+  Scheduled Audits - Verify that what we think is secure is really secure
+    Use Wifi Mappers/Heat Maps
+  Control AP Placement/Signal Strength
+Packet Capture and analysis

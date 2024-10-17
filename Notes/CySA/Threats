@@ -1,0 +1,157 @@
+	Threat Actor Types:
+Script Kiddies - Unskilled Hackers that often use other peoples code
+Insider Threats - A party in an organization that has higher level of trust to data
+  Intentional vs Unintentional
+Hacktivists - Hacker with the motivation of a larger cause
+Organized Crime - Cyber criminal gangs with a highly financial motivation
+Nation-State - State-sponsored hackers backed by large governments (Stuxnet)
+APT (Advanced Persistent Threats) - Highly skilled and sophisticated, goal is to persist in target for as long as possible
+Supply-Chain Threats - Threat actor that targets supply-chain/hardware/security solutions 
+
+	TTP (Tactics, Techniques and Procedures):
+Tactics - High level view of attackers goals:
+  Some goals can be: Gain system access, deny/disrubt service, establish persistence, steal data
+Techniques - Specific Methods and/or tools used to achieve goals:
+  Some methods: Malware, DDoS attacks, social engineering, backdoor/RAT
+Procedures - Low-level, detailed description of a technique:
+  Entire Cyber Kill Chain
+  Recon (OSINT, Active/Passive Scanning)
+  Access (Exploit vulnerabilities, using stolen creds)
+  Lateral Movements (Pass-the-hash, password reuse, misconfigured networked devices)
+  Exfiltrating Data (RAT, Backdoor accounts, Communications with C2, stegonography)
+  Covering Tracks (Deleting logs/histories, removing created accounts)
+MITRE.org ATT&CK Matrix for Enterprise
+	
+	CTI (Cyber Threat Intelligence) Levels:
+Use to gather topical threats
+Three Types:
+  1. Strategic
+    Long-Term Planning
+    Focusses on the who and why (Identify potential vulns and threats, and adversarial motives and capabilities)
+  2. Tactical 
+    Short-Term Planning
+    Tailored to specific teams, operations and investigations
+    Focusses on TTPs of likely adversaries
+    Aides in Threat hunting efforts
+  3. Operational
+    Focusing on responding to active threat responses
+    SIEMs/SOARs, EDRs, IDS/IPS, IOCs,
+    Threat-intel feeds (Anomali, Carbon Black, OpenCTI)
+Timeliness Levels:
+  Historic/Past (LEAST Relevant, Outdated)
+  Current/Present (MOST relevant)
+  Forcasted/Future (MODERATELY Relevant, Projected/Predicted Intel)
+  Indeterminant/Unknown (LIMITED Relevancy, not enough information is known)
+Relevancy Levels:
+  Low (Too Generic)
+  Moderate (Somewhat Generic, still indicative of usefulness)
+  High (Specific to your org/systems)
+  Very High (Highly Specific, tailored to your org/systems)
+Accuracy Levels:
+  Low (Incomplete, Outdated, Unverified Sources)
+  Moderate (Partially verify, still some uncertaincy of accuracy)
+  High (Verified)
+  Very High (Extensively Verified, Objective)
+
+	CTI (Cyber Threat Intelligance) Sources:
+Open Source & Closed Source
+Open Source:
+  Social Media
+  Blogs and Forums, such as:
+    https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence
+    https://www.mandiant.com/resources/blog
+    https://www.reddit.com/r/threatintel
+  Government Bulletins (Such as through CISA):
+    https://www.cisa.gov/news-events/cybersecurity-advisories
+  CERT and CSIRT:
+    https://sei.cmu.edu/about/divisions/cert/index.cfm
+    https://www.first.org
+  Deep Web/Dark Web:
+    The Hidden Wiki
+Closed Source:
+  Paid Feeds:
+    CrowdStrike Falcon Intelligence
+    Mandiant Threat Intelligence
+    Anomali Threat Stream
+  Information Sharing Organizations
+  Internal Sources, such as SIEMs or Honeypots
+
+	CTI (Cyber Threat Intelligence) Sharing:
+Benefits: Better security through sharing CTI - 
+  Sharing CTI Benefits during
+    Incident Response
+    Vulnerability Management
+    Risk Management
+    Security Engineering
+    Detection and Monitoring
+Sharing Tools:
+  STIX (Structured Threat Information eXpression) Standardized and formalized for sharing
+  TAXII (Trusted Automated eXchange of Intelligence Information) Mechanism for sharing STIX and other data.
+    HTTPS/RestFul API service used for sharing CTI data
+    Models
+      Hub and Spoke
+      Single Information Repository
+      Peer-to-Peer (Mesh network of sharing information)
+      Source-Subscriber
+      Single info repo - Subscribers pull from repo
+  Yara - Good for sharing CTI that hasn't reached AV signatures, create your own "signatures" from malware
+  Sigma - Yara or snort, but for log files
+
+	Threat Hunting:
+Discovering an assumed threat or breach and finding signs
+IoCs (Indicators of Compromise):
+  Not IoA indicator of attack
+  Attack/breach has already taken place, looking for anything that is related to it
+  Such as: File hashing, URLs/IPs/Domain names
+Process for obtaining IoCs:
+  Collection:
+   Logs, Files, Other data (PCAPs, lolbins, emails, registry entries, Scheduled Tasks
+  Analysis:
+    Reverse Engineering Malicious Binaries (Static Analysis SAST)
+    Dynamic Analysis (DAST)
+    Memory Dumps
+    Strings
+    Metadata
+  Application:
+    Tracking Threats
+    Attribution
+Focus Areas:
+  Configurations/Misconfigurations
+  Isolated Networks
+  Business Critical Assets and Processes
+Active Defence: Wasting the attackers time (Increasing the probability of detection, even baiting attacker into getting detected)
+  Fake websites/pages/directories/login portals
+  Canary Tokens
+    Inciting files/data
+    API Keys
+    SSH Keys
+    Encryption Keys
+    Sensitive-looking documents (passwords.txt, financial docs) 
+
+	Process Standardization (Using Automation):
+Identification of tasks suitable for automation:
+  Repeatable action that does not require human interaction
+  High volume tasks
+  Digital workflows
+  Error-Prone Tasks
+  Monotonous Tasks
+  Homogenous data
+Team coordinzation to manage and facilitate automation:
+  1. Set goals
+  2. Establish requirements:
+       Regulatory Compliance/Secure Coding Practices
+  3. Communication and Notifications:
+       Scheduled Meetings/Updates
+       Red Flag Triggers, Reporting/Escalation expectiations
+       Team Education
+       Best Practices
+       
+	Streamlining Operations:
+Definition - Making jobs and busiwork much more efficient
+SOAR (Security Orchestration, Automation, and Response) - Helps automate and respond autmatically
+Orchestrating Threat intelligence data: 
+  Data enrichment can help: Improves SIEM capabilities by integrating contextual information, such as group membership, geolocation, social media, internal threat intel.
+  Better detections, asset risk categorization, and prioritization of alerts
+  Threat feed combination (aggregating CTI) 
+Minimization of human engagement
+  Allows people to focus on difficult tasks, reduce human error, and increase efficiency

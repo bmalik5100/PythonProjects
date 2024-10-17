@@ -1,0 +1,23 @@
+Cyber Kill Chain
+  Reconnaissance
+  Weaponization
+  Delivery
+  Exploitation
+  Installation
+  Command and Control (C2)
+  Actions on Objectives
+Diamond Method of Intrusion Analysis
+
+MITRE ATT&CK
+            Adversary 
+Infrastructure      Capability
+              Victim
+
+OSS TMM
+
+OWASP Testing Guide
+  Phase 1: Before Development Begins
+  Phase 2: During Definition and Design
+  Phase 3: During Development
+  Phase 4: During Deployment
+  Phase 5: Maintenance and Operations

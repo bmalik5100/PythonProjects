@@ -1,0 +1,163 @@
+	Cloud Computing Basics:
+Cloud Models:
+  IaaS: Infrastructure as a service (AWS EC2)
+  PaaS: Platform as a service (Google App Engine)
+  SaaS: Software as a Service (GSuite/Google Workspace)
+  IDaaS: Identity as a Service (Okta)
+  SECaaS: Security as a Service (Cloudflare)
+  CaaS: Container as a Service (Google Kubernetes Engine)
+  FaaS: Function as as Service (AWS Lambda)
+
+Areas of Responsibility:
+  On-Prem (On premises)
+  IaaS Responsibilities:
+    Subscriber: Applications, Data, Runtime environments, Middleware, OS
+    Service Provider: Virtualization Environment, Physical Servers, Storage, Network
+  Paas Responsibilities:
+    Subscriber: Applications, Data
+    Service Provider: Runtime, Middleware, OS, Virtualization Environment, Physical Servers, Network
+  SaaS Responsibilities:
+    All belong to service providers  
+Deployment Models:
+  Public
+  Private (Single organization)
+  Community (Multiple org use)
+    Common industry and security concerns, such as healthcare, transportation, hotel
+  Hybrid (Mixing of cloud deployment models)
+  Multi-cloud:
+    Environment that spans acros multiple cloud providers
+    Has single management interface (typically through third party)
+NIST Cloud Deployment reference architecture:
+  Cloud Consumer (Person accessing/using the cloud services
+  Cloud Provider (Entity responsible for making service available to parties)
+  Cloud Auditor (Party that can perform an independent examination of a cloud service)
+  Cloud Carrier (Entity that provides connectivity and transport between cloud consumers and providers)
+  Cloud Broker (Intermediary that specializes in cloud management and negotiates relationships between consumer + provider)
+Cloud Storage Architecture:
+Front End: Where user interactes with data through an API
+Middleware: Data deduplication and replaction
+Backend: Physical Hardware
+
+	Container Basics:
+Definition: Portable software package/bundle - contains everything needed to run an application
+  Scalable, cost effective, contains all libraries dependencies and config file necessary
+Five Tier Container Architecture (As defined by CEH):
+  Tier 1: Developer machines - Image creation, testing and accreditation
+  Tier 2: Testing and Accreditation Systems - Verification/Validation of image contents, signing images, & sending to registry
+  Tier 3: Registries - Storing images, delivering images to orchastrators based on requests
+  Tier 4: Orchestrators - Transforming images into containers, deploying containers to hosts
+  Tier 5: Hosts - Operating and managing containers as instructed by the orchestrator
+Docker - Containerization platform:
+Terms:
+  Images - Basic foundation for building of containers
+  Container:
+  Docker Daemon: Background service that listens for API requests and manages docker objects, such as images, containers, networks and volumes
+  Docker Client: Promary way most users interact with Docker
+  Docker Registry: Docker Hub, repository of official images
+  Dockerfile: Simple text file containing a list of command sthat the Docker client calls when creating an image
+Orchestration:
+  Automation of container lifecycle - handles provisioning, configuring, deploying, security, monitoring, resource allocation, scaling
+  Ansible, Docker Swarm, Kubernetes, Openshift, etc.
+Container Security Challenges:
+  Large Attack Surface
+  Increased complexity through many objects: Containers, apps, databases
+  Container breakout: Attacker can breach the "wall" between container and host
+  Running as root
+  Vulnerable source code: Devs use containers for testing code, could expose org to attack through insecure code
+  Insecure storage of secrets
+  API keys
+  Usernames/Passwords
+  Noisy Neighbor Attack (Exhaust resources on physical hardware using container, DoS attack)
+
+	Hacking Cloud Services:
+Vulnerability scanning geared more toward Security Mistakes in cloud service misconfiguration
+Cloud Vulnerability Scanning Tools:
+  Trivy
+  Clair - 
+  Dadga - Docker static analysis tool
+  Twistlock
+  Kubernetes
+  Sysdig
+  etcd process enumeration:
+    Key Storage
+    API Objects
+    Configuration Files
+    Open Ports
+S3 Discovery and Enumeration:
+  Check Source Code for S3
+  Greyhat warface - S3 Search engine
+  S3Scanner - Command line / python module for scripting S3 Scanning
+  Secrets (keys, usernames, source code, passwords) can be found in publicly available Buckets
+  View Source + ctrl F "s3.amazon" on any large website can help find legitimate buckets
+  Bucket Kicking - app.
+  Bruteforce:
+     Attack Proxy 
+     BucketKicker
+     s3Scanner
+     Enumerates - Bucket Permissions, Public/Private status
+AWS Enumeration:
+  Look for: 
+    Account IDs - Github repos, AWS error messages, Public AMI (Amazon machine image), People posting on help forums
+    IAM Roles and Creds: Git Repos (Keys), Social engineering
+  Using AWS cli:
+    aws help
+    aws iam help
+    aws iam get-access-key-last-used
+  Using PACU:
+    ls
+    set_keys
+  AWS account ID + AWS Secret Key allow for access
+Vulnerabilities:  
+  Password Reuse
+  Login to AWS and find keys
+  Vulnerable app hosting in AWS
+  SSRF
+  Third Party cloud management apps
+  Insider Threats
+  IAM Role Misconfiguration
+Tools:
+  PACU
+  AWS-PWN
+  AWS Cli
+AWS IAM Privilege Escalation
+  Often found by finding new AWS keys
+  Flaws.cloud
+  
+	Cloud Security Controls:
+Something we put in place to increase security
+Standard Security Controls:
+  SDLC - developing safe code
+  Patches and Updates
+  Changing Defaults
+  Firewalls/IDS/IPS/WAFs
+  Logging and Monitoring
+  Anti-DoS/Anti-DDoS
+  Encrypting everyting at rest, in transit, and in use
+  AVs and EDR solutions
+Cloud Specific Security Controls:
+  Securing Amazon S3 Buckets:
+    IAM user policies
+      Public/Everyone - NO
+    Other Policies:
+      Search for this with google or AWS docukents
+      Block public access for s3 (on by default)
+      Enable Encryption (On by default)
+      Bucket versioning (like volume shadow copy for S3)
+  Docker:
+    Use trusted Docker images
+    Keep host and docker up to date
+    Do not expose docker daemon socket (even to the containers)
+    
+    cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html
+  Kubernetes: bluematador.com/blog/kubernetes-security-essentials
+    Keep updated
+    Restrict API/SSH Access 
+    
+Cloud, container, and Kubernetes security tools
+  Qualys Enterprise TruRiskTM Platform
+  Prisma Cloud
+  Aqua (Docker and Kubernetes and everything else)
+  Tenable Cloud Security
+  Kube-bench (FOSS - github)
+  Sumo Logic
+

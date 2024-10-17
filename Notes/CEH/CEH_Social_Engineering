@@ -1,0 +1,115 @@
+	Concepts and Attacks:
+Definition - Human Hacking (Social manipulation and deceit)
+No one is immune to social engineering
+How do successful social engineering attacks affect organizations:
+  Financially
+  Public Trust
+  Legal Action
+  Permanent Stoppage of Business
+Social Engineering Targets:
+  Helpdesk/Tech Support or IT for admin access
+  Admins to any department
+  C-level executives
+  Anyone!
+Framing - frame the lie in a way that sounds believable
+Pretexting - situation created by an attacker to lure a victim into a vulnerable situation
+  Wear a vague disguise
+Scarcity
+Urgency
+Authority
+Greed
+Trust
+SE Phases:
+  Reconnaisance/Narrowing Target
+  Establish a relationship to target
+  Exploit relationship - create trust or pressure (blackmail)
+  
+Types of Social Engineering:
+  Human SE - person to person contact:
+    Piggyback - Asking someone to use their creds to give you access (e.g. swiping you into a room with their key)
+    Tailgating - Following someone into a unauthorized access
+    Dumpster Diving - Going through trash to find sensitive/helpful information
+    Elicitation - having conversations with people to gleam information
+    Eavesdropping - Listening in on peoples conversation
+    Shouldersurfing - Looking over someone's shoulder at a computer screen to see what they're typing/doing
+    Impersonation - Pretend to be someone else
+    Vishing - Phishing over Voicemail/Phone
+  Computer SE - over electronic:
+    Phishing - 
+      Spear Phishing - Targeted campaign to an organization
+      SPIMming - Phishing over messanger or chat
+      Whaling - High level target (like C level)
+      SMShing - over text
+      Malicious App phishing
+Phishing Tools:
+  SE Toolkit
+  Shellfish
+  Kingfisher
+  Phone or email
+
+Defenses agains Social Engineering:
+  End User Awareness Training - FREQUENT
+  Mock Phishing Campaigns
+  Maybe have a channel for real samples to raise awareness
+  Deploy anti-phishing
+  MFA and security policies
+  Use ID badges for physical security
+  Physical Locks
+  Do proper garbage Disposal 
+  Employ a Check-In Policy
+
+	Insider Threats:
+Threat from the inside of an organization - who has a level of trust given to an employee
+Exploit a level of access given to an employee
+Types - Often seperated by motivation:
+  Disgruntled employees - possible revenge through termination
+  Negligence/Accidents - which results in security breaches (sticky notes with passwords)
+  Professional Insider - Employees who are specifically get the job to be a threat
+  Compromised Insider - Third party takes advantage or coerces with employee
+
+Indicators of Compromise:
+  Random storage caps (sudden large folders on employees devices) 
+  Covert chats
+  Exfiltration of data (emails with large attachments)
+  Unusual logins such as overnight or from multiple/seperate devices or areas
+  Privilege Creep - trying to get access to networks or physical areas not intended for position
+
+Defenses:
+  Difficult to prevent
+  Monitor everything, especially logins and sensitive data
+  Background checks of employees
+  User account termination policy - disable account immediately after termination
+  Account deletion policy  
+  Give employees role-based access wuth least privilege
+  Seperation of Duties - sharing control and access of duties between multiple people
+  Forced vacations good idea?
+  
+	Identity Theft:
+Definition - Complete fraudulent takeover of digital identity, social security, banking info, tax identity, etc. 
+Motivator: Money - not getting caught, thievery (such as loans), wire fraud
+Forms of identity that are targeted:
+  Drivers licenses, social security, tax forms, insurance info, banking info, CC/debit info, children's personal info
+How is information obtainied:
+  Physically stolen or pickpocketed
+  Steal your computer, phone
+  Stealing paper (such as mail) and electronic files 
+  OSINT - publicly available information  
+  Social Engineering, dumpster diving, system compromise, 
+  Keyloggers
+
+Determine if you are a victim - Indicators of Compromise:
+  Check credit reports
+  See if you stop recieveing mail
+  Start recieving suspicious mail or bills
+  Concact from debt collectors
+  See if your taxes are already filed
+  Unjustly denied insuance claims
+
+Defenses:
+  Pay attention
+  Use all security mechanisms - MFA, authenticator apps, etc
+  Collect physical mail changchang
+  Don't give personal info out
+  Be safe on social media
+  Be wary of Sock puppet accounts
+  Be paranoid 

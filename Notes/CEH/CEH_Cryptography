@@ -1,0 +1,125 @@
+	Cryptography Basics:
+Purpose - To protect the CIA (Confidentiality, Integrity, and Availablity) triad and for nonrepudiation
+Cryptography  types: 
+  Symmetric - Single key encryption 
+    Strong Keys, but difficult to securely share between encrypting and decrypting parties
+  Asymmetric - Public/Private key encryption
+    Private Key - not shared with anyone, used to decrypt data
+    Public Key - Shared with decrypting party, used to encrypt data
+Digitally sign - Verify integrity
+Generate keys:
+  Asymmetric: SSH - ssh-keygen (generates private/public RSA key pair [default /home/user/.ssh/id_rsa and id_rsa.pub])
+  Symmetric: openssl genrsa -out key
+GAK - Government Access to Keys:
+  If you work with the government, they will need access to keys
+  All keys are given to the government, which are securely stored
+  Government can access keys with court order
+  Government can eavesdrop using keys, such as a wiretap order
+Ciphers:
+  Classical cipher:
+    Substitution (Caesar Cipher), Transposition (Rail-fence)
+  Key based:
+    Symmetric/Asymmetric Key
+  Input Based:
+    Block Cipher: Transforms plaintext 1 block (64/128/256 bits) at a time (e.g. AWS, Blowfish, 3DES)
+    Stream Cipher: Transforms plaintext 1 BYTE at a time (RC4)
+
+      Crypto Algorithms and Implementations:
+Symmetric: DES/3DES (outdated, popular w/PCI), RC[4/5/6] (kerberos), Blowfish (email), AES ()
+Asymmetric: RSA, Diffie-Hellman
+
+Hashing Algorithms:
+  MD5 - Typically only used for digital signatures (md5sum) to verify data transfers
+  SHA(1/256/512) Standard hashing function, also used for digital signatures
+  RIPEMD-160
+  HMAC
+
+Digital Signatures (Combination of encryption and hashing):
+  Ensures message came from intended source and integrity has not changed
+Nonrepudiation - Verification of intended source using public key
+Hardware-based encryption:
+  TPM - Trusted platform module, stores secrets, used by Windows Bitlocker
+  USB - keys stored in a usb, software that requires it calls out to USB (MFA)
+  HSM - Hardware security module, device or PCI module
+  Hard drive
+Other encryption implementation:
+  Elliptic curve: Advanced algebraic equations to create shorter keys, increased efficiency
+  Quantum: Stores encrypted information in the quanta (variable state)
+  Homomorphic: Encrypted data can be modified without decrypting
+
+	Cryptography Tools:
+Common cryptography tools
+  GPG (Open source/cross platform PGP tool):
+    gpg --generate-key
+    gpg --list-keys
+    gpg --armor --export [uid of gpg key] >> pgpkey.pub
+    gpg --import [gpg key] (add --allow-non-selfsigned-uid if errors)
+    gpg --output [output name] --encrypt --recipient [uid/email of recipient] [file to be encrypted]
+    gpg --output [output name] --decrypt (promped for password)
+  Kleopatra (Windows key manager)
+  Gpg4win (windows build of GPG)
+  BCTextEncoder (Portable windows executable that encrypts plaintext)
+  Mobile Options: Google Play, Apple App Store
+
+	Public Key Infrastructure:
+Definition: Generating, issuing, distributing, managing, and revoking certificates
+PKI Components:
+  Certificate Management Systems: Central PKI Software
+    Creates Certs, stores certs, distributes certs, verifies certs
+  Digital certificate: The actual cert, used to verify entries
+  Validation Authority:
+    
+  Registration Authority:
+    Pre-screens cert signing requests for initial enrollments and renewals, verifies requester and forwards to CA
+  Certificate Authority:
+    Issues, validates, revokes, and deletes certs
+  End Users:
+    Requests certs, can self-sign
+
+PKI Process:
+  Subject (guy making website) applies for a cert from RA
+  RA processes the request (verifies subject's identity and requests the CA issue public key/cert to subject)
+  CA processes request from RA (Issues cert/key to subject, updates VA with subject's info)
+  User recieves cert and uses it (communication is signed with cert)
+  Recipient (client or guy going to website) queries the VA to assert that cert is valid
+  VA verifies the cert
+CA Service - a trusted third party, such as Verisign or digicert
+Self-signed certificates:
+  Often used within an intranet in an organization
+  Can help with establishing VPN tunnels using organization as trusted source
+
+	Cryptanalysis:
+Definition: Studying cryptosystems and looking for exploitable weaknesses
+Methods of cryptanalysis:
+  Linear (AKA Known-Plaintext Attack):
+    Requires both encrypted and plaintext data (some plain-text data can be guessed like common words, names and/or phrases)
+    Goal is to reverse-engineer a decryption key
+    Note: Anytime intofmation is reused, it weakens the cryptosystem
+    Further messages that were encrypted using the key can then be easily decrypted
+  Differential (AKA Chosen-Plaintext Attack):
+    Attacker defines the plaintext inputs and analyzes the encrypted results
+      Continues the process until the key is determined
+    Integral Attack:
+      Type of differential attack, uses larger inputs and is applicable to block ciphers
+  Code Breaking:
+    Uses bruteforce and frequency analysis (helps reduce time), not preferred
+Attacks:
+  Man-in-the-middle: Exchange key pairs with both sender and recipient, not difficult
+  Meet-in-the-middle: (for 2DES) Known-Plaintext Attack, try to break ciphertext to plaintext
+  Side-channel attacks: Physical attack that monitors environmental aspects of target to reveal sensitive info, such as power usage, EM Radiation, light/audio emanation
+  Hash collisions:
+    https://crackstation.net
+  Related Key: Key reuse (WEP is vulnerable)
+  Rubber hose attack: Beat someone with a rubber hose to get password (coersion or torture)
+
+	Crypto-Attack Countermeasures:
+Use Secure Key Sharing (such as .ssh folder in linux) - Maybe physically hand it to someone
+Use higher bit length hashing and symmetric key algorithms (at least 168, preferably 256)
+  Encrypt data with symmetric key, and then send encrypted key+data with public key
+Use industry standard algorithms such as AES-256, GPG (at least 2048 bit size)
+Don't hardcode keys!
+Encrypt your keys with a passphrase/passcode
+Use an IDS to monitor key exchanges between systems
+Implement key stretching, makes weak keys stronger thru increasing their length
+  Used by PBKDF2, bcrypt
+

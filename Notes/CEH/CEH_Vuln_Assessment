@@ -1,0 +1,162 @@
+	Concepts and Resources:
+Vulnerability assessment - Taking a system and looking/analyzing/documententing vulnerabilities.
+How to keep up with technology:
+  Stay as plugged in as possible
+  Threat feeds - can be as simple as twitter, security forums, communities
+  Keeping vulneraibility assessment tools up to date
+  Maintain professional development over time
+  Know what impact is for a given vulnerability
+How is a VA done:
+  Lean on software: Nessus, OpenVos/Greenbone, teneble.io, etc
+Vulnerability Metrics:
+  CVSS - Common Vulnerability Scoring System, helps qualify how bad a vulnerability is
+    AV - Attack Vector (e.g. AV(N) is network attack vector)
+      AV(N) - Network attack vector
+      AV(A) - Adjacent attack vector
+      AV(L) - Local attack vector
+      AV(P) - Physical attack vector
+    Qualitataive Severity Rating Scale:
+      None - 0.0
+      Low - 0.1-3.9
+      Medium - 4.0-5.9
+      High - 7.0-8.9
+      Critical - 9.0-10.0
+  CVEs:
+    Common Vulnerabilities and exposures
+    Curated and controlled by CVE Mitre Program
+  NVD - National Vulnerability Database:
+    US Government Run/Maintained
+  CWE - Common Weakness Enumeration:
+    Also from MITRE
+    Software and hardware weakness types.
+    Serves as a baseline for weakness identification, mitigation, etc
+    More general than vulnerabilities.
+    Types you may need to be on the lookout for in your environment
+
+	Vulnerability Assessment Management Lifecycle:
+Phases - 
+  1. Pre-assessment: Prepare for assessment
+    Identify Assets & how they fit in business flow.
+    Verify Asset managements, note unknown assets
+    Create Baselines
+    Understand environment
+    Note Security Controls: firewalls, ACLs, various softwares
+    Note Standards/Policies
+    Ensure you adhere to scope provided
+  2. Assessment Scan:
+    Run scan using software like OpenVas/Greenbone, Nessus, Qualis, etc
+    Could be physical (e.g. looking at locks, cameras, etc)
+    Could be security misconfigurations (e.g. public s3 bucket that should not be public)
+    Be aware of false positives and false negatives
+    Ensure a detailed report is generated/manually written for review
+    Sometimes useful to run two tools to ensure
+  3. Post-Assessment:
+    Risk assessment - determine risk and impact of vulnerabilities found 
+    Remediations - recommend and prioritize mitigations and fixes, RCA, implementation of fixes, patches, reconfigurations, training, etc
+    Ensure you go over a "Lessons Learned"
+    Re-scan and verify fixes!
+    Establish monitoring: SIEM, SOC, IDS/IPS
+
+	Vulnerability Classification:
+Missed condfigurations
+Missing Patches and Updates
+Application flaws
+  App vs Web App have different risks and remediations
+  Often coding errors
+Default/Insecure Creds
+Design Flaws
+  Similar to Application Flaws
+  Logic flow issues
+  Sometimes called business logic
+Cloud
+  Configuration/connections through AZ, AWS, etc that could be vulnerable
+Open Services
+  Services that may been running without realizing
+  Widens attack surface
+Buffer Overflows
+  Program, through various means, encounters crash condition, where RCE can be executed into new memory area 
+  Very important to find
+Operating System Flaws
+  OSs with known vulnerabilities or zero-days
+  
+	Vulnerability Assessment Types:
+Probably going to do both active and passive scanning
+Active:
+  Scanning with a tool, possibly host discovery
+  Discovering hosts, services
+  Cross referencing data with
+Passive:
+  Sniffing network
+  Just Listening
+  Looking for PHI, PII, login creds, session tokens
+
+External:
+  Simulate APTs
+  From the outside of the organization, see what they would be confronted
+  Kind of penatration testing
+Internal:
+  Looking from perspective of internal threat
+  What people have access to, assumed level of trust
+
+Host-Based:
+  Assessing the HOSTS on the network
+  Servers, workstations, mobile devices, IoT
+Network-Based:
+  Assessing the network itself.
+  Velnerabilities in the way the network is CONFIGURED
+  ACL, routing, switch rules, etc
+Application Assessments:
+  Both web app and software applications
+  Coding errors, insecure coding practices, necessary updates/patches
+Database assessments:
+  Software updates, configuration
+  Usually built-in to vulnerability assessment tools
+Wireless assessments:
+  Bad creds, WEP/WPA/WPA2/WPA3
+Credentialed Assessments:
+  They give you creds, either through sign up or given employee account
+
+	Vulnerability Assessment Methods & Tools:
+Product-Based Methods:
+  Installing and using a piece of software or other product in an environment to run assessment.
+  Cannot do an external assessment by this method
+  Example: OpenVas or Tenable application
+Service-Based Methods:
+  Third-Party owns product and runs scans
+  Can assess inside or outside environment  
+  Can showcase Air-Gap systems
+  Example: Redscan, Tenable One
+Tree-Based Strategy:
+  A variety of customized scans for web, service, host, DB, etc
+  Manager is trunk, each scan branches into a different facet of environment
+Inference-Based Strategy:
+  Broadly scans environment, then uses data found to narrow scope.
+  Ex. Scans hosts, then scans likely ports based on hosts, then scans to these services based on ports
+
+Host-Based Tools:
+  OpenVos, Nessus
+  Installed on a host and runs.
+
+Depth Assessments:
+  Looking for NEW VULNERABILITIESi that scanners may not know about
+  Load heavy, takes a while, fuzzes
+
+Application-Based tools:  
+  Nikto, ACME, Skipfix for web application
+
+Mobile-Based Assessment tools:
+  QARK - Quick Android Review Kit
+  
+Location and Data Examination Tools:
+  Network-Based - only able to scan the host its on 
+  Agent-Based - can scan localhost or hosts on local network 
+  Proxy Scanners - Can scan network from any machine on network
+  Cluster Scanner - Like proxy scan, but can scan multiple hosts at a time
+   
+	
+	Vulnerability Assessment Reports:
+Application Report:
+  Nikto has ways of converting to human readable
+  Often leads with information on what was scanned, host, port, site, server headers, ext
+For executive summary, ensure you can speak to people in terms they'd understand. 
+

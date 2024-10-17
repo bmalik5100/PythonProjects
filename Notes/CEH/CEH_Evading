@@ -1,0 +1,91 @@
+	IDS and IPS:
+Intrusion Detection System: Monitors network traffic and alerts admins based on rulesets - DOES NOT PREVENT ATTACKS
+Intrusion Prevention System: An IDS that also stops network traffic. Builds rules based on attackers
+Two Types:
+  Network-Based
+  Host-Based
+Alert Types:
+  True Positive/Negative
+  False Positive/Negative - Can be made better by fine-tuning rulesets 
+IDS/IPS solutions:
+  SNORT: Sniffs Network. Alert is sent when predifined rule is seen. Free and backend for many other IDS/IPS.
+    $ sudo snort -A (alert type) console -q (quiet) -c [config file]  -i [interface] -K ascii
+  bro/zeek
+  suricata - Frontend for snort
+  yara - Also can run against system files
+
+IDS/IPS Evasions:
+  Best way: Using malware/exploits
+  Decoys
+  Packet fragmentation
+  Encoding
+  Potentially DoS attack can make them fail open
+  Insertion attacks - where IDS/IPS allows malformed packets but endpoint will reject 
+  Evasion Attack - Messes with stream reassembly so the IDS misses part of attack
+  TTL Attack:
+    Attacker must have knowledge of network
+    Packets are sent out of order based on Time-to-live lengths where low TTL are resent after
+Defenses:
+  Baselines
+  Updates and patching
+  Block known malicious behavior/sources
+
+
+	Firewalls:
+Firewall definition - hardware/software network packet filter
+Whitelist/allowlist - set of rules to allow or deny something
+Implicit deny - deny everything by default
+Blacklist/denylist 
+Windows - Windows Firewall
+Linux (Debian) - iptables (or ufw which is a frontend for iptables)
+  sudo iptables -L (shows the current firewall rules
+  3 types of chains (traffic) - input (incoming), forward, output (outgoing)
+  sudo iptables --policy INPUT DROP (implicit deny any incoming data)
+  sudo iptables -A INPUT -p [tcp or port] --source [source IP or subnet] -j [ACCEPT or DROP/REJECT]
+Firewall deployment uses:
+  Good used as a DMZ where untrusted and trusted networks meet
+  Gateway or bastion host into a network
+  Multihomed
+Firewall Technology types:
+  Packet filtering - (based on a set of rules) (OSI layer 3)
+  Circuit level gateways - Filters based on sessions (OSI layer 5)
+  Application level gateways - Filters based on application specific rules, such as WAF (OSI Layer 6)
+  Stateful - checks the state/session to see if it is an established communication
+    sudo iptables -A INPUT -m conntrack --cstate [ESTABLISHED,RELATED,CLOSING,LISTEN] -j ACCEPT
+
+Firewall Evasion Traffic:
+  Firewalking for detection
+  IP Spoofing (blind attacks)
+  Fragmentation
+  DoS/DDoS to overwhelm into failing open 
+  MitM attacks
+  Social Engineering and Phishing
+  Proxies to obscure the source IP or tunneling traffic
+  
+Firewall Defenses
+  Implicit Deny policies
+  Rules for ingress and egress
+  Regular Updates
+  Regular rule testing and review
+  Logging and monitoring 
+
+	Honeypots/Honeynets:
+Definition: Trap host designed to lure or distract hackers so their behavior can be studied
+Honeynet: Network of honeypots designed to look like production environments
+Types of honeypots:
+  Low interaction: Narrow set of available services or apps
+  Medium interaction: Mimics a realistic host, such as OS, Apps, Services
+  High Interaction: DEPLOYS ALL same services as production
+  Pure: Mimics real production host or network
+Honeypot varieties:
+  Client honeypot: Mimics a client device. Purposefully gets pwned so that the admins can see how the attacker utilizes it an any modifications that get made to it
+  Database Honeypot: Helps with gaining insights to database-specific attacks (such as SQLi). Hackers love databases.
+  SPAM Honeypot: Learning about the abuse of mail servers
+  Malware Honeypot: Meant to capture malware samples, handy for AV companies to discover new malware.
+  HoneyNets: Mixed bag of honeypots, allows researchers to study multiple types of threats at the same time
+Honeypot solutions:
+  honeynetproject.com/honeypots.html
+    Software to be setup: Cowrie, UDPot Honeypot, Conpot, Artillery, HoneyWRT, Amin, HonTel, 
+  HoneyDrive: Honeypot bundle from curseforge
+
+

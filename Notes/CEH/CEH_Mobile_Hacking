@@ -1,0 +1,167 @@
+	Mobile Security Basics:
+Mobile Attack Surfaces, vulnerabilities, and threats:
+  Mobile Device itself:
+    Android and iOS release constant security updates/patches
+  Malware:
+    MalwareZoo has many public malware installed through browser, appstore, etc
+  Bluetooth:
+    Bluejacking - sending unsolicited messages over bluetooth
+    Bluesnarfing - unauthorized access of a phone features, contacts, calendars, etc
+    Bluebugging - Similar to bluesnarfing, accesses all phone features
+    Blueborne - 
+  Wifi
+  Telco (Cellular service provider)
+  SS7 (Common channel signaling system no 7)
+    Outdated protocol providing interoperability between providers
+    Need specialized hardware
+    Services:
+      SMS, Billing, Call waiting/forwarding
+    Attacker can tap into network using laptop and SS7 SDK
+    Attacker can then eavesdrop on conversations
+App Stores:
+  Malicious Apps in Official App stores
+  Third-Party App stores
+    F-Droid is a popular android app store
+  Web browser (XSS, CSRF, etc)
+  VPN - can be breached/compromised and can access everything if trusted
+  Weak/No Encryption (Such as SMS)
+
+OWASP TOP 10 for Mobile:
+  M1: Improper Credential Usage
+  M2: Inadequate Supply Chain Security
+  M3: Insecure Authentication/Authorization
+  M4: Insufficient I/O Validation
+  M5: Insecure Communication
+  M6: Inadequate Privacy Controls
+  M7: Insufficient Binary Protections
+  M8: Security Misconfiguration
+  M9: Insecure Data Storage
+  M10: Insufficient Cryptography
+
+Sandbox Bypass/Escape
+SIM hijacking 
+Moblie Spam
+SMShing/Phishing
+NSO Group (Pegasus/Darknet Diaries)
+Theft of Device
+
+	Android Security:
+Operating System - 3 of 4 devices are android
+Open source, linux based, developed by google
+App development - free ADK
+Rooting - Gaining full administrative "root" access to device
+Pros to Rooting: Bypass device controls, tethering, delete bloatware
+Cons to rooting: Security risks/malware infections more common with sideloaded apps, voided warranty, brick the device
+Tools for rooting (After device is placed in USB Debugging mode):
+  Kingoroot
+  Towelroot
+  Oneclickroot - Most Common
+Tools for hacking using android phones:
+  LOIC for android
+  Drozer - vulnerability scanner
+  zANTI - Professional paid Hacking toolkit
+  Kali Linux Nethunter 
+  Droid Sheep - MITM (Unprotected web HTTP over wifi) attacks and Vulnerabilty Attacks 
+  adb (android debug bridge) - gives shell access to install and debug apps
+  cSploit - Deprecated Mobile version of metasploit
+
+Security Defenses:
+  Don't Root your device
+  Use screen lock with decent password
+  Avoid sideloading & third party app stores without thorough due diligence
+  Install antimalware/antivirus
+  Keep phone updated and patched
+  Don't open links with attachments from emails or texts
+  Use vpns for sensitive data
+  Use where's my droid/Find my phone
+  
+
+	iOS Security:
+Basics:
+  Developed by Apple
+  All apps come from single official apple app store 
+  Security Measures:
+    Secureboot built in, faceID, passcodes, touchID, code-signing for third party apps, app sandboxing
+    All third-party apps are verified by Apple
+Jailbreaking - Bypassing security controls and gaining full access of device
+Pros: Removes sandbox restrictions, allows for sideloading third-party apps
+Cons: Allows for installing malicious apps
+Jailbreaking Techniques:
+  Tethered: 
+    Device boots normally, may get stuck in partially booted state
+    Device must be thethered to computer and rejailbroken each time
+    Use BOOT TETHERED feature of a jailbreaking tool
+  Semi-Tethered
+    Device Boots normally
+    If jailbroken functionality is required, device must be tethered to a computer and jailbreaking tool must be used
+  Untethered:
+    Device will be in a jailbroken state even after reboot
+    Doesn't require the help of a computer
+    Kernel is now patched over
+  Semi-Untethered
+    Similar to semi-tethered
+    Device boots normally
+    Device can be patched without a computer
+    Patch is applied by an app on the device
+Tools for jailbreaking:
+  Hexa/Hexaplus
+Hacking tools using an iOS:
+  Network-Analyzer Pro
+  Fing
+  Elcom Phone Breaker - Paid forensic tool
+  Spyic cell phone - Parental control app
+Hacking methods
+  Trust-jacking (remotely read messages/emails/etc, sync with iTunes Wifi Sync over wifi)
+  iOS Malware - https://theiphonewiki.com/wiki/Malware_for_iOS
+
+Security Measures:
+  Don't jailbreak your phone
+  Use screen lock with one or multiple security measures 
+  Don't install 3rd party apps or sideload apps without thorough 
+  Don't use random wifi
+  Enable location services
+  Keep phone updated and patched
+  Don't open links with attachments from emails or texts
+  Use vpns for sensitive data
+  Enable Find my phone
+  Use a mobile security suite - trendmicro/mcafee/avast 
+
+	Mobile Device Management (MDM):
+MDM - allows for admins to remotely manage mobile devices
+Uses:
+  Enable authentication, remote wiping, disabling jailbreaking/rooting, POLICY ENFORCEMENT, Inventory/Asset tracking
+Examples:
+  ManageEngine MDM Plus: Covers android, apple, etc and is cloud based
+  IBM MaaS360 with Watson: Cloud provided Mobility as a Service
+  Intune: Industry standard MDM
+BYOD (Bring your own Device):
+  By using company-related (Line of Business) apps, your phone is subject to company security policies/management
+  Personal devices must follow device policy
+  Pros:
+    Convenience, Productivity/Efficiency, Cost Effectiveness (you don't need to buy a work phone/app)
+  Risks:
+    Supporting multiple types of devices (increased attack surfce), mingling of private and company data, insecure device/data disposal, access unsecure/untrusted networks, phones can be lost or stolen, users can bypass securty policy
+BYOD securty Policy
+  Define and Formalize requirements
+  Standardize technology - hardware/software, approved apps or devices
+  Publish and disseminate policy info
+  Implement Security:
+    Asset and Identity Management
+    Local Storage Control
+    Removable media controll
+    Network access control
+    Device password policy
+    Web security
+    Device Health 
+    DLP
+    Organization/Personal App control
+    Trained support staff and user education
+
+Security Guidelines:
+  Always update and patch
+  Use antivirus/antispyware
+  Keep app installs to a bare minimum
+  Be able to securely do remote wipes or deletions
+  No jailbreaking/rooting/sideloading
+  Have a good securty policy
+  Use fully disk encryption
