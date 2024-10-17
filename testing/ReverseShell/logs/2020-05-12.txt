@@ -1,0 +1,8 @@
+LOGS FOR 2020-05-12
+
+[2020-05-12 09:32:57] > Established connection with 192.168.0.58:40528
+[2020-05-12 09:33:02] > Connected with 192.168.0.58:40528
+[2020-05-12 09:34:37] > Disconnected from 192.168.0.58
+[2020-05-12 09:34:59] > Established connection with 192.168.0.58:40534
+[2020-05-12 09:35:00] > Connected with 192.168.0.58:40528
+[2020-05-12 09:35:12] > Connected with 192.168.0.58:40528

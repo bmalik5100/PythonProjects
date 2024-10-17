@@ -1,0 +1,10 @@
+LOGS FOR 2020-05-14
+
+[2020-05-14 13:10:23] > Established connection with 192.168.0.58:52508
+[2020-05-14 13:10:29] > Connected with 192.168.0.58:52508
+[2020-05-14 13:11:42] > Sent h.py to client.
+[2020-05-14 13:15:15] > Sent makefile.py to client.
+[2020-05-14 13:17:05] > Sent makefile.py to client.
+[2020-05-14 13:17:44] > Sent makefile.py to client.
+[2020-05-14 13:19:14] > Exfiltrated makefile.py
+[2020-05-14 13:45:04] > Disconnected from 192.168.0.58

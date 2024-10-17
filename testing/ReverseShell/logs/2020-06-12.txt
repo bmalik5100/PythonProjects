@@ -1,0 +1,39 @@
+LOGS FOR 2020-06-12
+
+[2020-06-12 15:39:48] > Established connection with 192.168.0.58:43174
+[2020-06-12 15:39:52] > Connected with 192.168.0.58:43174
+[2020-06-12 15:43:36] > Established connection with 192.168.0.58:43208
+[2020-06-12 15:43:38] > Connected with 192.168.0.58:43208
+[2020-06-12 15:46:07] > Established connection with 192.168.0.58:43232
+[2020-06-12 15:46:09] > Connected with 192.168.0.58:43232
+[2020-06-12 15:47:12] > Established connection with 192.168.0.58:43244
+[2020-06-12 15:47:17] > Connected with 192.168.0.58:43244
+[2020-06-12 15:47:40] > Established connection with 192.168.0.58:43252
+[2020-06-12 15:47:42] > Connected with 192.168.0.58:43252
+[2020-06-12 15:49:44] > Established connection with 192.168.0.58:43322
+[2020-06-12 15:49:47] > Connected with 192.168.0.58:43322
+[2020-06-12 15:51:11] > Established connection with 192.168.0.58:43344
+[2020-06-12 15:51:13] > Connected with 192.168.0.58:43344
+[2020-06-12 15:54:28] > Established connection with 192.168.0.58:43382
+[2020-06-12 15:54:29] > Connected with 192.168.0.58:43382
+[2020-06-12 15:55:45] > Disconnected from 192.168.0.58
+[2020-06-12 15:55:50] > Established connection with 192.168.0.58:43402
+[2020-06-12 15:55:54] > Connected with 192.168.0.58:43402
+[2020-06-12 15:58:01] > Established connection with 192.168.0.58:43412
+[2020-06-12 15:58:02] > Connected with 192.168.0.58:43402
+[2020-06-12 15:58:13] > Established connection with 192.168.0.58:43416
+[2020-06-12 15:58:15] > Connected with 192.168.0.58:43416
+[2020-06-12 16:00:46] > Fat transferred kookaburra.jpgto server.
+[2020-06-12 16:06:44] > Disconnected from 192.168.0.58
+[2020-06-12 16:06:52] > Established connection with 192.168.0.58:43454
+[2020-06-12 16:06:56] > Connected with 192.168.0.58:43416
+[2020-06-12 16:07:07] > Established connection with 192.168.0.58:43460
+[2020-06-12 16:07:09] > Connected with 192.168.0.58:43460
+[2020-06-12 16:11:10] > Established connection with 192.168.0.58:43512
+[2020-06-12 16:11:14] > Connected with 192.168.0.58:43512
+[2020-06-12 16:12:11] > Established connection with 192.168.0.58:43528
+[2020-06-12 16:12:13] > Connected with 192.168.0.58:43528
+[2020-06-12 16:16:43] > Established connection with 192.168.0.58:43562
+[2020-06-12 16:16:45] > Connected with 192.168.0.58:43562
+[2020-06-12 16:16:51] > Got image: apshot-2020-06-12-16:16:50.jpg
+[2020-06-12 16:20:25] > Disconnected from 192.168.0.58

@@ -1,0 +1,103 @@
+
+[2020-05-04 09:42:06] > Established connection with 192.168.0.58:60528
+[2020-05-04 09:42:08] > Connected with 192.168.0.58:60360
+[2020-05-04 09:42:19] > Connected with 192.168.0.58:60360
+[2020-05-04 09:45:51] > Established connection with 192.168.0.58:60564
+[2020-05-04 09:45:53] > Connected with 192.168.0.58:60564
+[2020-05-04 09:47:34] > Established connection with 192.168.0.58:60586
+[2020-05-04 09:47:36] > Connected with 192.168.0.58:60586
+[2020-05-04 09:52:53] > Established connection with 192.168.0.58:60726
+[2020-05-04 09:52:55] > Connected with 192.168.0.58:60726
+[2020-05-04 09:55:48] > Established connection with 192.168.0.58:60754
+[2020-05-04 09:55:53] > Connected with 192.168.0.58:60726
+[2020-05-04 09:55:58] > Connected with 192.168.0.58:60726
+[2020-05-04 09:57:38] > Established connection with 192.168.0.58:60776
+[2020-05-04 09:57:43] > Connected with 192.168.0.58:60726
+[2020-05-04 09:57:48] > Connected with 192.168.0.58:60726
+[2020-05-04 09:58:52] > Established connection with 192.168.0.58:60792
+[2020-05-04 09:58:54] > Connected with 192.168.0.58:60792
+[2020-05-04 10:00:50] > Established connection with 192.168.0.58:60822
+[2020-05-04 10:00:59] > Connected with 192.168.0.58:60822
+[2020-05-04 10:01:20] > Established connection with 192.168.0.58:60828
+[2020-05-04 10:01:22] > Connected with 192.168.0.58:60828
+[2020-05-04 10:02:40] > Connected with 192.168.0.58:60828
+[2020-05-04 10:02:46] > Connected with 192.168.0.58:60828
+[2020-05-04 10:05:02] > Established connection with 192.168.0.58:60862
+[2020-05-04 10:05:04] > Connected with 192.168.0.58:60862
+[2020-05-04 10:05:43] > Established connection with 192.168.0.58:60872
+[2020-05-04 10:05:45] > Connected with 192.168.0.58:60862
+[2020-05-04 10:06:38] > Established connection with 192.168.0.58:60882
+[2020-05-04 10:06:41] > Connected with 192.168.0.58:60862
+[2020-05-04 10:06:45] > Established connection with 192.168.0.58:60884
+[2020-05-04 10:06:47] > Connected with 192.168.0.58:60862
+[2020-05-04 10:09:04] > Connected with 192.168.0.58:60872
+[2020-05-04 10:10:08] > Connected with 192.168.0.58:60884
+[2020-05-04 10:11:05] > Established connection with 192.168.0.58:60908
+[2020-05-04 10:11:07] > Connected with 192.168.0.58:60884
+[2020-05-04 10:11:40] > Connected with 192.168.0.58:60884
+[2020-05-04 10:11:45] > Connected with 192.168.0.58:60884
+[2020-05-04 10:11:56] > Connected with 192.168.0.58:60908
+[2020-05-04 10:17:24] > Established connection with 192.168.0.58:60986
+[2020-05-04 10:17:26] > Connected with 192.168.0.58:60986
+[2020-05-04 22:38:29] > Established connection with 192.168.0.58:60484
+[2020-05-04 22:38:34] > Connected with 192.168.0.58:60484
+[2020-05-04 22:41:26] > Established connection with 192.168.0.58:60570
+[2020-05-04 22:41:28] > Connected with 192.168.0.58:60484
+[2020-05-04 22:46:24] > Established connection with 192.168.0.58:51538
+[2020-05-04 22:46:28] > Connected with 192.168.0.58:51538
+[2020-05-04 22:47:24] > Exfiltrated test.txt
+[2020-05-04 22:47:24] > Exfiltrated test.txt
+[2020-05-04 22:47:42] > Exfiltrated test.txt
+[2020-05-04 22:47:42] > Exfiltrated test.txt
+[2020-05-04 22:51:55] > Established connection with 192.168.0.58:51756
+[2020-05-04 22:52:01] > Connected with 192.168.0.58:51756
+[2020-05-04 22:52:41] > Connected with 192.168.0.58:51756
+[2020-05-04 22:52:57] > Established connection with 192.168.0.58:51772
+[2020-05-04 22:52:59] > Connected with 192.168.0.58:51772
+[2020-05-04 22:53:13] > Exfiltrated test.txt
+[2020-05-04 22:53:14] > Exfiltrated test.txt
+[2020-05-04 22:53:36] > Exfiltrated test.txt
+[2020-05-04 22:53:37] > Exfiltrated test.txt
+[2020-05-04 22:53:54] > Exfiltrated test.txt
+[2020-05-04 22:53:55] > Exfiltrated test.txt
+[2020-05-04 22:54:04] > Exfiltrated test.txt
+[2020-05-04 22:54:05] > Exfiltrated test.txt
+[2020-05-04 22:54:18] > Sent hello2.txt to client.
+[2020-05-04 22:54:18] > Sent hello2.txt to client.
+[2020-05-04 22:54:28] > Sent hello2.txt to client.
+[2020-05-04 22:54:28] > Sent hello2.txt to client.
+[2020-05-04 22:55:44] > Established connection with 192.168.0.58:51810
+[2020-05-04 22:55:47] > Connected with 192.168.0.58:51772
+[2020-05-04 22:56:02] > Connected with 192.168.0.58:51810
+[2020-05-04 22:56:26] > Sent hello2.txt to client.
+[2020-05-04 22:56:26] > Sent hello2.txt to client.
+[2020-05-04 22:57:48] > Established connection with 192.168.0.58:51838
+[2020-05-04 22:57:50] > Connected with 192.168.0.58:51810
+[2020-05-04 22:58:00] > Connected with 192.168.0.58:51838
+[2020-05-04 22:58:48] > Sent hello2.txt to client.
+[2020-05-04 22:58:48] > Sent hello2.txt to client.
+[2020-05-04 23:00:33] > Established connection with 192.168.0.58:51858
+[2020-05-04 23:00:40] > Connected with 192.168.0.58:51858
+[2020-05-04 23:01:44] > Sent hello2.txt to client.
+[2020-05-04 23:01:44] > Sent hello2.txt to client.
+[2020-05-04 23:04:19] > Sent hello3.py to client.
+[2020-05-04 23:04:19] > Sent hello3.py to client.
+[2020-05-04 23:06:56] > Sent hello2.txt to client.
+[2020-05-04 23:06:56] > Sent hello2.txt to client.
+[2020-05-04 23:10:13] > Sent hello2.txt to client.
+[2020-05-04 23:10:13] > Sent hello2.txt to client.
+[2020-05-04 23:15:14] > Established connection with 192.168.0.58:52014
+[2020-05-04 23:15:19] > Connected with 192.168.0.58:52014
+[2020-05-04 23:16:51] > Sent h.py to client.
+[2020-05-04 23:16:51] > Sent h.py to client.
+[2020-05-04 23:20:08] > Established connection with 192.168.0.58:52066
+[2020-05-04 23:20:11] > Connected with 192.168.0.58:52066
+[2020-05-04 23:20:31] > Connected with 192.168.0.58:52066
+[2020-05-04 23:21:04] > Established connection with 192.168.0.58:52078
+[2020-05-04 23:21:07] > Connected with 192.168.0.58:52066
+[2020-05-04 23:27:25] > Established connection with 192.168.0.58:40940
+[2020-05-04 23:27:28] > Connected with 192.168.0.58:40940
+[2020-05-04 23:28:54] > Established connection with 192.168.0.58:40952
+[2020-05-04 23:29:07] > Connected with 192.168.0.58:40952
+[2020-05-04 23:33:02] > Established connection with 192.168.0.58:40968
+[2020-05-04 23:33:05] > Connected with 192.168.0.58:40968

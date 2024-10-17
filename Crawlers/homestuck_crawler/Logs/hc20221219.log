@@ -1,0 +1,788 @@
+INFO - Starting crawler at 12:41:50 2022/12/19
+INFO - Got page: 26
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user EB
+INFO - Parsed JSONL data for page 26
+ERROR - Misc error: 'NoneType' object has no attribute 'findChildren'
+INFO - Time elapsed: 2.675927 seconds
+INFO - Final page parsed: 27
+INFO - Starting crawler at 12:44:53 2022/12/19
+INFO - Got page: 26
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user EB
+INFO - Parsed JSONL data for page 26
+INFO - Got page: 35
+INFO - Collected 20 lines for user TG
+INFO - Collected 19 lines for user EB
+INFO - Parsed JSONL data for page 35
+INFO - Got page: 39
+INFO - Collected 7 lines for user TG
+INFO - Collected 6 lines for user EB
+INFO - Parsed JSONL data for page 39
+INFO - Got page: 63
+INFO - Collected 11 lines for user EB
+INFO - Collected 10 lines for user TT
+INFO - Parsed JSONL data for page 63
+INFO - Got page: 135
+INFO - Collected 11 lines for user EB
+INFO - Collected 10 lines for user TT
+INFO - Parsed JSONL data for page 135
+INFO - Got page: 141
+INFO - Collected 5 lines for user EB
+INFO - Collected 4 lines for user TT
+INFO - Parsed JSONL data for page 141
+INFO - Got page: 144
+INFO - Collected 4 lines for user EB
+INFO - Collected 3 lines for user TT
+INFO - Parsed JSONL data for page 144
+INFO - Got page: 153
+INFO - Collected 10 lines for user EB
+INFO - Collected 9 lines for user TT
+INFO - Parsed JSONL data for page 153
+INFO - Got page: 154
+INFO - Collected 7 lines for user EB
+INFO - Collected 6 lines for user TT
+INFO - Parsed JSONL data for page 154
+INFO - Got page: 157
+INFO - Collected 5 lines for user EB
+INFO - Collected 4 lines for user TT
+INFO - Parsed JSONL data for page 157
+INFO - Got page: 160
+INFO - Collected 14 lines for user EB
+INFO - Collected 13 lines for user TT
+INFO - Parsed JSONL data for page 160
+INFO - Got page: 163
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 163
+INFO - Got page: 164
+INFO - Collected 1 lines for user EB
+INFO - Collected 0 lines for user TT
+INFO - Parsed JSONL data for page 164
+INFO - Got page: 165
+INFO - Collected 3 lines for user EB
+INFO - Collected 2 lines for user TT
+INFO - Parsed JSONL data for page 165
+INFO - Got page: 169
+INFO - Collected 15 lines for user EB
+INFO - Collected 14 lines for user GG
+INFO - Parsed JSONL data for page 169
+INFO - Got page: 170
+INFO - Collected 4 lines for user EB
+INFO - Collected 3 lines for user TT
+INFO - Parsed JSONL data for page 170
+INFO - Got page: 174
+INFO - Collected 8 lines for user EB
+INFO - Collected 7 lines for user TT
+INFO - Parsed JSONL data for page 174
+INFO - Got page: 178
+INFO - Collected 5 lines for user EB
+INFO - Collected 4 lines for user TT
+INFO - Parsed JSONL data for page 178
+INFO - Got page: 184
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 184
+INFO - Got page: 187
+INFO - Collected 7 lines for user EB
+INFO - Collected 6 lines for user TT
+INFO - Parsed JSONL data for page 187
+INFO - Got page: 240
+INFO - Collected 9 lines for user EB
+INFO - Collected 8 lines for user TT
+INFO - Parsed JSONL data for page 240
+INFO - Got page: 256
+INFO - Collected 18 lines for user EB
+INFO - Collected 17 lines for user TT
+INFO - Parsed JSONL data for page 256
+INFO - Got page: 268
+INFO - Collected 6 lines for user EB
+INFO - Collected 5 lines for user TT
+INFO - Parsed JSONL data for page 268
+INFO - Got page: 275
+INFO - Collected 4 lines for user EB
+INFO - Collected 3 lines for user TT
+INFO - Parsed JSONL data for page 275
+INFO - Got page: 278
+INFO - Collected 1 lines for user EB
+INFO - Collected 0 lines for user TT
+INFO - Parsed JSONL data for page 278
+INFO - Got page: 283
+INFO - Collected 9 lines for user EB
+INFO - Collected 8 lines for user TT
+INFO - Parsed JSONL data for page 283
+INFO - Got page: 287
+INFO - Collected 10 lines for user TG
+INFO - Collected 9 lines for user EB
+INFO - Parsed JSONL data for page 287
+INFO - Got page: 289
+INFO - Collected 8 lines for user EB
+INFO - Collected 7 lines for user TT
+INFO - Parsed JSONL data for page 289
+INFO - Got page: 293
+INFO - Collected 20 lines for user EB
+INFO - Collected 19 lines for user GG
+INFO - Parsed JSONL data for page 293
+INFO - Got page: 294
+INFO - Collected 19 lines for user TG
+INFO - Collected 18 lines for user EB
+INFO - Parsed JSONL data for page 294
+INFO - Got page: 324
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user EB
+INFO - Parsed JSONL data for page 324
+INFO - Got page: 333
+INFO - Collected 17 lines for user TG
+INFO - Collected 16 lines for user TT
+INFO - Parsed JSONL data for page 333
+INFO - Got page: 382
+INFO - Collected 33 lines for user TG
+INFO - Collected 32 lines for user GG
+INFO - Parsed JSONL data for page 382
+INFO - Got page: 386
+INFO - Collected 21 lines for user TG
+INFO - Collected 20 lines for user EB
+INFO - Parsed JSONL data for page 386
+INFO - Got page: 419
+INFO - Collected 14 lines for user TG
+INFO - Collected 13 lines for user TT
+INFO - Parsed JSONL data for page 419
+INFO - Got page: 420
+INFO - Collected 6 lines for user JOHN
+INFO - Collected 5 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 420
+INFO - Got page: 421
+INFO - Collected 13 lines for user JOHN
+INFO - Collected 12 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 421
+INFO - Got page: 424
+INFO - Collected 1 lines for user JOHN
+INFO - Collected 0 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 424
+INFO - Got page: 425
+INFO - Collected 5 lines for user JOHN
+INFO - Collected 4 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 425
+INFO - Got page: 426
+INFO - Collected 3 lines for user JOHN
+INFO - Collected 2 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 426
+INFO - Got page: 427
+INFO - Collected 5 lines for user JOHN
+INFO - Collected 4 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 427
+INFO - Got page: 428
+INFO - Collected 6 lines for user JOHN
+INFO - Collected 5 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 428
+INFO - Got page: 442
+INFO - Collected 29 lines for user GG
+INFO - Collected 28 lines for user TT
+INFO - Parsed JSONL data for page 442
+INFO - Got page: 469
+INFO - Collected 14 lines for user TG
+INFO - Collected 13 lines for user TT
+INFO - Parsed JSONL data for page 469
+INFO - Got page: 473
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 473
+INFO - Got page: 478
+INFO - Collected 13 lines for user EB
+INFO - Collected 12 lines for user TT
+INFO - Parsed JSONL data for page 478
+INFO - Got page: 482
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 482
+INFO - Got page: 484
+INFO - Collected 6 lines for user EB
+INFO - Collected 5 lines for user TT
+INFO - Parsed JSONL data for page 484
+INFO - Got page: 485
+INFO - Collected 8 lines for user EB
+INFO - Collected 7 lines for user TT
+INFO - Parsed JSONL data for page 485
+INFO - Got page: 522
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user TT
+INFO - Parsed JSONL data for page 522
+INFO - Got page: 537
+INFO - Collected 1 lines for user TG
+INFO - Collected 0 lines for user TT
+INFO - Parsed JSONL data for page 537
+INFO - Got page: 538
+INFO - Collected 3 lines for user EB
+INFO - Collected 2 lines for user TT
+INFO - Parsed JSONL data for page 538
+INFO - Got page: 539
+INFO - Collected 18 lines for user EB
+INFO - Collected 17 lines for user TT
+INFO - Parsed JSONL data for page 539
+INFO - Got page: 551
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 551
+INFO - Got page: 611
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user TT
+INFO - Parsed JSONL data for page 611
+INFO - Got page: 622
+INFO - Collected 4 lines for user EB
+INFO - Collected 3 lines for user TT
+INFO - Parsed JSONL data for page 622
+INFO - Got page: 636
+INFO - Collected 8 lines for user EB
+INFO - Collected 7 lines for user TT
+INFO - Parsed JSONL data for page 636
+INFO - Got page: 643
+INFO - Collected 10 lines for user EB
+INFO - Collected 9 lines for user TT
+INFO - Parsed JSONL data for page 643
+INFO - Got page: 652
+INFO - Collected 27 lines for user EB
+INFO - Collected 26 lines for user GG
+INFO - Parsed JSONL data for page 652
+INFO - Got page: 835
+INFO - Collected 33 lines for user TG
+INFO - Collected 32 lines for user GG
+INFO - Parsed JSONL data for page 835
+INFO - Got page: 838
+INFO - Collected 12 lines for user GG
+INFO - Collected 11 lines for user TT
+INFO - Parsed JSONL data for page 838
+INFO - Got page: 859
+INFO - Collected 7 lines for user CG
+INFO - Collected 6 lines for user GG
+INFO - Parsed JSONL data for page 859
+INFO - Got page: 880
+INFO - Collected 9 lines for user EB
+INFO - Collected 8 lines for user TT
+INFO - Parsed JSONL data for page 880
+INFO - Got page: 885
+INFO - Collected 10 lines for user JOHN
+INFO - Collected 9 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 885
+INFO - Got page: 1000
+INFO - Collected 18 lines for user GT
+INFO - Collected 17 lines for user GG
+INFO - Parsed JSONL data for page 1000
+INFO - Got page: 1003
+INFO - Collected 18 lines for user EB
+INFO - Collected 17 lines for user TT
+INFO - Parsed JSONL data for page 1003
+INFO - Got page: 1004
+INFO - Collected 2 lines for user EB
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 1004
+INFO - Got page: 1022
+INFO - Collected 8 lines for user EB
+INFO - Collected 7 lines for user TT
+INFO - Parsed JSONL data for page 1022
+INFO - Got page: 1023
+INFO - Collected 12 lines for user EB
+INFO - Collected 11 lines for user TT
+INFO - Parsed JSONL data for page 1023
+INFO - Got page: 1024
+INFO - Collected 10 lines for user EB
+INFO - Collected 9 lines for user TT
+INFO - Parsed JSONL data for page 1024
+INFO - Got page: 1025
+INFO - Collected 6 lines for user EB
+INFO - Collected 5 lines for user TT
+INFO - Parsed JSONL data for page 1025
+INFO - Got page: 1073
+INFO - Collected 34 lines for user EB
+INFO - Collected 33 lines for user GG
+INFO - Parsed JSONL data for page 1073
+INFO - Got page: 1074
+INFO - Collected 27 lines for user EB
+INFO - Collected 26 lines for user GG
+INFO - Parsed JSONL data for page 1074
+INFO - Got page: 1093
+INFO - Collected 21 lines for user GA
+INFO - Collected 20 lines for user TT
+INFO - Parsed JSONL data for page 1093
+INFO - Got page: 1099
+INFO - Collected 23 lines for user AT
+INFO - Collected 22 lines for user TG
+INFO - Parsed JSONL data for page 1099
+INFO - Got page: 1148
+INFO - Collected 5 lines for user TG
+INFO - Collected 4 lines for user TT
+INFO - Parsed JSONL data for page 1148
+INFO - Got page: 1391
+INFO - Collected 32 lines for user GG
+INFO - Collected 31 lines for user EB
+INFO - Parsed JSONL data for page 1391
+INFO - Got page: 1393
+INFO - Collected 31 lines for user TG
+INFO - Collected 30 lines for user GG
+INFO - Parsed JSONL data for page 1393
+INFO - Got page: 1394
+INFO - Collected 31 lines for user CG
+INFO - Collected 30 lines for user EB
+INFO - Parsed JSONL data for page 1394
+INFO - Got page: 1399
+INFO - Collected 2 lines for user TG
+INFO - Collected 1 lines for user TT
+INFO - Parsed JSONL data for page 1399
+INFO - Got page: 1400
+INFO - Collected 9 lines for user TG
+INFO - Collected 8 lines for user GG
+INFO - Parsed JSONL data for page 1400
+INFO - Got page: 1401
+INFO - Collected 7 lines for user TG
+INFO - Collected 6 lines for user TT
+INFO - Parsed JSONL data for page 1401
+INFO - Got page: 1402
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user TT
+INFO - Parsed JSONL data for page 1402
+INFO - Got page: 1429
+INFO - Collected 9 lines for user JOHN
+INFO - Collected 8 lines for user NANNASPRITE
+INFO - Parsed JSONL data for page 1429
+INFO - Got page: 1438
+INFO - Collected 6 lines for user TG
+INFO - Collected 5 lines for user GG
+INFO - Parsed JSONL data for page 1438
+INFO - Got page: 1439
+INFO - Collected 9 lines for user TG
+INFO - Collected 8 lines for user GG
+INFO - Parsed JSONL data for page 1439
+INFO - Got page: 1444
+INFO - Collected 14 lines for user TG
+INFO - Collected 13 lines for user GG
+INFO - Parsed JSONL data for page 1444
+INFO - Got page: 1447
+INFO - Collected 5 lines for user TG
+INFO - Collected 4 lines for user GG
+INFO - Parsed JSONL data for page 1447
+INFO - Got page: 1448
+INFO - Collected 7 lines for user TG
+INFO - Collected 6 lines for user GG
+INFO - Parsed JSONL data for page 1448
+INFO - Got page: 1505
+INFO - Collected 12 lines for user TG
+INFO - Collected 11 lines for user GG
+INFO - Parsed JSONL data for page 1505
+INFO - Got page: 1507
+INFO - Collected 7 lines for user TG
+INFO - Collected 6 lines for user GG
+INFO - Parsed JSONL data for page 1507
+INFO - Got page: 1510
+INFO - Collected 20 lines for user TG
+INFO - Collected 19 lines for user GG
+INFO - Parsed JSONL data for page 1510
+INFO - Got page: 1511
+INFO - Collected 2 lines for user TG
+INFO - Collected 1 lines for user GG
+INFO - Parsed JSONL data for page 1511
+INFO - Got page: 1523
+INFO - Collected 19 lines for user EB
+INFO - Collected 18 lines for user TT
+INFO - Parsed JSONL data for page 1523
+INFO - Got page: 1524
+INFO - Collected 42 lines for user GC
+INFO - Collected 41 lines for user TT
+INFO - Parsed JSONL data for page 1524
+INFO - Got page: 1528
+INFO - Collected 13 lines for user GT
+INFO - Collected 12 lines for user GC
+INFO - Parsed JSONL data for page 1528
+INFO - Got page: 1563
+INFO - Collected 2 lines for user TG
+INFO - Collected 1 lines for user GG
+INFO - Parsed JSONL data for page 1563
+INFO - Got page: 1564
+INFO - Collected 1 lines for user TG
+INFO - Collected 0 lines for user GG
+INFO - Parsed JSONL data for page 1564
+INFO - Got page: 1579
+INFO - Collected 23 lines for user GC
+INFO - Collected 22 lines for user EB
+INFO - Parsed JSONL data for page 1579
+INFO - Got page: 1580
+INFO - Collected 9 lines for user GC
+INFO - Collected 8 lines for user EB
+INFO - Parsed JSONL data for page 1580
+INFO - Got page: 1588
+INFO - Collected 14 lines for user TG
+INFO - Collected 13 lines for user TT
+INFO - Parsed JSONL data for page 1588
+INFO - Got page: 1589
+INFO - Collected 29 lines for user GA
+INFO - Collected 28 lines for user TG
+INFO - Parsed JSONL data for page 1589
+INFO - Got page: 1590
+INFO - Collected 25 lines for user AT
+INFO - Collected 24 lines for user TT
+INFO - Parsed JSONL data for page 1590
+INFO - Got page: 1592
+INFO - Collected 41 lines for user GA
+INFO - Collected 40 lines for user TT
+INFO - Parsed JSONL data for page 1592
+INFO - Got page: 1595
+INFO - Collected 2 lines for user AT
+INFO - Collected 1 lines for user TG
+INFO - Parsed JSONL data for page 1595
+INFO - Got page: 1603
+INFO - Collected 45 lines for user CG
+INFO - Collected 44 lines for user EB
+INFO - Parsed JSONL data for page 1603
+INFO - Got page: 1604
+INFO - Collected 20 lines for user GC
+INFO - Collected 19 lines for user EB
+INFO - Parsed JSONL data for page 1604
+INFO - Got page: 1605
+INFO - Collected 17 lines for user GC
+INFO - Collected 16 lines for user EB
+INFO - Parsed JSONL data for page 1605
+INFO - Got page: 1606
+INFO - Collected 2 lines for user GC
+INFO - Collected 1 lines for user EB
+INFO - Parsed JSONL data for page 1606
+INFO - Got page: 1626
+INFO - Collected 25 lines for user ROSE
+INFO - Collected 24 lines for user JASPERSPRITE
+INFO - Parsed JSONL data for page 1626
+INFO - Got page: 1627
+INFO - Collected 27 lines for user GG
+INFO - Collected 26 lines for user TT
+INFO - Parsed JSONL data for page 1627
+INFO - Got page: 1629
+INFO - Collected 4 lines for user GG
+INFO - Collected 3 lines for user TT
+INFO - Parsed JSONL data for page 1629
+INFO - Got page: 1630
+INFO - Collected 3 lines for user GG
+INFO - Collected 2 lines for user TT
+INFO - Parsed JSONL data for page 1630
+INFO - Got page: 1633
+INFO - Collected 11 lines for user GC
+INFO - Collected 10 lines for user EB
+INFO - Parsed JSONL data for page 1633
+INFO - Got page: 1634
+INFO - Collected 4 lines for user GC
+INFO - Collected 3 lines for user EB
+INFO - Parsed JSONL data for page 1634
+INFO - Got page: 1635
+INFO - Collected 14 lines for user GC
+INFO - Collected 13 lines for user EB
+INFO - Parsed JSONL data for page 1635
+INFO - Got page: 1637
+INFO - Collected 23 lines for user TG
+INFO - Collected 22 lines for user EB
+INFO - Parsed JSONL data for page 1637
+INFO - Got page: 1642
+INFO - Collected 17 lines for user DAVE
+INFO - Collected 16 lines for user CALSPRITE
+INFO - Parsed JSONL data for page 1642
+INFO - Got page: 1643
+INFO - Collected 23 lines for user TG
+INFO - Collected 22 lines for user TT
+INFO - Parsed JSONL data for page 1643
+INFO - Got page: 1646
+INFO - Collected 23 lines for user TG
+INFO - Collected 22 lines for user EB
+INFO - Parsed JSONL data for page 1646
+INFO - Got page: 1647
+INFO - Collected 3 lines for user TG
+INFO - Collected 2 lines for user EB
+INFO - Parsed JSONL data for page 1647
+INFO - Got page: 1648
+INFO - Collected 3 lines for user TG
+INFO - Collected 2 lines for user EB
+INFO - Parsed JSONL data for page 1648
+INFO - Got page: 1649
+INFO - Collected 13 lines for user TG
+INFO - Collected 12 lines for user EB
+INFO - Parsed JSONL data for page 1649
+INFO - Got page: 1651
+INFO - Collected 1 lines for user DAVE
+INFO - Collected 0 lines for user DAVESPRITE
+INFO - Parsed JSONL data for page 1651
+INFO - Got page: 1653
+INFO - Collected 7 lines for user GG
+INFO - Collected 6 lines for user TT
+INFO - Parsed JSONL data for page 1653
+INFO - Got page: 1657
+INFO - Collected 32 lines for user GC
+INFO - Collected 31 lines for user TG
+INFO - Parsed JSONL data for page 1657
+INFO - Got page: 1658
+INFO - Collected 16 lines for user DAVE
+INFO - Collected 15 lines for user DAVESPRITE
+INFO - Parsed JSONL data for page 1658
+INFO - Got page: 1666
+INFO - Collected 7 lines for user TG
+INFO - Collected 6 lines for user EB
+INFO - Parsed JSONL data for page 1666
+INFO - Got page: 1667
+INFO - Collected 64 lines for user CG
+INFO - Collected 63 lines for user EB
+INFO - Parsed JSONL data for page 1667
+INFO - Got page: 1684
+INFO - Collected 19 lines for user GC
+INFO - Collected 18 lines for user EB
+INFO - Parsed JSONL data for page 1684
+INFO - Got page: 1692
+INFO - Collected 34 lines for user TG
+INFO - Collected 33 lines for user EB
+INFO - Parsed JSONL data for page 1692
+INFO - Got page: 1693
+INFO - Collected 9 lines for user TG
+INFO - Collected 8 lines for user EB
+INFO - Parsed JSONL data for page 1693
+INFO - Got page: 1694
+INFO - Collected 11 lines for user TG
+INFO - Collected 10 lines for user EB
+INFO - Parsed JSONL data for page 1694
+INFO - Got page: 1714
+INFO - Collected 27 lines for user GA
+INFO - Collected 26 lines for user TT
+INFO - Parsed JSONL data for page 1714
+INFO - Got page: 1715
+INFO - Collected 9 lines for user GA
+INFO - Collected 8 lines for user TA
+INFO - Parsed JSONL data for page 1715
+INFO - Got page: 1740
+INFO - Collected 11 lines for user TG
+INFO - Collected 10 lines for user EB
+INFO - Parsed JSONL data for page 1740
+INFO - Got page: 1857
+INFO - Collected 30 lines for user TG
+INFO - Collected 29 lines for user TT
+INFO - Parsed JSONL data for page 1857
+INFO - Got page: 1858
+INFO - Collected 19 lines for user TG
+INFO - Collected 18 lines for user TT
+INFO - Parsed JSONL data for page 1858
+INFO - Got page: 1861
+INFO - Collected 9 lines for user DAVE
+INFO - Collected 8 lines for user DAVESPRITE
+INFO - Parsed JSONL data for page 1861
+INFO - Got page: 1903
+INFO - Collected 51 lines for user CG
+INFO - Collected 50 lines for user EB
+INFO - Parsed JSONL data for page 1903
+INFO - Got page: 1907
+INFO - Collected 32 lines for user CG
+INFO - Collected 31 lines for user EB
+INFO - Parsed JSONL data for page 1907
+INFO - Got page: 1929
+INFO - Collected 12 lines for user CG
+INFO - Collected 11 lines for user EB
+INFO - Parsed JSONL data for page 1929
+INFO - Got page: 1930
+INFO - Collected 22 lines for user CG
+INFO - Collected 21 lines for user EB
+INFO - Parsed JSONL data for page 1930
+INFO - Got page: 1935
+INFO - Collected 30 lines for user TG
+INFO - Collected 29 lines for user GC
+INFO - Parsed JSONL data for page 1935
+INFO - Got page: 1936
+INFO - Collected 36 lines for user AT
+INFO - Collected 35 lines for user GG
+INFO - Parsed JSONL data for page 1936
+INFO - Got page: 1938
+INFO - Collected 12 lines for user GA
+INFO - Collected 11 lines for user TT
+INFO - Parsed JSONL data for page 1938
+INFO - Got page: 1939
+INFO - Collected 27 lines for user TG
+INFO - Collected 26 lines for user GC
+INFO - Parsed JSONL data for page 1939
+INFO - Got page: 2010
+INFO - Collected 29 lines for user CG
+INFO - Collected 28 lines for user TC
+INFO - Parsed JSONL data for page 2010
+INFO - Got page: 2024
+INFO - Collected 16 lines for user GC
+INFO - Collected 15 lines for user TC
+INFO - Parsed JSONL data for page 2024
+INFO - Got page: 2027
+INFO - Collected 49 lines for user CG
+INFO - Collected 48 lines for user TA
+INFO - Parsed JSONL data for page 2027
+INFO - Got page: 2055
+INFO - Collected 27 lines for user GC
+INFO - Collected 26 lines for user AC
+INFO - Parsed JSONL data for page 2055
+INFO - Got page: 2056
+INFO - Collected 2 lines for user GC
+INFO - Collected 1 lines for user TC
+INFO - Parsed JSONL data for page 2056
+INFO - Got page: 2058
+INFO - Collected 31 lines for user CG
+INFO - Collected 30 lines for user GC
+INFO - Parsed JSONL data for page 2058
+INFO - Got page: 2061
+INFO - Collected 27 lines for user CG
+INFO - Collected 26 lines for user GC
+INFO - Parsed JSONL data for page 2061
+INFO - Got page: 2082
+INFO - Collected 35 lines for user GC
+INFO - Collected 34 lines for user TA
+INFO - Parsed JSONL data for page 2082
+INFO - Got page: 2085
+INFO - Collected 40 lines for user TA
+INFO - Collected 39 lines for user AA
+INFO - Parsed JSONL data for page 2085
+INFO - Got page: 2122
+INFO - Collected 24 lines for user AT
+INFO - Collected 23 lines for user AG
+INFO - Parsed JSONL data for page 2122
+INFO - Got page: 2123
+INFO - Collected 31 lines for user AT
+INFO - Collected 30 lines for user TC
+INFO - Parsed JSONL data for page 2123
+INFO - Got page: 2139
+INFO - Collected 9 lines for user GA
+INFO - Collected 8 lines for user AA
+INFO - Parsed JSONL data for page 2139
+INFO - Got page: 2144
+INFO - Collected 29 lines for user AG
+INFO - Collected 28 lines for user AA
+INFO - Parsed JSONL data for page 2144
+INFO - Got page: 2146
+INFO - Collected 16 lines for user TA
+INFO - Collected 15 lines for user AA
+INFO - Parsed JSONL data for page 2146
+INFO - Got page: 2161
+INFO - Collected 14 lines for user CG
+INFO - Collected 13 lines for user AC
+INFO - Parsed JSONL data for page 2161
+INFO - Got page: 2162
+INFO - Collected 71 lines for user CT
+INFO - Collected 70 lines for user AC
+INFO - Parsed JSONL data for page 2162
+INFO - Got page: 2164
+INFO - Collected 13 lines for user AT
+INFO - Collected 12 lines for user AC
+INFO - Parsed JSONL data for page 2164
+INFO - Got page: 2168
+INFO - Collected 11 lines for user AT
+INFO - Collected 10 lines for user AA
+INFO - Parsed JSONL data for page 2168
+INFO - Got page: 2172
+INFO - Collected 12 lines for user AT
+INFO - Collected 11 lines for user AG
+INFO - Parsed JSONL data for page 2172
+INFO - Got page: 2173
+INFO - Collected 17 lines for user AT
+INFO - Collected 16 lines for user AG
+INFO - Parsed JSONL data for page 2173
+INFO - Got page: 2177
+INFO - Collected 1 lines for user AT
+INFO - Collected 0 lines for user CG
+INFO - Parsed JSONL data for page 2177
+INFO - Got page: 2193
+INFO - Collected 14 lines for user AC
+INFO - Collected 13 lines for user AA
+INFO - Parsed JSONL data for page 2193
+INFO - Got page: 2204
+INFO - Collected 37 lines for user GA
+INFO - Collected 36 lines for user AG
+INFO - Parsed JSONL data for page 2204
+INFO - Got page: 2221
+INFO - Collected 54 lines for user CT
+INFO - Collected 53 lines for user TC
+INFO - Parsed JSONL data for page 2221
+INFO - Got page: 2222
+INFO - Collected 41 lines for user CT
+INFO - Collected 40 lines for user AG
+INFO - Parsed JSONL data for page 2222
+INFO - Got page: 2237
+INFO - Collected 33 lines for user GC
+INFO - Collected 32 lines for user AG
+INFO - Parsed JSONL data for page 2237
+INFO - Got page: 2238
+INFO - Collected 18 lines for user GC
+INFO - Collected 17 lines for user AA
+INFO - Parsed JSONL data for page 2238
+INFO - Got page: 2246
+INFO - Collected 10 lines for user AG
+INFO - Collected 9 lines for user AA
+INFO - Parsed JSONL data for page 2246
+INFO - Got page: 2258
+INFO - Collected 16 lines for user GC
+INFO - Collected 15 lines for user AG
+INFO - Parsed JSONL data for page 2258
+INFO - Got page: 2276
+INFO - Collected 34 lines for user AG
+INFO - Collected 33 lines for user AA
+INFO - Parsed JSONL data for page 2276
+INFO - Got page: 2278
+INFO - Collected 29 lines for user CT
+INFO - Collected 28 lines for user AA
+INFO - Parsed JSONL data for page 2278
+INFO - Got page: 2279
+INFO - Collected 16 lines for user CT
+INFO - Collected 15 lines for user AA
+INFO - Parsed JSONL data for page 2279
+INFO - Got page: 2280
+INFO - Collected 25 lines for user CT
+INFO - Collected 24 lines for user AA
+INFO - Parsed JSONL data for page 2280
+INFO - Got page: 2281
+INFO - Collected 21 lines for user CT
+INFO - Collected 20 lines for user AA
+INFO - Parsed JSONL data for page 2281
+INFO - Got page: 2285
+INFO - Collected 4 lines for user EQUIUS
+INFO - Collected 3 lines for user ARADIASPRITE
+INFO - Parsed JSONL data for page 2285
+INFO - Got page: 2287
+INFO - Collected 12 lines for user ARADIABOT
+INFO - Collected 11 lines for user EQUIUS
+INFO - Parsed JSONL data for page 2287
+INFO - Got page: 2288
+INFO - Collected 8 lines for user ARADIABOT
+INFO - Collected 7 lines for user EQUIUS
+INFO - Parsed JSONL data for page 2288
+INFO - Got page: 2296
+INFO - Collected 56 lines for user CG
+INFO - Collected 55 lines for user AG
+INFO - Parsed JSONL data for page 2296
+INFO - Got page: 2297
+INFO - Collected 19 lines for user CG
+INFO - Collected 18 lines for user AG
+INFO - Parsed JSONL data for page 2297
+INFO - Got page: 2328
+INFO - Collected 35 lines for user GA
+INFO - Collected 34 lines for user CC
+INFO - Parsed JSONL data for page 2328
+INFO - Got page: 2341
+INFO - Collected 2 lines for user GA
+INFO - Collected 1 lines for user AG
+INFO - Parsed JSONL data for page 2341
+INFO - Got page: 2343
+INFO - Collected 53 lines for user GA
+INFO - Collected 52 lines for user CA
+INFO - Parsed JSONL data for page 2343
+INFO - Got page: 2349
+INFO - Collected 2 lines for user AT
+INFO - Collected 1 lines for user AG
+INFO - Parsed JSONL data for page 2349
+INFO - Got page: 2350
+INFO - Collected 35 lines for user AT
+INFO - Collected 34 lines for user AG
+INFO - Parsed JSONL data for page 2350
+INFO - Got page: 2356
+INFO - Collected 14 lines for user GA
+INFO - Collected 13 lines for user AG
+INFO - Parsed JSONL data for page 2356
+INFO - Got page: 2369
+INFO - Collected 27 lines for user AT
+INFO - Collected 26 lines for user AG
+INFO - Parsed JSONL data for page 2369
+INFO - Got page: 2370
+INFO - Collected 15 lines for user AT
+INFO - Collected 14 lines for user AG
+INFO - Parsed JSONL data for page 2370
+ERROR - Closed crawler due to connection error at 13:32:56 2022/12/19
+INFO - Time elapsed: 2883.418601 seconds
+INFO - Final page parsed: 2399

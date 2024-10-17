@@ -1,0 +1,25 @@
+LOGS FOR 2020-05-21
+
+[2020-05-21 21:51:42] > Established connection with 192.168.0.58:47334
+[2020-05-21 21:51:46] > Connected with 192.168.0.58:47334
+[2020-05-21 21:54:28] > Disconnected from 192.168.0.58
+[2020-05-21 22:00:50] > Established connection with 192.168.0.58:47364
+[2020-05-21 22:01:04] > Connected with 192.168.0.58:47364
+[2020-05-21 22:04:45] > Sent h.py to client.
+[2020-05-21 22:05:57] > Disconnected from 192.168.0.58
+[2020-05-21 22:22:16] > Established connection with 192.168.0.58:47402
+[2020-05-21 22:22:25] > Connected with 192.168.0.58:47402
+[2020-05-21 22:25:34] > Established connection with 192.168.0.58:47418
+[2020-05-21 22:25:38] > Connected with 192.168.0.58:47418
+[2020-05-21 22:26:14] > Disconnected from 192.168.0.58
+[2020-05-21 22:26:21] > Established connection with 192.168.0.58:47430
+[2020-05-21 22:26:28] > Connected with 192.168.0.58:47430
+[2020-05-21 22:29:01] > Established connection with 192.168.0.58:47444
+[2020-05-21 22:29:11] > Connected with 192.168.0.58:47444
+[2020-05-21 22:30:05] > Disconnected from 192.168.0.58
+[2020-05-21 22:30:24] > Established connection with 192.168.0.58:47446
+[2020-05-21 22:30:31] > Connected with 192.168.0.58:47446
+[2020-05-21 22:30:35] > Got image: apshot-2020-05-21-22:30:34.jpg
+[2020-05-21 22:31:10] > Got image: apshot-2020-05-21-22:31:09.jpg
+[2020-05-21 22:31:48] > Got image: apshot-2020-05-21-22:31:47.jpg
+[2020-05-21 22:42:09] > Disconnected from 192.168.0.58

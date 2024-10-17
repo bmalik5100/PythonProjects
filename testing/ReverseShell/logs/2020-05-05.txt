@@ -1,0 +1,26 @@
+LOGS FOR 2020-05-05
+
+[2020-05-05 09:34:53] > Established connection with 192.168.0.58:48286
+[2020-05-05 09:34:56] > Connected with 192.168.0.58:48286
+[2020-05-05 09:35:33] > Exfiltrated test.txt
+[2020-05-05 09:36:06] > Exfiltrated test.txt
+[2020-05-05 09:39:13] > Established connection with 192.168.0.58:48312
+[2020-05-05 09:39:15] > Connected with 192.168.0.58:48286
+[2020-05-05 09:40:00] > Connected with 192.168.0.58:48312
+[2020-05-05 09:40:29] > Established connection with 192.168.0.58:48334
+[2020-05-05 09:40:31] > Connected with 192.168.0.58:48312
+[2020-05-05 09:45:11] > Connected with 192.168.0.58:48334
+[2020-05-05 09:45:16] > Established connection with 192.168.0.58:48442
+[2020-05-05 09:45:19] > Connected with 192.168.0.58:48334
+[2020-05-05 09:46:27] > Connected with 192.168.0.58:48442
+[2020-05-05 09:46:33] > Established connection with 192.168.0.58:48456
+[2020-05-05 09:46:37] > Connected with 192.168.0.58:48456
+[2020-05-05 09:49:46] > Established connection with 192.168.0.58:48466
+[2020-05-05 09:49:47] > Connected with 192.168.0.58:48466
+[2020-05-05 09:51:25] > Established connection with 192.168.0.58:48476
+[2020-05-05 09:51:26] > Connected with 192.168.0.58:48466
+[2020-05-05 09:52:56] > Connected with 192.168.0.58:48466
+[2020-05-05 09:53:18] > Established connection with 192.168.0.58:48498
+[2020-05-05 09:53:20] > Connected with 192.168.0.58:48498
+[2020-05-05 09:57:01] > Established connection with 192.168.0.58:48512
+[2020-05-05 09:57:19] > Connected with 192.168.0.58:48512

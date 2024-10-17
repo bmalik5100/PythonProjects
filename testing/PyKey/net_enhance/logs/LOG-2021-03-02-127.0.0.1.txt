@@ -1,0 +1,33 @@
+LOG FOR arturo
+Machine: Linux-5.9.0-2parrot1-amd64-x86_64-with-glibc2.31
+Time: 2021-03-02 at 22:24:46:
+IP: 127.0.0.1
+
+alt+(tab)kjnajkdnajsdkjwnqwjkdn
+ksskdj iheflasdn laskdn
+sdjasnk ssadkjsakd
+asdajsdn akjd ad
+asdkjasdnkasdn skjda
+sdaksjdnaskdjan dk jasn
+asdkasjdnaskjdnaks das
+sdk asdasdnakjdansdkj
+asd kasjdn saj dnakjsn
+^		LOG FOR arturo
+		MACHINE: Linux-5.9.0-2parrot1-amd64-x86_64-with-glibc2.31
+		TIME: 2021-03-02 at 22:32:35:
+IP: 127.0.0.1
+
+alt+(tab)alt+(tab)alt+(tab)^c
+ Connection lost.
+ Elapsed time: 6.83 seconds.
+
+		LOG FOR arturo
+		MACHINE: Linux-5.9.0-2parrot1-amd64-x86_64-with-glibc2.31
+		TIME: 2021-03-02 at 22:32:52:
+IP: 127.0.0.1
+
+alt+(tab)alt+alt+(tab)alt+(tab)alt+alt+alt+(tab)alt+alt+(tab)alt+(tab)thats cool
+^c
+ Connection lost.
+ Elapsed time: 47.86 seconds.
+

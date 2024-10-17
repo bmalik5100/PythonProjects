@@ -1,0 +1,74 @@
+LOGS FOR 2020-08-04
+
+[2020-08-04 13:36:45] > Established connection with 192.168.0.14:59260
+[2020-08-04 13:36:48] > Connected with 192.168.0.14:59260
+[2020-08-04 13:48:54] > Established connection with 192.168.0.14:59302
+[2020-08-04 13:48:58] > Connected with 192.168.0.14:59302
+[2020-08-04 13:53:00] > Fat transferred makefile.py
+[2020-08-04 13:57:36] > Fat transferred makefile.py
+[2020-08-04 14:06:47] > Established connection with 192.168.0.14:59366
+[2020-08-04 14:06:59] > Connected with 192.168.0.14:59366
+[2020-08-04 14:07:19] > Fat transferred kookaburra.jpg
+[2020-08-04 14:34:46] > Established connection with 192.168.0.14:59556
+[2020-08-04 14:34:48] > Connected with 192.168.0.14:59556
+[2020-08-04 14:34:54] > Fat transferred kookaburra.jpg
+[2020-08-04 15:09:46] > Established connection with 192.168.0.14:59642
+[2020-08-04 15:09:49] > Connected with 192.168.0.14:59642
+[2020-08-04 15:18:55] > Established connection with 192.168.0.14:59662
+[2020-08-04 15:18:57] > Connected with 192.168.0.14:59662
+[2020-08-04 15:24:22] > Established connection with 192.168.0.14:59690
+[2020-08-04 15:24:23] > Connected with 192.168.0.14:59690
+[2020-08-04 15:26:04] > Established connection with 192.168.0.14:59704
+[2020-08-04 15:26:05] > Connected with 192.168.0.14:59704
+[2020-08-04 15:28:39] > Established connection with 192.168.0.14:59734
+[2020-08-04 15:28:41] > Connected with 192.168.0.14:59734
+[2020-08-04 15:30:11] > Established connection with 192.168.0.14:59754
+[2020-08-04 15:30:15] > Connected with 192.168.0.14:59754
+[2020-08-04 15:32:14] > Established connection with 192.168.0.14:59776
+[2020-08-04 15:32:21] > Connected with 192.168.0.14:59776
+[2020-08-04 15:33:20] > Established connection with 192.168.0.14:59786
+[2020-08-04 15:33:22] > Connected with 192.168.0.14:59786
+[2020-08-04 15:35:59] > Established connection with 192.168.0.14:59800
+[2020-08-04 15:36:29] > Established connection with 192.168.0.14:59808
+[2020-08-04 15:36:31] > Connected with 192.168.0.14:59800
+[2020-08-04 15:37:00] > Established connection with 192.168.0.14:59814
+[2020-08-04 15:37:02] > Connected with 192.168.0.14:59814
+[2020-08-04 15:38:42] > Established connection with 192.168.0.14:59822
+[2020-08-04 15:38:44] > Connected with 192.168.0.14:59822
+[2020-08-04 15:39:06] > Fat transferred kook.jpg
+[2020-08-04 15:43:31] > Established connection with 192.168.0.14:59858
+[2020-08-04 15:43:35] > Connected with 192.168.0.14:59858
+[2020-08-04 15:43:43] > Fat transferred kook.jpg
+[2020-08-04 15:45:49] > Established connection with 192.168.0.14:59888
+[2020-08-04 15:45:51] > Connected with 192.168.0.14:59888
+[2020-08-04 15:45:56] > Fat transferred kook.jpg
+[2020-08-04 15:46:35] > Established connection with 192.168.0.14:59898
+[2020-08-04 15:46:37] > Connected with 192.168.0.14:59898
+[2020-08-04 15:46:45] > Fat transferred kook.jpg
+[2020-08-04 15:47:26] > Established connection with 192.168.0.14:59910
+[2020-08-04 15:47:28] > Connected with 192.168.0.14:59910
+[2020-08-04 15:47:34] > Fat transferred kook.jpg
+[2020-08-04 15:48:03] > Established connection with 192.168.0.14:59918
+[2020-08-04 15:48:05] > Connected with 192.168.0.14:59918
+[2020-08-04 15:48:09] > Fat transferred kook.jpg
+[2020-08-04 15:59:59] > Established connection with 192.168.0.14:59944
+[2020-08-04 16:00:01] > Connected with 192.168.0.14:59944
+[2020-08-04 16:00:27] > Got image: apshot-2020-08-04-16:00:26.jpg
+[2020-08-04 16:05:13] > Got image: apshot-2020-08-04-16:05:12.jpg
+[2020-08-04 16:15:20] > Established connection with 192.168.0.14:60010
+[2020-08-04 16:17:20] > Established connection with 192.168.0.14:60042
+[2020-08-04 16:17:23] > Connected with 192.168.0.14:60042
+[2020-08-04 16:17:33] > Sent kook.jpg to client.
+[2020-08-04 16:20:33] > Established connection with 192.168.0.14:60080
+[2020-08-04 16:20:43] > Connected with 192.168.0.14:60080
+[2020-08-04 16:20:49] > Sent kook.jpg to client.
+[2020-08-04 16:21:36] > Established connection with 192.168.0.14:60094
+[2020-08-04 16:21:38] > Connected with 192.168.0.14:60094
+[2020-08-04 16:22:14] > Sent kook.jpg to client.
+[2020-08-04 16:25:06] > Sent dbg.txt to client.
+[2020-08-04 16:26:58] > Established connection with 192.168.0.14:60124
+[2020-08-04 16:27:03] > Connected with 192.168.0.14:60124
+[2020-08-04 16:27:47] > Sent dbg.txt to client.
+[2020-08-04 16:28:13] > Established connection with 192.168.0.14:60132
+[2020-08-04 16:28:16] > Connected with 192.168.0.14:60132
+[2020-08-04 16:28:35] > Sent dbg.txt to client.

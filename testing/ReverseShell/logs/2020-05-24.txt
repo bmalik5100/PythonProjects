@@ -1,0 +1,7 @@
+LOGS FOR 2020-05-24
+
+[2020-05-24 13:45:59] > Established connection with 192.168.0.58:59344
+[2020-05-24 13:46:08] > Connected with 192.168.0.58:59344
+[2020-05-24 13:46:23] > Fat transferred makefile.pyto server.
+[2020-05-24 13:51:59] > Connected with 192.168.0.58:59344
+[2020-05-24 13:52:07] > Sent makefile.py to client.

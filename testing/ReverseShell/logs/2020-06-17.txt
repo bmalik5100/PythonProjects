@@ -1,0 +1,35 @@
+LOGS FOR 2020-06-17
+
+[2020-06-17 14:24:42] > Established connection with 192.168.0.58:49456
+[2020-06-17 14:24:46] > Connected with 192.168.0.58:49456
+[2020-06-17 14:28:03] > Established connection with 192.168.0.58:49468
+[2020-06-17 14:28:06] > Connected with 192.168.0.58:49468
+[2020-06-17 14:29:53] > Established connection with 192.168.0.58:49490
+[2020-06-17 14:29:55] > Connected with 192.168.0.58:49490
+[2020-06-17 15:30:02] > Established connection with 192.168.0.58:50200
+[2020-06-17 15:30:05] > Connected with 192.168.0.58:50200
+[2020-06-17 15:31:08] > Disconnected from 192.168.0.58
+[2020-06-17 15:31:15] > Established connection with 192.168.0.58:50212
+[2020-06-17 15:31:17] > Connected with 192.168.0.58:50212
+[2020-06-17 15:33:32] > Established connection with 192.168.0.58:50230
+[2020-06-17 15:33:34] > Connected with 192.168.0.58:50230
+[2020-06-17 15:38:55] > Connected with 192.168.0.58:50230
+[2020-06-17 15:41:07] > Established connection with 192.168.0.58:50294
+[2020-06-17 15:41:09] > Connected with 192.168.0.58:50294
+[2020-06-17 15:41:37] > Established connection with 192.168.0.58:50304
+[2020-06-17 15:41:40] > Connected with 192.168.0.58:50304
+[2020-06-17 15:47:03] > Established connection with 192.168.0.58:50328
+[2020-06-17 15:47:05] > Connected with 192.168.0.58:50328
+[2020-06-17 15:47:54] > Established connection with 192.168.0.58:50336
+[2020-06-17 15:47:56] > Connected with 192.168.0.58:50336
+[2020-06-17 15:48:23] > Established connection with 192.168.0.58:50346
+[2020-06-17 15:48:25] > Connected with 192.168.0.58:50346
+[2020-06-17 15:51:19] > Disconnected from 192.168.0.58
+[2020-06-17 16:06:50] > Established connection with 192.168.0.58:50632
+[2020-06-17 16:06:52] > Connected with 192.168.0.58:50632
+[2020-06-17 16:08:08] > Established connection with 192.168.0.58:50642
+[2020-06-17 16:08:11] > Connected with 192.168.0.58:50642
+[2020-06-17 16:18:19] > Established connection with 192.168.0.58:50668
+[2020-06-17 16:18:21] > Connected with 192.168.0.58:50668
+[2020-06-17 16:18:51] > Got image: apshot-2020-06-17-16:18:50.jpg
+[2020-06-17 16:26:28] > Disconnected from 192.168.0.58

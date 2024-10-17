@@ -1,0 +1,5 @@
+LOGS FOR 2020-06-11
+
+[2020-06-11 17:32:55] > Established connection with 192.168.0.58:51532
+[2020-06-11 17:33:08] > Connected with 192.168.0.58:51532
+[2020-06-11 17:33:32] > Disconnected from 192.168.0.58

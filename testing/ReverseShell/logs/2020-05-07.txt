@@ -1,0 +1,50 @@
+LOGS FOR 2020-05-07
+
+[2020-05-07 16:40:31] > Established connection with 192.168.0.58:57992
+[2020-05-07 16:40:48] > Connected with 192.168.0.58:57992
+[2020-05-07 16:41:20] > Established connection with 192.168.0.58:58004
+[2020-05-07 16:41:32] > Connected with 192.168.0.58:58004
+[2020-05-07 16:41:56] > Disconnected from 192.168.0.58
+[2020-05-07 19:49:27] > Established connection with 192.168.0.58:59666
+[2020-05-07 19:49:47] > Connected with 192.168.0.58:58004
+[2020-05-07 19:50:13] > Connected with 192.168.0.58:59666
+[2020-05-07 19:50:44] > Connected with 192.168.0.58:59666
+[2020-05-07 19:50:48] > Disconnected from 192.168.0.58
+[2020-05-07 20:03:04] > Established connection with 192.168.0.58:59838
+[2020-05-07 20:03:09] > Connected with 192.168.0.58:59838
+[2020-05-07 20:05:02] > Established connection with 192.168.0.58:59860
+[2020-05-07 20:05:04] > Connected with 192.168.0.58:59860
+[2020-05-07 20:06:01] > Disconnected from 192.168.0.58
+[2020-05-07 20:08:34] > Established connection with 192.168.0.58:59880
+[2020-05-07 20:08:36] > Connected with 192.168.0.58:59880
+[2020-05-07 20:08:40] > Disconnected from 192.168.0.58
+[2020-05-07 20:10:09] > Established connection with 192.168.0.58:59900
+[2020-05-07 20:10:15] > Connected with 192.168.0.58:59900
+[2020-05-07 20:10:18] > Disconnected from 192.168.0.58
+[2020-05-07 20:10:24] > Established connection with 192.168.0.58:59908
+[2020-05-07 20:10:37] > Connected with 192.168.0.58:59908
+[2020-05-07 20:11:25] > Disconnected from 192.168.0.58
+[2020-05-07 20:11:32] > Established connection with 192.168.0.58:59920
+[2020-05-07 20:11:34] > Connected with 192.168.0.58:59920
+[2020-05-07 20:12:05] > Connected with 192.168.0.58:59920
+[2020-05-07 20:12:59] > Disconnected from 192.168.0.58
+[2020-05-07 20:13:02] > Established connection with 192.168.0.58:59936
+[2020-05-07 20:13:04] > Connected with 192.168.0.58:59936
+[2020-05-07 20:13:13] > Connected with 192.168.0.58:59936
+[2020-05-07 20:13:40] > Connected with 192.168.0.58:59936
+[2020-05-07 20:13:42] > Disconnected from 192.168.0.58
+[2020-05-07 20:13:49] > Established connection with 192.168.0.58:59946
+[2020-05-07 20:13:52] > Connected with 192.168.0.58:59946
+[2020-05-07 20:15:20] > Connected with 192.168.0.58:59946
+[2020-05-07 20:15:22] > Disconnected from 192.168.0.58
+[2020-05-07 20:15:27] > Established connection with 192.168.0.58:59962
+[2020-05-07 20:15:29] > Connected with 192.168.0.58:59962
+[2020-05-07 20:17:01] > Disconnected from 192.168.0.58
+[2020-05-07 20:17:14] > Established connection with 192.168.0.58:59980
+[2020-05-07 20:17:18] > Connected with 192.168.0.58:59980
+[2020-05-07 20:19:53] > Disconnected from 192.168.0.58
+[2020-05-07 20:19:57] > Established connection with 192.168.0.58:59990
+[2020-05-07 20:20:14] > Connected with 192.168.0.58:59990
+[2020-05-07 20:20:52] > Disconnected from 192.168.0.58
+[2020-05-07 20:20:55] > Established connection with 192.168.0.58:59998
+[2020-05-07 20:21:00] > Connected with 192.168.0.58:59998

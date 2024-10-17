@@ -1,0 +1,59 @@
+LOGS FOR 2020-04-29
+
+[2020-04-29 17:03:36] > Established connection with 192.168.0.58:54748
+[2020-04-29 17:03:38] > Connected with 192.168.0.58:54748
+[2020-04-29 17:03:50] > Exfiltratedtest.txt
+[2020-04-29 17:11:43] > Established connection with 192.168.0.58:54892
+[2020-04-29 17:11:45] > Connected with 192.168.0.58:54892
+[2020-04-29 17:13:42] > Established connection with 192.168.0.58:54918
+[2020-04-29 17:13:47] > Connected with 192.168.0.58:54918
+[2020-04-29 17:13:52] > Exfiltrated test.txt
+[2020-04-29 17:15:38] > Senthello2.txtto client.
+[2020-04-29 19:18:54] > Established connection with 192.168.0.58:55142
+[2020-04-29 19:18:56] > Connected with 192.168.0.58:54918
+[2020-04-29 19:20:37] > Connected with 192.168.0.58:55142
+[2020-04-29 19:22:53] > Established connection with 192.168.0.58:55180
+[2020-04-29 19:22:54] > Connected with 192.168.0.58:55180
+[2020-04-29 19:23:00] > Senthello2.txtto client.
+[2020-04-29 19:24:32] > Established connection with 192.168.0.58:55202
+[2020-04-29 19:24:35] > Connected with 192.168.0.58:55202
+[2020-04-29 19:24:47] > Established connection with 192.168.0.58:55208
+[2020-04-29 19:24:51] > Connected with 192.168.0.58:55202
+[2020-04-29 19:25:32] > Connected with 192.168.0.58:55202
+[2020-04-29 19:26:56] > Established connection with 192.168.0.58:55236
+[2020-04-29 19:26:59] > Connected with 192.168.0.58:55236
+[2020-04-29 19:27:13] > Senthello2.txtto client.
+[2020-04-29 19:29:25] > Established connection with 192.168.0.58:55270
+[2020-04-29 19:29:27] > Connected with 192.168.0.58:55270
+[2020-04-29 19:29:37] > Senthello3.pyto client.
+[2020-04-29 19:41:52] > Established connection with 192.168.0.58:55336
+[2020-04-29 19:41:58] > Connected with 192.168.0.58:55336
+[2020-04-29 19:42:31] > Sent hello2.txt to client.
+[2020-04-29 19:44:53] > Established connection with 192.168.0.58:55364
+[2020-04-29 19:44:56] > Connected with 192.168.0.58:55364
+[2020-04-29 19:46:04] > Established connection with 192.168.0.58:55380
+[2020-04-29 19:46:07] > Connected with 192.168.0.58:55380
+[2020-04-29 19:47:41] > Established connection with 192.168.0.58:55392
+[2020-04-29 19:47:44] > Connected with 192.168.0.58:55392
+[2020-04-29 19:47:57] > Established connection with 192.168.0.58:55398
+[2020-04-29 19:48:00] > Connected with 192.168.0.58:55398
+[2020-04-29 19:49:17] > Established connection with 192.168.0.58:55412
+[2020-04-29 19:49:20] > Connected with 192.168.0.58:55412
+[2020-04-29 19:49:53] > Established connection with 192.168.0.58:55422
+[2020-04-29 19:49:58] > Connected with 192.168.0.58:55422
+[2020-04-29 19:50:37] > Sent hello2.txt to client.
+[2020-04-29 20:46:30] > Established connection with 192.168.0.58:55550
+[2020-04-29 20:46:34] > Connected with 192.168.0.58:55422
+[2020-04-29 20:52:56] > Established connection with 192.168.0.58:55630
+[2020-04-29 20:53:01] > Connected with 192.168.0.58:55630
+[2020-04-29 20:53:05] > Sent hello2.txt to client.
+[2020-04-29 20:53:40] > Sent hello2.txt to client.
+[2020-04-29 20:53:54] > Sent hello2.txt to client.
+[2020-04-29 20:55:04] > Established connection with 192.168.0.58:55656
+[2020-04-29 20:55:14] > Connected with 192.168.0.58:55656
+[2020-04-29 20:55:27] > Sent hello2.txt to client.
+[2020-04-29 20:55:36] > Sent hello2.txt to client.
+[2020-04-29 20:56:51] > Sent hello2.txt to client.
+[2020-04-29 20:57:01] > Sent hello2.txt to client.
+[2020-04-29 21:55:55] > Established connection with 192.168.0.58:55862
+[2020-04-29 21:56:02] > Connected with 192.168.0.58:55862

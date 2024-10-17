@@ -1,0 +1,6 @@
+LOGS FOR 2020-10-18
+
+[2020-10-18 22:31:42] > Established connection with 127.0.0.1:51286
+[2020-10-18 22:32:02] > Connected with 127.0.0.1:51286
+[2020-10-18 22:33:13] > Fat transferred dbg.txt
+[2020-10-18 22:34:27] > Got image: apshot-2020-10-18-22:34:26.jpg

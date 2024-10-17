@@ -1,0 +1,37 @@
+LOGS FOR 2020-05-29
+
+[2020-05-29 11:26:41] > Established connection with 192.168.0.58:46896
+[2020-05-29 11:26:44] > Connected with 192.168.0.58:46896
+[2020-05-29 11:27:26] > Established connection with 192.168.0.58:46904
+[2020-05-29 11:27:28] > Connected with 192.168.0.58:46896
+[2020-05-29 11:27:41] > Connected with 192.168.0.58:46904
+[2020-05-29 18:45:51] > Established connection with 192.168.0.58:47760
+[2020-05-29 18:45:59] > Connected with 192.168.0.58:47760
+[2020-05-29 20:47:56] > Established connection with 192.168.0.58:47886
+[2020-05-29 20:47:59] > Connected with 192.168.0.58:47886
+[2020-05-29 20:49:22] > Established connection with 192.168.0.58:47906
+[2020-05-29 20:49:24] > Connected with 192.168.0.58:47906
+[2020-05-29 20:49:59] > Established connection with 192.168.0.58:47916
+[2020-05-29 20:50:03] > Connected with 192.168.0.58:47916
+[2020-05-29 20:51:42] > Established connection with 192.168.0.58:47934
+[2020-05-29 20:51:45] > Connected with 192.168.0.58:47934
+[2020-05-29 20:53:21] > Established connection with 192.168.0.58:48024
+[2020-05-29 20:54:12] > Connected with 192.168.0.58:48024
+[2020-05-29 21:09:40] > Established connection with 192.168.0.58:48078
+[2020-05-29 21:09:41] > Connected with 192.168.0.58:48078
+[2020-05-29 21:09:45] > Got image: apshot-2020-05-29-21:09:44.jpg
+[2020-05-29 21:12:19] > Disconnected from 192.168.0.58
+[2020-05-29 21:13:46] > Established connection with 192.168.0.58:48132
+[2020-05-29 21:13:50] > Connected with 192.168.0.58:48132
+[2020-05-29 21:14:42] > Disconnected from 192.168.0.58
+[2020-05-29 21:23:16] > Established connection with 192.168.0.58:48200
+[2020-05-29 21:23:19] > Connected with 192.168.0.58:48200
+[2020-05-29 21:24:47] > Disconnected from 192.168.0.58
+[2020-05-29 21:24:55] > Established connection with 192.168.0.58:48226
+[2020-05-29 21:24:57] > Connected with 192.168.0.58:48226
+[2020-05-29 21:27:49] > Disconnected from 192.168.0.58
+[2020-05-29 21:27:53] > Established connection with 192.168.0.58:48322
+[2020-05-29 21:27:55] > Connected with 192.168.0.58:48322
+[2020-05-29 21:28:02] > Fat transferred makefile.pyto server.
+[2020-05-29 21:34:57] > Established connection with 192.168.0.58:48370
+[2020-05-29 21:34:59] > Connected with 192.168.0.58:48370

@@ -1,0 +1,139 @@
+LOGS FOR 2020-05-10
+
+[2020-05-10 15:22:49] > Established connection with 192.168.0.58:46100
+[2020-05-10 15:22:56] > Connected with 192.168.0.58:46100
+[2020-05-10 15:23:10] > Exfiltrated Client.py
+[2020-05-10 15:25:21] > Disconnected from 192.168.0.58
+[2020-05-10 15:31:39] > Established connection with 192.168.0.58:46200
+[2020-05-10 15:31:49] > Connected with 192.168.0.58:46200
+[2020-05-10 15:32:26] > Disconnected from 192.168.0.58
+[2020-05-10 15:34:43] > Established connection with 192.168.0.58:46226
+[2020-05-10 15:34:57] > Established connection with 192.168.0.58:46232
+[2020-05-10 15:34:59] > Connected with 192.168.0.58:46232
+[2020-05-10 15:35:25] > Exfiltrated test.txt
+[2020-05-10 17:52:28] > Disconnected from 192.168.0.58
+[2020-05-10 18:05:42] > Established connection with 192.168.0.58:47606
+[2020-05-10 18:05:47] > Connected with 192.168.0.58:47606
+[2020-05-10 19:57:23] > Established connection with 192.168.0.58:48164
+[2020-05-10 19:57:26] > Connected with 192.168.0.58:48164
+[2020-05-10 19:57:55] > Disconnected from 192.168.0.58
+[2020-05-10 19:58:59] > Established connection with 192.168.0.58:48184
+[2020-05-10 19:59:00] > Connected with 192.168.0.58:48184
+[2020-05-10 19:59:15] > Disconnected from 192.168.0.58
+[2020-05-10 20:07:18] > Established connection with 192.168.0.58:48286
+[2020-05-10 20:07:23] > Connected with 192.168.0.58:48286
+[2020-05-10 20:07:46] > Disconnected from 192.168.0.58
+[2020-05-10 20:10:21] > Established connection with 192.168.0.58:48330
+[2020-05-10 20:10:24] > Connected with 192.168.0.58:48330
+[2020-05-10 20:10:35] > Disconnected from 192.168.0.58
+[2020-05-10 20:11:04] > Established connection with 192.168.0.58:48340
+[2020-05-10 20:11:07] > Connected with 192.168.0.58:48340
+[2020-05-10 20:11:24] > Disconnected from 192.168.0.58
+[2020-05-10 20:11:42] > Established connection with 192.168.0.58:48346
+[2020-05-10 20:11:43] > Connected with 192.168.0.58:48346
+[2020-05-10 20:11:54] > Disconnected from 192.168.0.58
+[2020-05-10 20:14:41] > Established connection with 192.168.0.58:48380
+[2020-05-10 20:14:42] > Connected with 192.168.0.58:48380
+[2020-05-10 20:15:02] > Disconnected from 192.168.0.58
+[2020-05-10 20:15:06] > Established connection with 192.168.0.58:48388
+[2020-05-10 20:15:09] > Connected with 192.168.0.58:48388
+[2020-05-10 20:16:46] > Disconnected from 192.168.0.58
+[2020-05-10 20:16:51] > Established connection with 192.168.0.58:48416
+[2020-05-10 20:16:53] > Connected with 192.168.0.58:48416
+[2020-05-10 20:25:29] > Disconnected from 192.168.0.58
+[2020-05-10 20:28:32] > Established connection with 192.168.0.58:48650
+[2020-05-10 20:28:33] > Connected with 192.168.0.58:48650
+[2020-05-10 20:28:54] > Disconnected from 192.168.0.58
+[2020-05-10 20:32:19] > Established connection with 192.168.0.58:48730
+[2020-05-10 20:32:22] > Connected with 192.168.0.58:48730
+[2020-05-10 20:32:26] > Got snapshot-2020-05-10::20:32:25.jpg
+[2020-05-10 20:35:06] > Disconnected from 192.168.0.58
+[2020-05-10 20:40:18] > Established connection with 192.168.0.58:48834
+[2020-05-10 20:40:20] > Connected with 192.168.0.58:48834
+[2020-05-10 20:44:59] > Established connection with 192.168.0.58:48892
+[2020-05-10 20:45:02] > Connected with 192.168.0.58:48892
+[2020-05-10 20:46:47] > Established connection with 192.168.0.58:48914
+[2020-05-10 20:46:49] > Connected with 192.168.0.58:48914
+[2020-05-10 20:51:14] > Established connection with 192.168.0.58:48932
+[2020-05-10 20:51:16] > Connected with 192.168.0.58:48932
+[2020-05-10 20:52:30] > Disconnected from 192.168.0.58
+[2020-05-10 20:52:59] > Established connection with 192.168.0.58:48956
+[2020-05-10 20:53:03] > Connected with 192.168.0.58:48956
+[2020-05-10 20:54:06] > Established connection with 192.168.0.58:48972
+[2020-05-10 20:54:08] > Connected with 192.168.0.58:48972
+[2020-05-10 20:54:26] > Disconnected from 192.168.0.58
+[2020-05-10 20:54:29] > Established connection with 192.168.0.58:48978
+[2020-05-10 20:54:31] > Connected with 192.168.0.58:48978
+[2020-05-10 20:55:24] > Established connection with 192.168.0.58:48992
+[2020-05-10 20:55:26] > Connected with 192.168.0.58:48992
+[2020-05-10 20:57:18] > Established connection with 192.168.0.58:49028
+[2020-05-10 20:57:19] > Connected with 192.168.0.58:49028
+[2020-05-10 20:59:01] > Established connection with 192.168.0.58:49052
+[2020-05-10 20:59:03] > Connected with 192.168.0.58:49052
+[2020-05-10 20:59:07] > Got snapshot-2020-05-10::20:59:06.jpg
+[2020-05-10 20:59:41] > Established connection with 192.168.0.58:49068
+[2020-05-10 20:59:44] > Connected with 192.168.0.58:49068
+[2020-05-10 20:59:48] > Got snapshot-2020-05-10::20:59:47.jpg
+[2020-05-10 21:01:55] > Established connection with 192.168.0.58:49102
+[2020-05-10 21:01:59] > Connected with 192.168.0.58:49102
+[2020-05-10 21:02:07] > Got snapshot-2020-05-10::21:02:06.jpg
+[2020-05-10 21:04:09] > Disconnected from 192.168.0.58
+[2020-05-10 21:04:16] > Established connection with 192.168.0.58:49138
+[2020-05-10 21:04:17] > Connected with 192.168.0.58:49138
+[2020-05-10 21:04:27] > Got snapshot-2020-05-10::21:04:26.jpg
+[2020-05-10 21:05:50] > Established connection with 192.168.0.58:49152
+[2020-05-10 21:05:51] > Connected with 192.168.0.58:49152
+[2020-05-10 21:06:41] > Got cal variable 'rval' referenced before assignment
+[2020-05-10 21:08:06] > Established connection with 192.168.0.58:49186
+[2020-05-10 21:08:07] > Connected with 192.168.0.58:49186
+[2020-05-10 21:08:18] > Got cal variable 'rval' referenced before assignment
+[2020-05-10 21:09:17] > Established connection with 192.168.0.58:49200
+[2020-05-10 21:09:20] > Connected with 192.168.0.58:49200
+[2020-05-10 21:09:27] > Got cal variable 'rval' referenced before assignment
+[2020-05-10 22:24:51] > Established connection with 192.168.0.58:49344
+[2020-05-10 22:24:52] > Connected with 192.168.0.58:49344
+[2020-05-10 22:26:31] > Got snapshot-2020-05-10::22:26:30.jpg
+[2020-05-10 22:28:45] > Established connection with 192.168.0.58:49378
+[2020-05-10 22:28:48] > Connected with 192.168.0.58:49378
+[2020-05-10 22:28:52] > Got snapshot-2020-05-10::22:28:51.jpg
+[2020-05-10 22:30:40] > Established connection with 192.168.0.58:49404
+[2020-05-10 22:30:42] > Connected with 192.168.0.58:49404
+[2020-05-10 22:30:47] > Got snapshot-2020-05-10::22:30:46.jpg
+[2020-05-10 22:31:06] > Established connection with 192.168.0.58:49410
+[2020-05-10 22:31:07] > Connected with 192.168.0.58:49410
+[2020-05-10 22:31:12] > Got snapshot-2020-05-10::22:31:11.jpg
+[2020-05-10 22:32:00] > Established connection with 192.168.0.58:49424
+[2020-05-10 22:32:01] > Connected with 192.168.0.58:49424
+[2020-05-10 22:32:20] > Got snapshot-2020-05-10::22:32:19.jpg
+[2020-05-10 22:34:06] > Established connection with 192.168.0.58:49452
+[2020-05-10 22:34:08] > Connected with 192.168.0.58:49452
+[2020-05-10 22:34:12] > Got image:snapshot-2020-05-10::22:34:11.jpg
+[2020-05-10 22:36:52] > Established connection with 192.168.0.58:49584
+[2020-05-10 22:36:53] > Connected with 192.168.0.58:49584
+[2020-05-10 22:37:01] > Got image:snapshot-2020-05-10::22:37:00.jpg
+[2020-05-10 22:39:35] > Established connection with 192.168.0.58:49614
+[2020-05-10 22:39:36] > Connected with 192.168.0.58:49614
+[2020-05-10 22:39:41] > Got image:snapshot-2020-05-10::22:39:40.jpg
+[2020-05-10 22:40:40] > Established connection with 192.168.0.58:49630
+[2020-05-10 22:40:42] > Connected with 192.168.0.58:49630
+[2020-05-10 22:40:45] > Got image:snapshot-2020-05-10::22:40:44.jpg
+[2020-05-10 22:43:46] > Established connection with 192.168.0.58:49670
+[2020-05-10 22:43:47] > Connected with 192.168.0.58:49670
+[2020-05-10 22:43:51] > Got image:snapshot-2020-05-10::22:43:50.jpg
+[2020-05-10 22:47:25] > Disconnected from 192.168.0.58
+[2020-05-10 23:05:17] > Established connection with 192.168.0.63:61986
+[2020-05-10 23:05:20] > Connected with 192.168.0.63:61986
+[2020-05-10 23:05:31] > Got image:cal variable 'rval' referenced before assignment
+[2020-05-10 23:05:54] > Established connection with 192.168.0.63:61987
+[2020-05-10 23:05:56] > Connected with 192.168.0.63:61987
+[2020-05-10 23:06:04] > Got image: cal variable 'rval' referenced before assignment
+[2020-05-10 23:09:23] > Established connection with 192.168.0.63:61998
+[2020-05-10 23:09:28] > Connected with 192.168.0.63:61998
+[2020-05-10 23:12:32] > Got image: cal variable 'rval' referenced before assignment
+[2020-05-10 23:12:39] > Disconnected from 192.168.0.63
+[2020-05-10 23:15:36] > Established connection with 192.168.0.63:62003
+[2020-05-10 23:15:39] > Connected with 192.168.0.63:61998
+[2020-05-10 23:16:07] > Established connection with 192.168.0.63:62004
+[2020-05-10 23:18:17] > Established connection with 192.168.0.58:49802
+[2020-05-10 23:18:26] > Connected with 192.168.0.58:49802
+[2020-05-10 23:19:17] > Disconnected from 192.168.0.58

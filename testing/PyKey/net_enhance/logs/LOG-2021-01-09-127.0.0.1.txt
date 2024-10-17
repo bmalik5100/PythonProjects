@@ -1,0 +1,10 @@
+LOG FOR arturo
+ Machine: Linux-5.9.0-2parrot1-amd64-x86_64-with-glibc2.31
+ Time: 2021-01-09 at 21:13:48:
+IP: 127.0.0.1
+
+alt+lalksdmcmvpsdnvaoidnqwd
+(esc)hello there
+username
+password
+^

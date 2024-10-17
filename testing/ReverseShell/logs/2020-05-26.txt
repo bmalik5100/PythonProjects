@@ -1,0 +1,13 @@
+LOGS FOR 2020-05-26
+
+[2020-05-26 17:36:22] > Established connection with 192.168.0.58:45530
+[2020-05-26 17:36:44] > Connected with 192.168.0.58:45530
+[2020-05-26 17:36:49] > Got image: apshot-2020-05-26-17:36:48.jpg
+[2020-05-26 17:40:14] > Established connection with 192.168.0.58:45570
+[2020-05-26 17:40:22] > Connected with 192.168.0.58:45570
+[2020-05-26 17:41:14] > Established connection with 192.168.0.58:45582
+[2020-05-26 17:41:17] > Connected with 192.168.0.58:45582
+[2020-05-26 17:42:04] > Established connection with 192.168.0.58:45592
+[2020-05-26 17:42:08] > Connected with 192.168.0.58:45592
+[2020-05-26 17:42:25] > Got image: apshot-2020-05-26-17:42:24.jpg
+[2020-05-26 17:44:16] > Disconnected from 192.168.0.58

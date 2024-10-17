@@ -1,0 +1,54 @@
+LOGS FOR 2020-05-11
+
+[2020-05-11 12:19:22] > Established connection with 192.168.0.58:38952
+[2020-05-11 12:19:25] > Connected with 192.168.0.58:38952
+[2020-05-11 12:19:36] > Got image: snapshot-2020-05-11::12:19:35.jpg
+[2020-05-11 12:19:53] > Disconnected from 192.168.0.58
+[2020-05-11 12:20:15] > Established connection with 192.168.0.58:38966
+[2020-05-11 12:20:18] > Connected with 192.168.0.58:38966
+[2020-05-11 12:26:06] > Disconnected from 192.168.0.58
+[2020-05-11 12:27:55] > Established connection with 192.168.0.58:39082
+[2020-05-11 12:28:03] > Established connection with 192.168.0.58:39084
+[2020-05-11 12:28:05] > Connected with 192.168.0.58:39084
+[2020-05-11 12:29:28] > Established connection with 192.168.0.58:39104
+[2020-05-11 12:29:30] > Connected with 192.168.0.58:39104
+[2020-05-11 12:34:56] > Established connection with 192.168.0.58:39184
+[2020-05-11 12:35:01] > Connected with 192.168.0.58:39184
+[2020-05-11 12:35:55] > Established connection with 192.168.0.58:39194
+[2020-05-11 12:35:56] > Connected with 192.168.0.58:39194
+[2020-05-11 12:40:11] > Established connection with 192.168.0.58:39242
+[2020-05-11 12:40:13] > Connected with 192.168.0.58:39242
+[2020-05-11 12:42:24] > Established connection with 192.168.0.58:39264
+[2020-05-11 12:42:26] > Connected with 192.168.0.58:39264
+[2020-05-11 12:42:59] > Established connection with 192.168.0.58:39272
+[2020-05-11 12:43:01] > Connected with 192.168.0.58:39272
+[2020-05-11 12:44:46] > Established connection with 192.168.0.58:39292
+[2020-05-11 12:44:48] > Connected with 192.168.0.58:39292
+[2020-05-11 12:47:21] > Established connection with 192.168.0.58:39324
+[2020-05-11 12:47:23] > Connected with 192.168.0.58:39324
+[2020-05-11 12:47:36] > Established connection with 192.168.0.58:39330
+[2020-05-11 12:47:38] > Connected with 192.168.0.58:39324
+[2020-05-11 12:48:44] > Established connection with 192.168.0.58:39344
+[2020-05-11 12:48:46] > Connected with 192.168.0.58:39344
+[2020-05-11 12:49:13] > Established connection with 192.168.0.58:39352
+[2020-05-11 12:49:14] > Connected with 192.168.0.58:39352
+[2020-05-11 12:51:32] > Established connection with 192.168.0.58:39382
+[2020-05-11 12:51:34] > Connected with 192.168.0.58:39382
+[2020-05-11 12:52:35] > Established connection with 192.168.0.58:39392
+[2020-05-11 12:52:38] > Connected with 192.168.0.58:39382
+[2020-05-11 12:54:00] > Established connection with 192.168.0.58:39404
+[2020-05-11 12:54:02] > Connected with 192.168.0.58:39404
+[2020-05-11 12:54:35] > Established connection with 192.168.0.58:39412
+[2020-05-11 12:54:39] > Connected with 192.168.0.58:39404
+[2020-05-11 12:56:53] > Established connection with 192.168.0.58:39438
+[2020-05-11 12:56:56] > Connected with 192.168.0.58:39438
+[2020-05-11 12:57:39] > Established connection with 192.168.0.58:39446
+[2020-05-11 12:57:43] > Connected with 192.168.0.58:39446
+[2020-05-11 12:59:56] > Established connection with 192.168.0.58:39474
+[2020-05-11 12:59:59] > Connected with 192.168.0.58:39474
+[2020-05-11 13:00:58] > Established connection with 192.168.0.58:39484
+[2020-05-11 13:01:00] > Connected with 192.168.0.58:39484
+[2020-05-11 13:02:07] > Established connection with 192.168.0.58:39494
+[2020-05-11 13:02:14] > Connected with 192.168.0.58:39494
+[2020-05-11 13:03:08] > Established connection with 192.168.0.58:39508
+[2020-05-11 13:03:10] > Connected with 192.168.0.58:39508

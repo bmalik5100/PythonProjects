@@ -1,0 +1,48 @@
+
+[2020-05-25 07:38:25] > Fat transferred makefile.pyto server.
+[2020-05-25 07:43:54] > Disconnected from 192.168.0.58
+[2020-05-25 08:25:30] > Established connection with 192.168.0.58:34448
+[2020-05-25 08:25:41] > Connected with 192.168.0.58:34448
+[2020-05-25 08:25:44] > Disconnected from 192.168.0.58
+[2020-05-25 08:35:57] > Established connection with 192.168.0.58:34556
+[2020-05-25 08:36:44] > Connected with 192.168.0.58:34556
+[2020-05-25 08:40:47] > Established connection with 192.168.0.58:34608
+[2020-05-25 08:42:51] > Connected with 192.168.0.58:34608
+[2020-05-25 08:43:59] > Disconnected from 192.168.0.58
+[2020-05-25 08:49:40] > Established connection with 192.168.0.58:34678
+[2020-05-25 08:49:44] > Connected with 192.168.0.58:34678
+[2020-05-25 08:51:53] > Disconnected from 192.168.0.58
+[2020-05-25 08:52:20] > Established connection with 192.168.0.58:34718
+[2020-05-25 08:52:28] > Connected with 192.168.0.58:34718
+[2020-05-25 09:04:14] > Disconnected from 192.168.0.58
+[2020-05-25 09:04:22] > Established connection with 192.168.0.58:34808
+[2020-05-25 09:04:26] > Connected with 192.168.0.58:34808
+[2020-05-25 09:04:48] > Fat transferred Unable to find file832to server.
+[2020-05-25 09:04:53] > Disconnected from 192.168.0.58
+[2020-05-25 09:13:08] > Established connection with 192.168.0.58:34854
+[2020-05-25 09:13:10] > Connected with 192.168.0.58:34854
+[2020-05-25 09:13:28] > Fat transferred Unable to find file832to server.
+[2020-05-25 09:47:29] > Established connection with 192.168.0.58:34960
+[2020-05-25 09:47:52] > Connected with 192.168.0.58:34960
+[2020-05-25 09:48:17] > Fat transferred makefile.pyto server.
+[2020-05-25 09:48:39] > Disconnected from 192.168.0.58
+[2020-05-25 11:51:43] > Established connection with 192.168.0.31:61760
+[2020-05-25 11:51:49] > Connected with 192.168.0.31:61760
+[2020-05-25 11:53:33] > Connected with 192.168.0.31:61760
+[2020-05-25 11:55:09] > Disconnected from 192.168.0.31
+[2020-05-25 12:01:58] > Established connection with 192.168.0.31:61803
+[2020-05-25 12:02:41] > Connected with 192.168.0.31:61760
+[2020-05-25 12:03:05] > Connected with 192.168.0.31:61760
+[2020-05-25 12:03:25] > Established connection with 192.168.0.31:61805
+[2020-05-25 12:03:37] > Connected with 192.168.0.31:61760
+[2020-05-25 12:04:27] > Connected with 192.168.0.31:61760
+[2020-05-25 12:06:42] > Established connection with 192.168.0.31:61812
+[2020-05-25 12:06:55] > Connected with 192.168.0.31:61760
+[2020-05-25 12:08:49] > Established connection with 192.168.0.31:61815
+[2020-05-25 12:08:54] > Connected with 192.168.0.31:61760
+[2020-05-25 12:09:00] > Connected with 192.168.0.31:61760
+[2020-05-25 12:12:02] > Established connection with 192.168.0.31:61821
+[2020-05-25 12:12:05] > Connected with 192.168.0.31:61760
+[2020-05-25 12:12:16] > Connected with 192.168.0.31:61760
+[2020-05-25 12:45:04] > Established connection with 192.168.0.31:61892
+[2020-05-25 12:47:19] > Established connection with 192.168.0.31:61900
